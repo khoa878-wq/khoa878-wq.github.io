@@ -1789,7 +1789,7 @@
     "Brochure",
     "Logo"
    ],
-   "hidden": false,
+   "hidden": true,
    "cover": 0,
    "images": [
     {

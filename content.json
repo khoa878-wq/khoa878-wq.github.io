@@ -566,6 +566,42 @@
    ]
   },
   {
+   "slug": "banner-acta",
+   "title": "Banner Affiliate thực chiến",
+   "brand": "Cộng Đồng Sống Hạnh Phúc · ACTA",
+   "groups": [
+    "Banner"
+   ],
+   "mark": "ACTA",
+   "colors": [
+    "#ffd84d",
+    "#1d3a8a"
+   ],
+   "hidden": false,
+   "cover": 0,
+   "description": "Banner cho chương trình \"Liên minh cộng đồng Affiliate thực chiến\" của ACTA: ba phiên bản với bố cục và màu khác nhau, kèm mã QR và thông tin chương trình.",
+   "scope": [
+    "Banner",
+    "Key visual"
+   ],
+   "link": "https://www.behance.net/gallery/240535207/banner-ACTA",
+   "linkText": "Xem trên Behance",
+   "images": [
+    {
+     "src": "work/banner-acta/01.jpg",
+     "ratio": 1.701
+    },
+    {
+     "src": "work/banner-acta/02.jpg",
+     "ratio": 1.701
+    },
+    {
+     "src": "work/banner-acta/03.jpg",
+     "ratio": 1.6
+    }
+   ]
+  },
+  {
    "slug": "tra-hoa-lanh",
    "title": "Trà Hoa Lành",
    "brand": "Nhận diện thương hiệu",
@@ -581,7 +617,7 @@
     "#b3caa6",
     "#233c36"
    ],
-   "description": "Nhận diện thương hiệu trà hoa và trà thảo mộc Lành: logo, typography, màu, mascot, pattern, bộ bao bì, ảnh sản phẩm, bộ quảng cáo, website, kịch bản và storyboard TVC.",
+   "description": "Nghiên cứu thị trường, đối thủ và chân dung khách hàng, rồi xây dựng nhận diện thương hiệu trà hoa và trà thảo mộc Lành: logo, typography, màu, mascot, pattern, bộ bao bì, bảng giá và khuyến mãi, ảnh sản phẩm, bộ quảng cáo, website, kịch bản và storyboard TVC.",
    "scope": [
     "Logo",
     "Bao bì",
@@ -593,7 +629,7 @@
    "link": "https://canva.link/1189w578b5p6p26",
    "linkText": "Bản gốc trên Canva",
    "hidden": false,
-   "cover": 39,
+   "cover": 50,
    "images": [
     {
      "src": "work/tra-hoa-lanh/01.jpg",
@@ -610,6 +646,26 @@
     {
      "src": "work/tra-hoa-lanh/04.jpg",
      "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/b01.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-hoa-lanh/b02.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-hoa-lanh/b03.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-hoa-lanh/b04.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-hoa-lanh/b05.jpg",
+     "ratio": 1.777
     },
     {
      "src": "work/tra-hoa-lanh/05.jpg",
@@ -666,6 +722,10 @@
     {
      "src": "work/tra-hoa-lanh/18.jpg",
      "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/b06.jpg",
+     "ratio": 1.777
     },
     {
      "src": "work/tra-hoa-lanh/19.jpg",
@@ -734,6 +794,26 @@
     {
      "src": "work/tra-hoa-lanh/35.jpg",
      "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/b07.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-hoa-lanh/b08.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-hoa-lanh/b09.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-hoa-lanh/b10.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-hoa-lanh/b11.jpg",
+     "ratio": 1.777
     },
     {
      "src": "work/tra-hoa-lanh/36.jpg",
@@ -1004,8 +1084,12 @@
     "Poster"
    ],
    "hidden": false,
-   "cover": 6,
+   "cover": 7,
    "images": [
+    {
+     "src": "work/tvc-ps/b01.jpg",
+     "ratio": 1.777
+    },
     {
      "src": "work/tvc-ps/01.jpg",
      "ratio": 1.778
@@ -1034,7 +1118,9 @@
      "src": "work/tvc-ps/07.jpg",
      "ratio": 1.778
     }
-   ]
+   ],
+   "link": "https://www.behance.net/gallery/240552517/kch-bn-qung-cao-storyboard",
+   "linkText": "Xem video trên Behance"
   },
   {
    "slug": "phim-3d-khan-do",
@@ -1074,6 +1160,10 @@
     {
      "src": "work/phim-3d-khan-do/04.jpg",
      "ratio": 1.778
+    },
+    {
+     "src": "work/phim-3d-khan-do/b01.jpg",
+     "ratio": 1.777
     },
     {
      "src": "work/phim-3d-khan-do/05.jpg",
@@ -1138,6 +1228,41 @@
     {
      "src": "work/phim-3d-khan-do/20.jpg",
      "ratio": 1.778
+    }
+   ],
+   "link": "https://www.behance.net/gallery/240536109/little-red-ridinh-hood-video-Final",
+   "linkText": "Xem phim trên Behance"
+  },
+  {
+   "slug": "dung-hinh-3d-maya",
+   "title": "Dựng hình 3D với Maya",
+   "brand": "Môn Dựng hình Maya · FPT Polytechnic",
+   "groups": [
+    "3D"
+   ],
+   "mark": "Maya",
+   "colors": [
+    "#d9e6e1",
+    "#7a3d08"
+   ],
+   "hidden": false,
+   "cover": 0,
+   "description": "Hai bài dựng cảnh 3D trong Maya: \"Tận thế sắp đặt\" và \"3 Cõi Âm Dương của mèo\", gồm dựng bối cảnh, nhân vật mèo và render nhiều góc máy. Kèm video 3D lon nước trên Behance.",
+   "scope": [
+    "Dựng cảnh",
+    "Nhân vật",
+    "Render"
+   ],
+   "link": "https://www.behance.net/gallery/240543561/video-lon-nuc-3d",
+   "linkText": "Xem video 3D lon nước trên Behance",
+   "images": [
+    {
+     "src": "work/dung-hinh-3d-maya/01.jpg",
+     "ratio": 0.857
+    },
+    {
+     "src": "work/dung-hinh-3d-maya/02.jpg",
+     "ratio": 0.693
     }
    ]
   },
@@ -1670,6 +1795,22 @@
      "ratio": 1.777
     },
     {
+     "src": "work/tokyo-sushi/b01.jpg",
+     "ratio": 1.388
+    },
+    {
+     "src": "work/tokyo-sushi/b02.jpg",
+     "ratio": 0.69
+    },
+    {
+     "src": "work/tokyo-sushi/b03.jpg",
+     "ratio": 0.687
+    },
+    {
+     "src": "work/tokyo-sushi/b04.jpg",
+     "ratio": 0.631
+    },
+    {
      "src": "work/tokyo-sushi/06.jpg",
      "ratio": 1.777
     },
@@ -1783,7 +1924,7 @@
     "#efe9df",
     "#3b3a36"
    ],
-   "description": "Các thiết kế đầu tay: voucher giảm giá cho quán Cơm Tấm Ngon, brochure gấp ba du lịch Nhật Bản (bản phác thảo), tấm in logo MS.T và logo đội bóng The Rainbow FC.",
+   "description": "Các thiết kế đầu tay: voucher giảm giá cho quán Cơm Tấm Ngon, brochure gấp ba du lịch Nhật Bản (bản phác thảo), tấm in logo MS.T, logo đội bóng The Rainbow FC và logo Sausaeeg.",
    "scope": [
     "Voucher",
     "Brochure",
@@ -1811,6 +1952,10 @@
     {
      "src": "work/thiet-ke-dau-tay/05.jpg",
      "ratio": 0.898
+    },
+    {
+     "src": "work/thiet-ke-dau-tay/sausaeeg.jpg",
+     "ratio": 1.0
     }
    ]
   }

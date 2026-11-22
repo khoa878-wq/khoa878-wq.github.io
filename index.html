@@ -119,14 +119,54 @@ h1 { font-size:clamp(4rem,11vw,9rem); line-height:.88; letter-spacing:-.09em; ma
 @media(max-width:870px) { .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .gallery { --cols:2 !important; } .case-head { grid-template-columns:1fr; gap:24px; } }
 @media(max-width:630px) { .wrap { width:calc(100% - 32px); } .hero,.details { grid-template-columns:1fr; gap:24px; } .hero { padding-block:38px 54px; } .grid { grid-template-columns:1fr; } .art b { font-size:3.5rem; } .details { padding-block:42px; gap:40px; } .gallery { --cols:1 !important; } .viewer-stage { padding:0 8px; } .case-nav strong { font-size:1rem; } }
 @media(prefers-reduced-motion:reduce) { * { transition:none !important; } }
+/* Chế độ sửa (chỉ hiện khi link có ?sua) */
+.ed { outline:1px dashed color-mix(in srgb, currentColor 45%, transparent); outline-offset:3px; border-radius:2px; cursor:text; }
+.ed:hover, .ed:focus { outline:2px solid var(--lime); }
+.lower .ed:hover, .lower .ed:focus { outline-color:#5d7a00; }
+.ed:empty::before { content:attr(data-ph); opacity:.5; }
+.editbar { position:fixed; inset:auto 0 0 0; z-index:50; display:flex; flex-wrap:wrap; align-items:center; gap:8px 10px; padding:10px max(16px, env(safe-area-inset-left, 0px)); background:#0e0f0c; border-top:2px solid var(--lime); color:var(--ink); font-size:.9rem; }
+.editbar b { color:var(--lime); }
+.editbar .grow { flex:1; min-width:160px; color:var(--muted); }
+.editbar button, .tool, .tools button { border:1px solid #77796b; background:var(--panel); color:var(--ink); border-radius:99px; padding:6px 14px; min-height:36px; }
+.editbar button.primary { background:var(--lime); color:var(--bg); border-color:var(--lime); font-weight:750; }
+.editbar button:disabled { opacity:.45; cursor:default; }
+body.editing { padding-bottom:84px; }
+.tools { display:flex; flex-wrap:wrap; gap:6px; }
+.tools button { padding:3px 10px; min-height:30px; font-size:.82rem; }
+.card { position:relative; }
+.card .tools { position:absolute; top:8px; right:8px; z-index:2; }
+.card.is-hidden { opacity:.5; }
+.badge { display:inline-block; background:#ff8a65; color:#2a0e05; font-weight:750; font-size:.78rem; border-radius:99px; padding:2px 9px; }
+.card .badge { position:absolute; top:10px; left:10px; z-index:2; }
+.history li .tools, .skills .tools { margin-top:6px; }
+.history li .tools button, .skills .tools button { background:transparent; color:var(--paper-ink); border-color:#8a8b7e; }
+.lower .tool { background:transparent; color:var(--paper-ink); border-color:#8a8b7e; margin-top:12px; }
+.edit-box { display:grid; gap:10px; margin-top:16px; padding:14px; border:1px dashed var(--line); border-radius:6px; }
+.edit-box label { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.edit-box input[type=text], .edit-box input[type=url] { flex:1; min-width:180px; background:var(--panel-2); color:var(--ink); border:1px solid var(--line); border-radius:4px; padding:6px 8px; font:inherit; }
+.checks { display:flex; flex-wrap:wrap; gap:6px 14px; }
+.shot-edit { display:grid; gap:6px; }
+.shot-edit .frame { cursor:zoom-in; }
+.shot-edit.is-cover .frame { border:2px solid var(--lime); }
+.add-shot { display:grid; place-items:center; aspect-ratio:var(--ratio); border:1px dashed #77796b; border-radius:4px; color:var(--muted); background:none; }
+.add-shot:hover { border-color:var(--lime); color:var(--ink); }
+.token-dlg { max-width:560px; width:calc(100% - 32px); border:1px solid var(--line); border-radius:8px; background:var(--panel); color:var(--ink); padding:22px; }
+.token-dlg::backdrop { background:#000a; }
+.token-dlg ol { padding-left:20px; color:var(--muted); }
+.token-dlg a { color:var(--lime); text-decoration:underline; }
+.token-dlg input { width:100%; margin:10px 0; background:var(--panel-2); color:var(--ink); border:1px solid var(--line); border-radius:4px; padding:8px; font:inherit; }
+.token-dlg .row { display:flex; flex-wrap:wrap; gap:8px; justify-content:flex-end; }
+.token-dlg button { border:1px solid #77796b; background:none; color:var(--ink); border-radius:99px; padding:7px 16px; }
+.token-dlg button.primary { background:var(--lime); color:var(--bg); border-color:var(--lime); font-weight:750; }
+@media(max-width:630px) { .editbar { gap:6px; padding:8px 10px; font-size:.8rem; } .editbar .grow { flex-basis:100%; order:-1; } .editbar > b { display:none; } .editbar button { padding:4px 10px; min-height:32px; font-size:.8rem; } body.editing { padding-bottom:130px; } }
 </style>
 </head>
 <body>
 <header class="top wrap"><a class="brand" href="#gioi-thieu" aria-label="Nguyễn Khoa, đầu trang">NK<span>.</span></a><nav aria-label="Điều hướng chính"><a href="#du-an">Dự án</a><a href="#kinh-nghiem">Kinh nghiệm</a><a href="#ky-nang">Kỹ năng</a></nav></header>
 <main id="home">
 <section class="hero wrap" id="gioi-thieu">
-  <div><p class="label">Graphic designer · TP.HCM</p><h1>Nguyễn<br>Khoa<span>.</span></h1><p class="intro">Mình thiết kế ấn phẩm truyền thông, hình ảnh thương hiệu, bao bì và video ngắn cho mạng xã hội.</p>
-  <div class="stats"><div><b id="stat-projects">–</b>dự án</div><div><b id="stat-images">–</b>thiết kế</div><div><b>2022–2026</b>giai đoạn</div></div>
+  <div><p class="label" id="site-label"></p><h1>Nguyễn<br>Khoa<span>.</span></h1><p class="intro" id="site-intro"></p>
+  <div class="stats"><div><b id="stat-projects">–</b>dự án</div><div><b id="stat-images">–</b>thiết kế</div><div><b id="stat-period"></b>giai đoạn</div></div>
   <a class="action" href="#du-an">Xem dự án</a></div>
   <div class="mosaic" id="mosaic"></div>
 </section>
@@ -136,24 +176,14 @@ h1 { font-size:clamp(4rem,11vw,9rem); line-height:.88; letter-spacing:-.09em; ma
   <div class="grid" id="cards"></div>
 </section>
 <div class="lower"><div class="wrap details">
-<section id="kinh-nghiem"><h2>Kinh nghiệm</h2>
-<ul class="history">
-<li><time>11/2026 – hiện tại</time><h3>Giường Tủ Đẹp</h3><p>Thiết kế thumbnail, chỉnh ảnh sản phẩm, dựng video nội thất và viết nội dung cho TikTok, Facebook, YouTube.</p><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/giuongtudep.vn">Facebook Giường Tủ Đẹp</a></li>
-<li><time>01–09/2026</time><h3>Việt Phát · Wan2Care</h3><p>Thiết kế nội dung hình ảnh cho Wan2Care, dịch vụ dọn nhà tại khu vực Toronto, Canada: bài đăng, banner, video và ứng dụng AI trong sản xuất nội dung.</p><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/wan2care.ca">Facebook Wan2Care</a></li>
-<li><time>05–11/2025</time><h3>Cộng Đồng Sống Hạnh Phúc · ACTA</h3><p>Thực tập thiết kế: ấn phẩm truyền thông, chỉnh sửa hình ảnh, video, viết nội dung và hỗ trợ studio.</p><a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@acta010825">TikTok ACTA</a></li>
-<li><time>01–05/2025</time><h3>Viet Pickleball</h3><p>Nhân viên part-time: thiết kế ấn phẩm quảng cáo, quay dựng video, chụp ảnh và hỗ trợ vận hành.</p></li>
-<li><time>10–12/2024</time><h3>Góc Cà Phê</h3><p>Freelance quay video, viết kịch bản và thiết kế.</p><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/people/G%C3%B3c-C%C3%A0-Ph%C3%AA/61567362864331/">Facebook Góc Cà Phê</a></li>
-<li><time>01–08/2024</time><h3>Forward</h3><p>Thiết kế freelance logo, banner, poster và ấn phẩm truyền thông.</p></li>
-<li><time>09–11/2023</time><h3>Vận Chuyển Quảng Cáo Thái Khoa</h3><p>Freelance: thiết kế logo, poster và làm content.</p></li>
-</ul></section>
-<section id="ky-nang"><h2>Kỹ năng</h2>
-<dl class="skills"><dt>Thiết kế 2D</dt><dd>Photoshop, Illustrator, Canva</dd><dt>Dựng video</dt><dd>CapCut PC, Premiere Pro, After Effects</dd><dt>Thiết kế 3D</dt><dd>Cinema 4D, Maya</dd><dt>Nội dung và AI</dt><dd>Phát triển concept, viết kịch bản, tạo hình ảnh và video bằng AI</dd></dl>
-</section></div></div>
+<section id="kinh-nghiem"><h2>Kinh nghiệm</h2><ul class="history" id="history"></ul></section>
+<section id="ky-nang"><h2>Kỹ năng</h2><dl class="skills" id="skills"></dl></section>
+</div></div>
 </main>
 
 <section id="case" class="case wrap" hidden aria-live="polite"></section>
 
-<footer class="wrap foot"><strong>Nguyễn Khoa</strong><span class="contact"><span>khnsz878@gmail.com</span><a target="_blank" rel="noopener noreferrer" href="https://www.behance.net/khoangy2">Behance ↗</a></span></footer>
+<footer class="wrap foot"><strong>Nguyễn Khoa</strong><span class="contact"><span id="site-email"></span><a id="site-behance" target="_blank" rel="noopener noreferrer" href="https://www.behance.net/khoangy2">Behance ↗</a></span></footer>
 
 <dialog class="viewer" id="viewer" aria-label="Xem ảnh lớn">
   <div class="viewer-bar"><span id="viewer-count"></span><button class="icon-btn" id="viewer-close" type="button" aria-label="Đóng">Đóng ×</button></div>
@@ -161,78 +191,17 @@ h1 { font-size:clamp(4rem,11vw,9rem); line-height:.88; letter-spacing:-.09em; ma
   <div class="viewer-ctrl"><button class="icon-btn" id="viewer-prev" type="button">← Trước</button><button class="icon-btn" id="viewer-next" type="button">Sau →</button></div>
 </dialog>
 
+<!-- Bản dự phòng của content.json (tools/inject.py chép vào). Trang luôn đọc content.json mới nhất trước. -->
+<script id="content-data" type="application/json">{"site":{"label":"Graphic designer · TP.HCM","intro":"Mình thiết kế ấn phẩm truyền thông, hình ảnh thương hiệu, bao bì và video ngắn cho mạng xã hội.","period":"2022–2026","email":"khnsz878@gmail.com","behance":"https://www.behance.net/khoangy2"},"groups":["Tất cả","Social post","Banner","Video","Nhận diện","Bao bì","Ấn phẩm in","3D","AI"],"mosaic":["wan2care-worldcup","tra-hoa-lanh","phim-3d-khan-do","bougies"],"experience":[{"time":"11/2026 – hiện tại","title":"Giường Tủ Đẹp","text":"Thiết kế thumbnail, chỉnh ảnh sản phẩm, dựng video nội thất và viết nội dung cho TikTok, Facebook, YouTube.","link":"https://www.facebook.com/giuongtudep.vn","linkText":"Facebook Giường Tủ Đẹp"},{"time":"01–09/2026","title":"Việt Phát · Wan2Care","text":"Thiết kế nội dung hình ảnh cho Wan2Care, dịch vụ dọn nhà tại khu vực Toronto, Canada: bài đăng, banner, video và ứng dụng AI trong sản xuất nội dung.","link":"https://www.facebook.com/wan2care.ca","linkText":"Facebook Wan2Care"},{"time":"05–11/2025","title":"Cộng Đồng Sống Hạnh Phúc · ACTA","text":"Thực tập thiết kế: ấn phẩm truyền thông, chỉnh sửa hình ảnh, video, viết nội dung và hỗ trợ studio.","link":"https://www.tiktok.com/@acta010825","linkText":"TikTok ACTA"},{"time":"01–05/2025","title":"Viet Pickleball","text":"Nhân viên part-time: thiết kế ấn phẩm quảng cáo, quay dựng video, chụp ảnh và hỗ trợ vận hành.","link":"","linkText":""},{"time":"10–12/2024","title":"Góc Cà Phê","text":"Freelance quay video, viết kịch bản và thiết kế.","link":"https://www.facebook.com/people/G%C3%B3c-C%C3%A0-Ph%C3%AA/61567362864331/","linkText":"Facebook Góc Cà Phê"},{"time":"01–08/2024","title":"Forward","text":"Thiết kế freelance logo, banner, poster và ấn phẩm truyền thông.","link":"","linkText":""},{"time":"09–11/2023","title":"Vận Chuyển Quảng Cáo Thái Khoa","text":"Freelance: thiết kế logo, poster và làm content.","link":"","linkText":""}],"skills":[{"name":"Thiết kế 2D","value":"Photoshop, Illustrator, Canva"},{"name":"Dựng video","value":"CapCut PC, Premiere Pro, After Effects"},{"name":"Thiết kế 3D","value":"Cinema 4D, Maya"},{"name":"Nội dung và AI","value":"Phát triển concept, viết kịch bản, tạo hình ảnh và video bằng AI"}],"projects":[{"slug":"wan2care-social","title":"Bài đăng mạng xã hội","brand":"Việt Phát · Wan2Care","groups":["Social post","AI"],"image":"images/viet-phat.jpg","mark":"Wan2Care","colors":["#d4ee79","#22281b"],"description":"Bài đăng cho dịch vụ dọn nhà Wan2Care tại Toronto: chủ đề dọn dẹp theo mùa, Lễ Tạ ơn, Tết, Black Friday, World Cup và các ngày lễ Canada. Có ứng dụng AI trong sản xuất hình ảnh.","scope":["Bài đăng","Ấn phẩm theo mùa","Hình ảnh AI"],"hidden":false,"cover":6,"images":[{"src":"work/wan2care-social/01.jpg","ratio":1},{"src":"work/wan2care-social/02.jpg","ratio":1},{"src":"work/wan2care-social/03.jpg","ratio":1},{"src":"work/wan2care-social/04.jpg","ratio":1},{"src":"work/wan2care-social/05.jpg","ratio":1},{"src":"work/wan2care-social/06.jpg","ratio":1},{"src":"work/wan2care-social/07.jpg","ratio":1},{"src":"work/wan2care-social/08.jpg","ratio":1},{"src":"work/wan2care-social/09.jpg","ratio":1},{"src":"work/wan2care-social/10.jpg","ratio":1},{"src":"work/wan2care-social/11.jpg","ratio":1},{"src":"work/wan2care-social/12.jpg","ratio":1},{"src":"work/wan2care-social/13.jpg","ratio":1},{"src":"work/wan2care-social/14.jpg","ratio":1},{"src":"work/wan2care-social/15.jpg","ratio":1},{"src":"work/wan2care-social/16.jpg","ratio":1},{"src":"work/wan2care-social/17.jpg","ratio":1},{"src":"work/wan2care-social/18.jpg","ratio":1.778},{"src":"work/wan2care-social/19.jpg","ratio":1.778},{"src":"work/wan2care-social/20.jpg","ratio":1},{"src":"work/wan2care-social/21.jpg","ratio":1},{"src":"work/wan2care-social/22.jpg","ratio":1},{"src":"work/wan2care-social/23.jpg","ratio":1},{"src":"work/wan2care-social/24.jpg","ratio":1},{"src":"work/wan2care-social/25.jpg","ratio":1},{"src":"work/wan2care-social/26.jpg","ratio":1},{"src":"work/wan2care-social/27.jpg","ratio":1},{"src":"work/wan2care-social/28.jpg","ratio":1},{"src":"work/wan2care-social/29.jpg","ratio":1},{"src":"work/wan2care-social/30.jpg","ratio":1},{"src":"work/wan2care-social/31.jpg","ratio":1},{"src":"work/wan2care-social/32.jpg","ratio":1},{"src":"work/wan2care-social/33.jpg","ratio":1},{"src":"work/wan2care-social/34.jpg","ratio":1},{"src":"work/wan2care-social/35.jpg","ratio":1},{"src":"work/wan2care-social/36.jpg","ratio":1},{"src":"work/wan2care-social/37.jpg","ratio":1},{"src":"work/wan2care-social/38.jpg","ratio":1},{"src":"work/wan2care-social/39.jpg","ratio":1},{"src":"work/wan2care-social/40.jpg","ratio":1},{"src":"work/wan2care-social/41.jpg","ratio":1},{"src":"work/wan2care-social/42.jpg","ratio":1},{"src":"work/wan2care-social/43.jpg","ratio":1},{"src":"work/wan2care-social/44.jpg","ratio":1},{"src":"work/wan2care-social/45.jpg","ratio":1},{"src":"work/wan2care-social/46.jpg","ratio":1},{"src":"work/wan2care-social/47.jpg","ratio":1},{"src":"work/wan2care-social/48.jpg","ratio":1},{"src":"work/wan2care-social/49.jpg","ratio":1}]},{"slug":"wan2care-worldcup","title":"Chiến dịch World Cup 2026","brand":"Việt Phát · Wan2Care","groups":["Social post","Banner","AI"],"image":"images/world-cup.jpg","mark":"World Cup","colors":["#d4ee79","#22281b"],"description":"Thiết kế bài đăng và ấn phẩm quảng bá dịch vụ dọn nhà trong mùa World Cup. Bộ nội dung gồm bài khởi động, thử thách dự đoán, tỷ số các trận đấu và ưu đãi Winners’ Week.","scope":["Bài đăng","Poster","Tỷ số trận đấu","Minigame"],"hidden":false,"cover":0,"images":[{"src":"work/wan2care-worldcup/01.jpg","ratio":1},{"src":"work/wan2care-worldcup/02.jpg","ratio":1},{"src":"work/wan2care-worldcup/03.jpg","ratio":1},{"src":"work/wan2care-worldcup/04.jpg","ratio":1},{"src":"work/wan2care-worldcup/05.jpg","ratio":1},{"src":"work/wan2care-worldcup/06.jpg","ratio":1},{"src":"work/wan2care-worldcup/07.jpg","ratio":1},{"src":"work/wan2care-worldcup/08.jpg","ratio":1},{"src":"work/wan2care-worldcup/09.jpg","ratio":1},{"src":"work/wan2care-worldcup/10.jpg","ratio":1}]},{"slug":"wan2care-tuyen-dung","title":"Banner tuyển cộng tác viên","brand":"Việt Phát · Wan2Care","groups":["Banner","Social post"],"image":"images/banner-tuyen-dung.jpg","mark":"Wan2Care","colors":["#cbd7fa","#1d3263"],"description":"Thiết kế banner cho chiến dịch tuyển người làm dịch vụ dọn dẹp và giới thiệu ứng dụng Wan2Care. Phát triển nội dung tuyển dụng dựa trên hệ thống hình ảnh của thương hiệu.","scope":["Banner","Bài tuyển dụng","Banner ứng dụng"],"hidden":false,"cover":0,"images":[{"src":"work/wan2care-tuyen-dung/01.jpg","ratio":1},{"src":"work/wan2care-tuyen-dung/02.jpg","ratio":1},{"src":"work/wan2care-tuyen-dung/03.jpg","ratio":2.505},{"src":"work/wan2care-tuyen-dung/04.jpg","ratio":2.505},{"src":"work/wan2care-tuyen-dung/05.jpg","ratio":2.505},{"src":"work/wan2care-tuyen-dung/06.jpg","ratio":2.505},{"src":"work/wan2care-tuyen-dung/07.jpg","ratio":1},{"src":"work/wan2care-tuyen-dung/08.jpg","ratio":1},{"src":"work/wan2care-tuyen-dung/09.jpg","ratio":1}]},{"slug":"vicci-bao-bi","title":"Bao bì VICCI · Vietcan Fresh","brand":"Việt Phát · Wan2Care","groups":["Bao bì"],"mark":"VICCI","colors":["#f6c35b","#5a1d10"],"description":"Thiết kế bao bì cho các dòng sản phẩm VICCI: nem nướng, nem nướng phô mai, chả giò gà, chả giò heo và chả giò chay, cùng name card.","scope":["Bao bì","Name card","Banner sản phẩm"],"hidden":false,"cover":0,"images":[{"src":"work/vicci-bao-bi/01.jpg","ratio":1.778},{"src":"work/vicci-bao-bi/02.jpg","ratio":1.778},{"src":"work/vicci-bao-bi/03.jpg","ratio":1.778},{"src":"work/vicci-bao-bi/04.jpg","ratio":1.778},{"src":"work/vicci-bao-bi/05.jpg","ratio":1.778},{"src":"work/vicci-bao-bi/06.jpg","ratio":1.778},{"src":"work/vicci-bao-bi/07.jpg","ratio":1.778},{"src":"work/vicci-bao-bi/08.jpg","ratio":1.778},{"src":"work/vicci-bao-bi/09.jpg","ratio":1.778},{"src":"work/vicci-bao-bi/10.jpg","ratio":1.778}]},{"slug":"giuong-tu-dep-video","title":"Video nội thất dọc","brand":"Giường Tủ Đẹp","groups":["Video"],"image":"images/video-noi-that.jpg","mark":"9:16","colors":["#b96b49","#211710"],"description":"Dựng video TikTok bằng CapCut PC. Nội dung tập trung vào sản phẩm thật, quá trình vận chuyển, lắp ráp và hoàn thiện giường, tủ.","scope":["Video dọc","Thumbnail","Chỉnh ảnh sản phẩm"],"link":"https://www.facebook.com/giuongtudep.vn","linkText":"Facebook Giường Tủ Đẹp","hidden":false,"cover":0,"images":[{"src":"work/giuong-tu-dep-video/01.jpg","ratio":0.562}]},{"slug":"san-pham-2025","title":"Các sản phẩm 2025","brand":"Ấn phẩm sản phẩm","groups":["Banner"],"mark":"2025","colors":["#e9e3c8","#3a3220"],"description":"Ấn phẩm cho các sản phẩm năm 2025, gồm kem đánh răng P/S, poster affiliate và hỗ trợ chụp sản phẩm X3 Nano Xáo Tam Phần.","scope":["Poster","Chụp ảnh sản phẩm"],"hidden":false,"cover":0,"images":[{"src":"work/san-pham-2025/01.jpg","ratio":1},{"src":"work/san-pham-2025/02.jpg","ratio":1.778}]},{"slug":"tra-hoa-lanh","title":"Trà Hoa Lành","brand":"Nhận diện thương hiệu","groups":["Nhận diện","Bao bì","Banner","Video"],"image":"images/tra-hoa-lanh.jpg","mark":"Lành","colors":["#b3caa6","#233c36"],"description":"Nhận diện thương hiệu trà hoa và trà thảo mộc Lành: logo, typography, màu, mascot, pattern, bộ bao bì, ảnh sản phẩm, bộ quảng cáo, website, kịch bản và storyboard TVC.","scope":["Logo","Bao bì","Poster · Standee · Banner","Brochure · Lịch · Catalogue","App · Website","Storyboard TVC"],"link":"https://canva.link/1189w578b5p6p26","linkText":"Bản gốc trên Canva","hidden":false,"cover":39,"images":[{"src":"work/tra-hoa-lanh/01.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/02.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/03.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/04.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/05.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/06.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/07.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/08.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/09.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/10.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/11.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/12.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/13.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/14.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/15.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/16.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/17.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/18.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/19.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/20.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/21.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/22.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/23.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/24.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/25.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/26.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/27.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/28.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/29.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/30.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/31.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/32.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/33.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/34.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/35.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/36.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/37.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/38.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/39.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/40.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/41.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/42.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/43.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/44.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/45.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/46.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/47.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/48.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/49.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/50.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/51.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/52.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/53.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/54.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/55.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/56.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/57.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/58.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/59.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/60.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/61.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/62.jpg","ratio":1.778}]},{"slug":"tvc-giay","title":"TVC giày chạy bộ","brand":"Video quảng cáo","groups":["Video"],"image":"images/tvc-giay.jpg","mark":"TVC","colors":["#eb9c9e","#5c2429"],"description":"Video quảng cáo kể về một người trẻ yêu chạy bộ và đôi giày đã xuống cấp. Trình bày đủ tiền kỳ, kịch bản văn học, kịch bản phân cảnh, storyboard, thiết bị quay, kỹ thuật góc máy và hậu kỳ chỉnh màu.","scope":["Kịch bản","Storyboard","Quay","Hậu kỳ"],"link":"https://canva.link/1189w578b5p6p26","linkText":"Bản gốc trên Canva","hidden":false,"cover":0,"images":[{"src":"work/tvc-giay/01.jpg","ratio":1.778},{"src":"work/tvc-giay/02.jpg","ratio":1.778},{"src":"work/tvc-giay/03.jpg","ratio":1.778},{"src":"work/tvc-giay/04.jpg","ratio":1.778},{"src":"work/tvc-giay/05.jpg","ratio":1.778},{"src":"work/tvc-giay/06.jpg","ratio":1.778},{"src":"work/tvc-giay/07.jpg","ratio":1.778},{"src":"work/tvc-giay/08.jpg","ratio":1.778},{"src":"work/tvc-giay/09.jpg","ratio":1.778},{"src":"work/tvc-giay/10.jpg","ratio":1.778},{"src":"work/tvc-giay/11.jpg","ratio":1.778},{"src":"work/tvc-giay/12.jpg","ratio":1.778},{"src":"work/tvc-giay/13.jpg","ratio":1.778},{"src":"work/tvc-giay/14.jpg","ratio":1.778},{"src":"work/tvc-giay/15.jpg","ratio":1.778},{"src":"work/tvc-giay/16.jpg","ratio":1.778},{"src":"work/tvc-giay/17.jpg","ratio":1.778},{"src":"work/tvc-giay/18.jpg","ratio":1.778},{"src":"work/tvc-giay/19.jpg","ratio":1.778},{"src":"work/tvc-giay/20.jpg","ratio":1.778},{"src":"work/tvc-giay/21.jpg","ratio":1.778},{"src":"work/tvc-giay/22.jpg","ratio":1.778},{"src":"work/tvc-giay/23.jpg","ratio":1.778},{"src":"work/tvc-giay/24.jpg","ratio":1.778},{"src":"work/tvc-giay/25.jpg","ratio":1.778},{"src":"work/tvc-giay/26.jpg","ratio":1.778},{"src":"work/tvc-giay/27.jpg","ratio":1.778},{"src":"work/tvc-giay/28.jpg","ratio":1.778}]},{"slug":"tvc-ps","title":"Ý tưởng TVC kem đánh răng P/S Trà Xanh","brand":"Ý tưởng TVC","groups":["Video"],"mark":"P/S","colors":["#cfe8d6","#16402a"],"description":"Ý tưởng đề tài, kịch bản phân cảnh, storyboard và poster cho kem đánh răng P/S Trà Xanh.","scope":["Ý tưởng","Kịch bản phân cảnh","Storyboard","Poster"],"hidden":false,"cover":6,"images":[{"src":"work/tvc-ps/01.jpg","ratio":1.778},{"src":"work/tvc-ps/02.jpg","ratio":1.778},{"src":"work/tvc-ps/03.jpg","ratio":1.778},{"src":"work/tvc-ps/04.jpg","ratio":1.778},{"src":"work/tvc-ps/05.jpg","ratio":1.778},{"src":"work/tvc-ps/06.jpg","ratio":1.778},{"src":"work/tvc-ps/07.jpg","ratio":1.778}]},{"slug":"phim-3d-khan-do","title":"Phim hoạt hình 3D Cô bé quàng khăn đỏ","brand":"Phim hoạt hình 3D","groups":["Video","3D"],"mark":"3D","colors":["#e7cfa4","#4a2a14"],"description":"Phim hoạt hình 3D dựa trên truyện cổ Cô bé quàng khăn đỏ: ý nghĩa tên phim, storyline, kịch bản phân cảnh, thiết kế nhân vật (cô bé, bà ngoại, thợ săn, chó sói), storyboard và dựng bối cảnh 3D.","scope":["Storyline","Nhân vật","Storyboard","Bối cảnh 3D"],"hidden":false,"cover":2,"images":[{"src":"work/phim-3d-khan-do/01.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/02.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/03.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/04.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/05.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/06.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/07.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/08.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/09.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/10.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/11.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/12.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/13.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/14.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/15.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/16.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/17.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/18.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/19.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/20.jpg","ratio":1.778}]},{"slug":"bear-cream","title":"Bear Cream","brand":"Nhận diện thương hiệu · Dự án nhóm","groups":["Nhận diện","Banner"],"mark":"Bear","colors":["#f6d3dc","#6b3b22"],"description":"Nhận diện thương hiệu kem Bear Cream: logo và các phiên bản, linh vật Boo, hệ thống font, màu, lưới và khoảng cách an toàn, bộ nhận diện văn phòng, quà tặng, bộ quảng cáo, media và website.","scope":["Logo","Linh vật","Bộ văn phòng","Quà tặng","Quảng cáo","Website"],"hidden":false,"cover":16,"images":[{"src":"work/bear-cream/01.jpg","ratio":1.778},{"src":"work/bear-cream/02.jpg","ratio":1.778},{"src":"work/bear-cream/03.jpg","ratio":1.778},{"src":"work/bear-cream/04.jpg","ratio":1.778},{"src":"work/bear-cream/05.jpg","ratio":1.778},{"src":"work/bear-cream/06.jpg","ratio":1.778},{"src":"work/bear-cream/07.jpg","ratio":1.778},{"src":"work/bear-cream/08.jpg","ratio":1.778},{"src":"work/bear-cream/09.jpg","ratio":1.778},{"src":"work/bear-cream/10.jpg","ratio":1.778},{"src":"work/bear-cream/11.jpg","ratio":1.778},{"src":"work/bear-cream/12.jpg","ratio":1.778},{"src":"work/bear-cream/13.jpg","ratio":1.778},{"src":"work/bear-cream/14.jpg","ratio":1.778},{"src":"work/bear-cream/15.jpg","ratio":1.778},{"src":"work/bear-cream/16.jpg","ratio":1.778},{"src":"work/bear-cream/17.jpg","ratio":1.778},{"src":"work/bear-cream/18.jpg","ratio":1.778},{"src":"work/bear-cream/19.jpg","ratio":1.778},{"src":"work/bear-cream/20.jpg","ratio":1.778},{"src":"work/bear-cream/21.jpg","ratio":1.778},{"src":"work/bear-cream/22.jpg","ratio":1.778},{"src":"work/bear-cream/23.jpg","ratio":1.778},{"src":"work/bear-cream/24.jpg","ratio":1.778},{"src":"work/bear-cream/25.jpg","ratio":1.778},{"src":"work/bear-cream/26.jpg","ratio":1.778},{"src":"work/bear-cream/27.jpg","ratio":1}]},{"slug":"bougies","title":"Bougies","brand":"Nhận diện thương hiệu · Dự án nhóm","groups":["Nhận diện","Banner","Social post"],"mark":"Bougies","colors":["#f3d9e3","#3d3550"],"description":"Nhận diện thương hiệu nến thơm Bougies: màu chủ đạo, mô hình workshop, phân tích đối thủ, logo, bộ nhận diện văn phòng, name card, ấn phẩm mạng xã hội, brochure, tờ rơi, standee, poster, banner và catalogue.","scope":["Logo","Bộ văn phòng","Mạng xã hội","Brochure · Tờ rơi","Standee · Poster · Banner","Catalogue"],"hidden":false,"cover":19,"images":[{"src":"work/bougies/01.jpg","ratio":1.778},{"src":"work/bougies/02.jpg","ratio":1.778},{"src":"work/bougies/03.jpg","ratio":1.778},{"src":"work/bougies/04.jpg","ratio":1.778},{"src":"work/bougies/05.jpg","ratio":1.778},{"src":"work/bougies/06.jpg","ratio":1.778},{"src":"work/bougies/07.jpg","ratio":1.778},{"src":"work/bougies/08.jpg","ratio":1.778},{"src":"work/bougies/09.jpg","ratio":1.778},{"src":"work/bougies/10.jpg","ratio":1.778},{"src":"work/bougies/11.jpg","ratio":1.778},{"src":"work/bougies/12.jpg","ratio":1.778},{"src":"work/bougies/13.jpg","ratio":1.778},{"src":"work/bougies/14.jpg","ratio":1.778},{"src":"work/bougies/15.jpg","ratio":1.778},{"src":"work/bougies/16.jpg","ratio":1.778},{"src":"work/bougies/17.jpg","ratio":1.778},{"src":"work/bougies/18.jpg","ratio":1.778},{"src":"work/bougies/19.jpg","ratio":1.778},{"src":"work/bougies/20.jpg","ratio":1.778},{"src":"work/bougies/21.jpg","ratio":1.778}]},{"slug":"jus-de-fruit","title":"Jus De Fruit","brand":"Dự án tốt nghiệp · FPT Polytechnic","groups":["Nhận diện","Bao bì"],"mark":"Jus","colors":["#fbe4b0","#2f5a1e"],"description":"Thương hiệu nước ép trái cây Jus De Fruit: bộ nhận diện, bao bì lốc và chai, poster, standee, catalogue và website.","scope":["Bộ nhận diện","Bao bì","Poster · Standee","Catalogue","Website"],"hidden":false,"cover":0,"images":[{"src":"work/jus-de-fruit/01.jpg","ratio":1.778},{"src":"work/jus-de-fruit/02.jpg","ratio":1.778},{"src":"work/jus-de-fruit/03.jpg","ratio":1.778},{"src":"work/jus-de-fruit/04.jpg","ratio":1.778},{"src":"work/jus-de-fruit/05.jpg","ratio":1.778},{"src":"work/jus-de-fruit/06.jpg","ratio":1.778}]},{"slug":"glow","title":"Glow Natural Soap","brand":"Dự án nhóm","groups":["Bao bì"],"mark":"Glow","colors":["#d7e3f1","#16365c"],"description":"Thiết kế logo và bao bì ba cấp cho xà phòng tự nhiên Glow, kèm poster.","scope":["Logo","Bao bì 3 cấp","Poster"],"hidden":false,"cover":3,"images":[{"src":"work/glow/01.jpg","ratio":1.778},{"src":"work/glow/02.jpg","ratio":1.778},{"src":"work/glow/03.jpg","ratio":1.778},{"src":"work/glow/04.jpg","ratio":1.778}]},{"slug":"tra-sakura","title":"Thương hiệu trà Sakura","brand":"Thiết kế thương hiệu và Marketing · Dự án nhóm","groups":["Nhận diện","Banner"],"mark":"Sakura","colors":["#fbe1e6","#7a2a44"],"description":"Xây dựng thương hiệu trà Sakura từ nghiên cứu thị trường, đối thủ, khách hàng mục tiêu và SWOT, đến logo, lưới logo, font chữ, bộ nhận diện văn phòng, bộ quà tặng và bộ quảng cáo.","scope":["Nghiên cứu","Logo","Bộ văn phòng","Quà tặng","Quảng cáo"],"link":"https://www.behance.net/gallery/225233871/d-an-thuong-hiu-tra","linkText":"Xem trên Behance","hidden":false,"cover":0,"images":[{"src":"work/tra-sakura/01.jpg","ratio":2.055},{"src":"work/tra-sakura/02.jpg","ratio":1.777},{"src":"work/tra-sakura/03.jpg","ratio":1.777},{"src":"work/tra-sakura/04.jpg","ratio":1.777},{"src":"work/tra-sakura/05.jpg","ratio":1.777},{"src":"work/tra-sakura/06.jpg","ratio":1.777},{"src":"work/tra-sakura/07.jpg","ratio":1.777},{"src":"work/tra-sakura/08.jpg","ratio":1.777},{"src":"work/tra-sakura/09.jpg","ratio":1.777},{"src":"work/tra-sakura/10.jpg","ratio":1.777},{"src":"work/tra-sakura/11.jpg","ratio":1.777},{"src":"work/tra-sakura/12.jpg","ratio":1.777},{"src":"work/tra-sakura/13.jpg","ratio":1.777},{"src":"work/tra-sakura/14.jpg","ratio":1.777},{"src":"work/tra-sakura/15.jpg","ratio":1.777},{"src":"work/tra-sakura/16.jpg","ratio":1.777},{"src":"work/tra-sakura/17.jpg","ratio":1.777},{"src":"work/tra-sakura/18.jpg","ratio":1.777},{"src":"work/tra-sakura/19.jpg","ratio":1.777},{"src":"work/tra-sakura/20.jpg","ratio":1.777},{"src":"work/tra-sakura/21.jpg","ratio":1.777},{"src":"work/tra-sakura/22.jpg","ratio":1.777},{"src":"work/tra-sakura/23.jpg","ratio":1.777},{"src":"work/tra-sakura/24.jpg","ratio":1.777},{"src":"work/tra-sakura/25.jpg","ratio":1.777},{"src":"work/tra-sakura/26.jpg","ratio":1.777},{"src":"work/tra-sakura/27.jpg","ratio":1.777},{"src":"work/tra-sakura/28.jpg","ratio":1.777},{"src":"work/tra-sakura/29.jpg","ratio":1.777},{"src":"work/tra-sakura/30.jpg","ratio":1.777}]},{"slug":"tokyo-sushi","title":"Bao bì Tokyo Sushi","brand":"Đồ án 2022 · Dự án nhóm","groups":["Bao bì","Nhận diện"],"mark":"Sushi","colors":["#dbe4f7","#1a3a8f"],"description":"Thiết kế logo và hệ thống bao bì ba cấp cho thương hiệu sushi Tokyo Sushi: thông tin sản phẩm, cấu trúc hộp, dieline và túi giấy.","scope":["Logo","Bao bì 3 cấp","Dieline"],"link":"https://www.behance.net/gallery/225072615/d-an-sushi-2022","linkText":"Xem trên Behance","hidden":false,"cover":0,"images":[{"src":"work/tokyo-sushi/01.jpg","ratio":1.777},{"src":"work/tokyo-sushi/02.jpg","ratio":1.777},{"src":"work/tokyo-sushi/03.jpg","ratio":1.777},{"src":"work/tokyo-sushi/04.jpg","ratio":1.777},{"src":"work/tokyo-sushi/05.jpg","ratio":1.777},{"src":"work/tokyo-sushi/06.jpg","ratio":1.777},{"src":"work/tokyo-sushi/07.jpg","ratio":1.777}]},{"slug":"viet-flavour","title":"Ấn phẩm ẩm thực Viet Flavour","brand":"Đồ án năm 1","groups":["Ấn phẩm in"],"mark":"Flavour","colors":["#fdeccb","#2f5a2a"],"description":"Ấn phẩm 8 trang giới thiệu món ngon Sài Gòn: cơm tấm, hủ tiếu Nam Vang, bột chiên, bánh mì kẹp thịt và cà phê đá. Bố cục kiểu tạp chí, mỗi món một trang.","scope":["Dàn trang","Editorial"],"link":"https://www.behance.net/gallery/240564275/d-an-nam-1","linkText":"Xem trên Behance","hidden":false,"cover":0,"images":[{"src":"work/viet-flavour/01.jpg","ratio":1},{"src":"work/viet-flavour/02.jpg","ratio":1},{"src":"work/viet-flavour/03.jpg","ratio":1},{"src":"work/viet-flavour/04.jpg","ratio":1},{"src":"work/viet-flavour/05.jpg","ratio":1},{"src":"work/viet-flavour/06.jpg","ratio":1},{"src":"work/viet-flavour/07.jpg","ratio":1},{"src":"work/viet-flavour/08.jpg","ratio":1}]},{"slug":"thai-khoa","title":"Logo & poster Thái Khoa","brand":"Vận Chuyển Quảng Cáo Thái Khoa · Freelance 2023","groups":["Nhận diện","Ấn phẩm in"],"mark":"TK","colors":["#e6e8ee","#1e3360"],"description":"Thiết kế logo và hai poster giới thiệu dịch vụ vận chuyển hàng hoá của công ty Thái Khoa, xoay quanh khẩu hiệu \"Sự hài lòng là phương châm của chúng tôi\".","scope":["Logo","Poster"],"hidden":false,"cover":1,"images":[{"src":"work/thai-khoa/01.jpg","ratio":1.414},{"src":"work/thai-khoa/02.jpg","ratio":0.75},{"src":"work/thai-khoa/03.jpg","ratio":0.717}]},{"slug":"thiet-ke-dau-tay","title":"Thiết kế đầu tay 2022–2023","brand":"Bài tập và thiết kế nhỏ","groups":["Ấn phẩm in","Nhận diện"],"mark":"2022","colors":["#efe9df","#3b3a36"],"description":"Các thiết kế đầu tay: voucher giảm giá cho quán Cơm Tấm Ngon, brochure gấp ba du lịch Nhật Bản (bản phác thảo), tấm in logo MS.T và logo đội bóng The Rainbow FC.","scope":["Voucher","Brochure","Logo"],"hidden":false,"cover":0,"images":[{"src":"work/thiet-ke-dau-tay/01.jpg","ratio":1.116},{"src":"work/thiet-ke-dau-tay/02.jpg","ratio":1.475},{"src":"work/thiet-ke-dau-tay/03.jpg","ratio":1.475},{"src":"work/thiet-ke-dau-tay/04.jpg","ratio":1.414},{"src":"work/thiet-ke-dau-tay/05.jpg","ratio":0.898}]}]}</script>
 <script>
-const WORK = /*WORK-START*/{"wan2care-social":{"cover":6,"images":[{"src":"work/wan2care-social/01.jpg","ratio":1.0},{"src":"work/wan2care-social/02.jpg","ratio":1.0},{"src":"work/wan2care-social/03.jpg","ratio":1.0},{"src":"work/wan2care-social/04.jpg","ratio":1.0},{"src":"work/wan2care-social/05.jpg","ratio":1.0},{"src":"work/wan2care-social/06.jpg","ratio":1.0},{"src":"work/wan2care-social/07.jpg","ratio":1.0},{"src":"work/wan2care-social/08.jpg","ratio":1.0},{"src":"work/wan2care-social/09.jpg","ratio":1.0},{"src":"work/wan2care-social/10.jpg","ratio":1.0},{"src":"work/wan2care-social/11.jpg","ratio":1.0},{"src":"work/wan2care-social/12.jpg","ratio":1.0},{"src":"work/wan2care-social/13.jpg","ratio":1.0},{"src":"work/wan2care-social/14.jpg","ratio":1.0},{"src":"work/wan2care-social/15.jpg","ratio":1.0},{"src":"work/wan2care-social/16.jpg","ratio":1.0},{"src":"work/wan2care-social/17.jpg","ratio":1.0},{"src":"work/wan2care-social/18.jpg","ratio":1.778},{"src":"work/wan2care-social/19.jpg","ratio":1.778},{"src":"work/wan2care-social/20.jpg","ratio":1.0},{"src":"work/wan2care-social/21.jpg","ratio":1.0},{"src":"work/wan2care-social/22.jpg","ratio":1.0},{"src":"work/wan2care-social/23.jpg","ratio":1.0},{"src":"work/wan2care-social/24.jpg","ratio":1.0},{"src":"work/wan2care-social/25.jpg","ratio":1.0},{"src":"work/wan2care-social/26.jpg","ratio":1.0},{"src":"work/wan2care-social/27.jpg","ratio":1.0},{"src":"work/wan2care-social/28.jpg","ratio":1.0},{"src":"work/wan2care-social/29.jpg","ratio":1.0},{"src":"work/wan2care-social/30.jpg","ratio":1.0},{"src":"work/wan2care-social/31.jpg","ratio":1.0},{"src":"work/wan2care-social/32.jpg","ratio":1.0},{"src":"work/wan2care-social/33.jpg","ratio":1.0},{"src":"work/wan2care-social/34.jpg","ratio":1.0},{"src":"work/wan2care-social/35.jpg","ratio":1.0},{"src":"work/wan2care-social/36.jpg","ratio":1.0},{"src":"work/wan2care-social/37.jpg","ratio":1.0},{"src":"work/wan2care-social/38.jpg","ratio":1.0},{"src":"work/wan2care-social/39.jpg","ratio":1.0},{"src":"work/wan2care-social/40.jpg","ratio":1.0},{"src":"work/wan2care-social/41.jpg","ratio":1.0},{"src":"work/wan2care-social/42.jpg","ratio":1.0},{"src":"work/wan2care-social/43.jpg","ratio":1.0},{"src":"work/wan2care-social/44.jpg","ratio":1.0},{"src":"work/wan2care-social/45.jpg","ratio":1.0},{"src":"work/wan2care-social/46.jpg","ratio":1.0},{"src":"work/wan2care-social/47.jpg","ratio":1.0},{"src":"work/wan2care-social/48.jpg","ratio":1.0},{"src":"work/wan2care-social/49.jpg","ratio":1.0}]},"wan2care-worldcup":{"cover":0,"images":[{"src":"work/wan2care-worldcup/01.jpg","ratio":1.0},{"src":"work/wan2care-worldcup/02.jpg","ratio":1.0},{"src":"work/wan2care-worldcup/03.jpg","ratio":1.0},{"src":"work/wan2care-worldcup/04.jpg","ratio":1.0},{"src":"work/wan2care-worldcup/05.jpg","ratio":1.0},{"src":"work/wan2care-worldcup/06.jpg","ratio":1.0},{"src":"work/wan2care-worldcup/07.jpg","ratio":1.0},{"src":"work/wan2care-worldcup/08.jpg","ratio":1.0},{"src":"work/wan2care-worldcup/09.jpg","ratio":1.0},{"src":"work/wan2care-worldcup/10.jpg","ratio":1.0}]},"wan2care-tuyen-dung":{"cover":0,"images":[{"src":"work/wan2care-tuyen-dung/01.jpg","ratio":1.0},{"src":"work/wan2care-tuyen-dung/02.jpg","ratio":1.0},{"src":"work/wan2care-tuyen-dung/03.jpg","ratio":2.505},{"src":"work/wan2care-tuyen-dung/04.jpg","ratio":2.505},{"src":"work/wan2care-tuyen-dung/05.jpg","ratio":2.505},{"src":"work/wan2care-tuyen-dung/06.jpg","ratio":2.505},{"src":"work/wan2care-tuyen-dung/07.jpg","ratio":1.0},{"src":"work/wan2care-tuyen-dung/08.jpg","ratio":1.0},{"src":"work/wan2care-tuyen-dung/09.jpg","ratio":1.0}]},"vicci-bao-bi":{"cover":0,"images":[{"src":"work/vicci-bao-bi/01.jpg","ratio":1.778},{"src":"work/vicci-bao-bi/02.jpg","ratio":1.778},{"src":"work/vicci-bao-bi/03.jpg","ratio":1.778},{"src":"work/vicci-bao-bi/04.jpg","ratio":1.778},{"src":"work/vicci-bao-bi/05.jpg","ratio":1.778},{"src":"work/vicci-bao-bi/06.jpg","ratio":1.778},{"src":"work/vicci-bao-bi/07.jpg","ratio":1.778},{"src":"work/vicci-bao-bi/08.jpg","ratio":1.778},{"src":"work/vicci-bao-bi/09.jpg","ratio":1.778},{"src":"work/vicci-bao-bi/10.jpg","ratio":1.778}]},"giuong-tu-dep-video":{"cover":0,"images":[{"src":"work/giuong-tu-dep-video/01.jpg","ratio":0.562}]},"san-pham-2025":{"cover":0,"images":[{"src":"work/san-pham-2025/01.jpg","ratio":1.0},{"src":"work/san-pham-2025/02.jpg","ratio":1.778}]},"tra-hoa-lanh":{"cover":39,"images":[{"src":"work/tra-hoa-lanh/01.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/02.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/03.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/04.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/05.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/06.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/07.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/08.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/09.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/10.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/11.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/12.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/13.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/14.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/15.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/16.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/17.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/18.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/19.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/20.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/21.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/22.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/23.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/24.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/25.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/26.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/27.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/28.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/29.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/30.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/31.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/32.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/33.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/34.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/35.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/36.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/37.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/38.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/39.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/40.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/41.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/42.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/43.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/44.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/45.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/46.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/47.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/48.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/49.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/50.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/51.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/52.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/53.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/54.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/55.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/56.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/57.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/58.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/59.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/60.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/61.jpg","ratio":1.778},{"src":"work/tra-hoa-lanh/62.jpg","ratio":1.778}]},"tvc-giay":{"cover":0,"images":[{"src":"work/tvc-giay/01.jpg","ratio":1.778},{"src":"work/tvc-giay/02.jpg","ratio":1.778},{"src":"work/tvc-giay/03.jpg","ratio":1.778},{"src":"work/tvc-giay/04.jpg","ratio":1.778},{"src":"work/tvc-giay/05.jpg","ratio":1.778},{"src":"work/tvc-giay/06.jpg","ratio":1.778},{"src":"work/tvc-giay/07.jpg","ratio":1.778},{"src":"work/tvc-giay/08.jpg","ratio":1.778},{"src":"work/tvc-giay/09.jpg","ratio":1.778},{"src":"work/tvc-giay/10.jpg","ratio":1.778},{"src":"work/tvc-giay/11.jpg","ratio":1.778},{"src":"work/tvc-giay/12.jpg","ratio":1.778},{"src":"work/tvc-giay/13.jpg","ratio":1.778},{"src":"work/tvc-giay/14.jpg","ratio":1.778},{"src":"work/tvc-giay/15.jpg","ratio":1.778},{"src":"work/tvc-giay/16.jpg","ratio":1.778},{"src":"work/tvc-giay/17.jpg","ratio":1.778},{"src":"work/tvc-giay/18.jpg","ratio":1.778},{"src":"work/tvc-giay/19.jpg","ratio":1.778},{"src":"work/tvc-giay/20.jpg","ratio":1.778},{"src":"work/tvc-giay/21.jpg","ratio":1.778},{"src":"work/tvc-giay/22.jpg","ratio":1.778},{"src":"work/tvc-giay/23.jpg","ratio":1.778},{"src":"work/tvc-giay/24.jpg","ratio":1.778},{"src":"work/tvc-giay/25.jpg","ratio":1.778},{"src":"work/tvc-giay/26.jpg","ratio":1.778},{"src":"work/tvc-giay/27.jpg","ratio":1.778},{"src":"work/tvc-giay/28.jpg","ratio":1.778}]},"tvc-ps":{"cover":6,"images":[{"src":"work/tvc-ps/01.jpg","ratio":1.778},{"src":"work/tvc-ps/02.jpg","ratio":1.778},{"src":"work/tvc-ps/03.jpg","ratio":1.778},{"src":"work/tvc-ps/04.jpg","ratio":1.778},{"src":"work/tvc-ps/05.jpg","ratio":1.778},{"src":"work/tvc-ps/06.jpg","ratio":1.778},{"src":"work/tvc-ps/07.jpg","ratio":1.778}]},"phim-3d-khan-do":{"cover":2,"images":[{"src":"work/phim-3d-khan-do/01.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/02.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/03.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/04.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/05.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/06.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/07.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/08.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/09.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/10.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/11.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/12.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/13.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/14.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/15.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/16.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/17.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/18.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/19.jpg","ratio":1.778},{"src":"work/phim-3d-khan-do/20.jpg","ratio":1.778}]},"bear-cream":{"cover":16,"images":[{"src":"work/bear-cream/01.jpg","ratio":1.778},{"src":"work/bear-cream/02.jpg","ratio":1.778},{"src":"work/bear-cream/03.jpg","ratio":1.778},{"src":"work/bear-cream/04.jpg","ratio":1.778},{"src":"work/bear-cream/05.jpg","ratio":1.778},{"src":"work/bear-cream/06.jpg","ratio":1.778},{"src":"work/bear-cream/07.jpg","ratio":1.778},{"src":"work/bear-cream/08.jpg","ratio":1.778},{"src":"work/bear-cream/09.jpg","ratio":1.778},{"src":"work/bear-cream/10.jpg","ratio":1.778},{"src":"work/bear-cream/11.jpg","ratio":1.778},{"src":"work/bear-cream/12.jpg","ratio":1.778},{"src":"work/bear-cream/13.jpg","ratio":1.778},{"src":"work/bear-cream/14.jpg","ratio":1.778},{"src":"work/bear-cream/15.jpg","ratio":1.778},{"src":"work/bear-cream/16.jpg","ratio":1.778},{"src":"work/bear-cream/17.jpg","ratio":1.778},{"src":"work/bear-cream/18.jpg","ratio":1.778},{"src":"work/bear-cream/19.jpg","ratio":1.778},{"src":"work/bear-cream/20.jpg","ratio":1.778},{"src":"work/bear-cream/21.jpg","ratio":1.778},{"src":"work/bear-cream/22.jpg","ratio":1.778},{"src":"work/bear-cream/23.jpg","ratio":1.778},{"src":"work/bear-cream/24.jpg","ratio":1.778},{"src":"work/bear-cream/25.jpg","ratio":1.778},{"src":"work/bear-cream/26.jpg","ratio":1.778},{"src":"work/bear-cream/27.jpg","ratio":1.0}]},"bougies":{"cover":19,"images":[{"src":"work/bougies/01.jpg","ratio":1.778},{"src":"work/bougies/02.jpg","ratio":1.778},{"src":"work/bougies/03.jpg","ratio":1.778},{"src":"work/bougies/04.jpg","ratio":1.778},{"src":"work/bougies/05.jpg","ratio":1.778},{"src":"work/bougies/06.jpg","ratio":1.778},{"src":"work/bougies/07.jpg","ratio":1.778},{"src":"work/bougies/08.jpg","ratio":1.778},{"src":"work/bougies/09.jpg","ratio":1.778},{"src":"work/bougies/10.jpg","ratio":1.778},{"src":"work/bougies/11.jpg","ratio":1.778},{"src":"work/bougies/12.jpg","ratio":1.778},{"src":"work/bougies/13.jpg","ratio":1.778},{"src":"work/bougies/14.jpg","ratio":1.778},{"src":"work/bougies/15.jpg","ratio":1.778},{"src":"work/bougies/16.jpg","ratio":1.778},{"src":"work/bougies/17.jpg","ratio":1.778},{"src":"work/bougies/18.jpg","ratio":1.778},{"src":"work/bougies/19.jpg","ratio":1.778},{"src":"work/bougies/20.jpg","ratio":1.778},{"src":"work/bougies/21.jpg","ratio":1.778}]},"jus-de-fruit":{"cover":0,"images":[{"src":"work/jus-de-fruit/01.jpg","ratio":1.778},{"src":"work/jus-de-fruit/02.jpg","ratio":1.778},{"src":"work/jus-de-fruit/03.jpg","ratio":1.778},{"src":"work/jus-de-fruit/04.jpg","ratio":1.778},{"src":"work/jus-de-fruit/05.jpg","ratio":1.778},{"src":"work/jus-de-fruit/06.jpg","ratio":1.778}]},"glow":{"cover":3,"images":[{"src":"work/glow/01.jpg","ratio":1.778},{"src":"work/glow/02.jpg","ratio":1.778},{"src":"work/glow/03.jpg","ratio":1.778},{"src":"work/glow/04.jpg","ratio":1.778}]},"thai-khoa":{"cover":1,"images":[{"src":"work/thai-khoa/01.jpg","ratio":1.414},{"src":"work/thai-khoa/02.jpg","ratio":0.75},{"src":"work/thai-khoa/03.jpg","ratio":0.717}]},"viet-flavour":{"cover":0,"images":[{"src":"work/viet-flavour/01.jpg","ratio":1.0},{"src":"work/viet-flavour/02.jpg","ratio":1.0},{"src":"work/viet-flavour/03.jpg","ratio":1.0},{"src":"work/viet-flavour/04.jpg","ratio":1.0},{"src":"work/viet-flavour/05.jpg","ratio":1.0},{"src":"work/viet-flavour/06.jpg","ratio":1.0},{"src":"work/viet-flavour/07.jpg","ratio":1.0},{"src":"work/viet-flavour/08.jpg","ratio":1.0}]},"tokyo-sushi":{"cover":0,"images":[{"src":"work/tokyo-sushi/01.jpg","ratio":1.777},{"src":"work/tokyo-sushi/02.jpg","ratio":1.777},{"src":"work/tokyo-sushi/03.jpg","ratio":1.777},{"src":"work/tokyo-sushi/04.jpg","ratio":1.777},{"src":"work/tokyo-sushi/05.jpg","ratio":1.777},{"src":"work/tokyo-sushi/06.jpg","ratio":1.777},{"src":"work/tokyo-sushi/07.jpg","ratio":1.777}]},"tra-sakura":{"cover":0,"images":[{"src":"work/tra-sakura/01.jpg","ratio":2.055},{"src":"work/tra-sakura/02.jpg","ratio":1.777},{"src":"work/tra-sakura/03.jpg","ratio":1.777},{"src":"work/tra-sakura/04.jpg","ratio":1.777},{"src":"work/tra-sakura/05.jpg","ratio":1.777},{"src":"work/tra-sakura/06.jpg","ratio":1.777},{"src":"work/tra-sakura/07.jpg","ratio":1.777},{"src":"work/tra-sakura/08.jpg","ratio":1.777},{"src":"work/tra-sakura/09.jpg","ratio":1.777},{"src":"work/tra-sakura/10.jpg","ratio":1.777},{"src":"work/tra-sakura/11.jpg","ratio":1.777},{"src":"work/tra-sakura/12.jpg","ratio":1.777},{"src":"work/tra-sakura/13.jpg","ratio":1.777},{"src":"work/tra-sakura/14.jpg","ratio":1.777},{"src":"work/tra-sakura/15.jpg","ratio":1.777},{"src":"work/tra-sakura/16.jpg","ratio":1.777},{"src":"work/tra-sakura/17.jpg","ratio":1.777},{"src":"work/tra-sakura/18.jpg","ratio":1.777},{"src":"work/tra-sakura/19.jpg","ratio":1.777},{"src":"work/tra-sakura/20.jpg","ratio":1.777},{"src":"work/tra-sakura/21.jpg","ratio":1.777},{"src":"work/tra-sakura/22.jpg","ratio":1.777},{"src":"work/tra-sakura/23.jpg","ratio":1.777},{"src":"work/tra-sakura/24.jpg","ratio":1.777},{"src":"work/tra-sakura/25.jpg","ratio":1.777},{"src":"work/tra-sakura/26.jpg","ratio":1.777},{"src":"work/tra-sakura/27.jpg","ratio":1.777},{"src":"work/tra-sakura/28.jpg","ratio":1.777},{"src":"work/tra-sakura/29.jpg","ratio":1.777},{"src":"work/tra-sakura/30.jpg","ratio":1.777}]},"thiet-ke-dau-tay":{"cover":0,"images":[{"src":"work/thiet-ke-dau-tay/01.jpg","ratio":1.116},{"src":"work/thiet-ke-dau-tay/02.jpg","ratio":1.475},{"src":"work/thiet-ke-dau-tay/03.jpg","ratio":1.475},{"src":"work/thiet-ke-dau-tay/04.jpg","ratio":1.414},{"src":"work/thiet-ke-dau-tay/05.jpg","ratio":0.898}]}}/*WORK-END*/;
-const canva = 'https://canva.link/1189w578b5p6p26';
-const groups = ['Tất cả', 'Social post', 'Banner', 'Video', 'Nhận diện', 'Bao bì', 'Ấn phẩm in', '3D', 'AI'];
-// Nội dung lấy từ thông tin Khoa cung cấp và tiêu đề trên chính các trang portfolio.
-const projects = [
-  { slug:'wan2care-social', title:'Bài đăng mạng xã hội', brand:'Việt Phát · Wan2Care', groups:['Social post','AI'], image:'images/viet-phat.jpg', mark:'Wan2Care', colors:['#d4ee79','#22281b'],
-    description:'Bài đăng cho dịch vụ dọn nhà Wan2Care tại Toronto: chủ đề dọn dẹp theo mùa, Lễ Tạ ơn, Tết, Black Friday, World Cup và các ngày lễ Canada. Có ứng dụng AI trong sản xuất hình ảnh.',
-    scope:['Bài đăng','Ấn phẩm theo mùa','Hình ảnh AI'] },
-  { slug:'wan2care-worldcup', title:'Chiến dịch World Cup 2026', brand:'Việt Phát · Wan2Care', groups:['Social post','Banner','AI'], image:'images/world-cup.jpg', mark:'World Cup', colors:['#d4ee79','#22281b'],
-    description:'Thiết kế bài đăng và ấn phẩm quảng bá dịch vụ dọn nhà trong mùa World Cup. Bộ nội dung gồm bài khởi động, thử thách dự đoán, tỷ số các trận đấu và ưu đãi Winners’ Week.',
-    scope:['Bài đăng','Poster','Tỷ số trận đấu','Minigame'] },
-  { slug:'wan2care-tuyen-dung', title:'Banner tuyển cộng tác viên', brand:'Việt Phát · Wan2Care', groups:['Banner','Social post'], image:'images/banner-tuyen-dung.jpg', mark:'Wan2Care', colors:['#cbd7fa','#1d3263'],
-    description:'Thiết kế banner cho chiến dịch tuyển người làm dịch vụ dọn dẹp và giới thiệu ứng dụng Wan2Care. Phát triển nội dung tuyển dụng dựa trên hệ thống hình ảnh của thương hiệu.',
-    scope:['Banner','Bài tuyển dụng','Banner ứng dụng'] },
-  { slug:'vicci-bao-bi', title:'Bao bì VICCI · Vietcan Fresh', brand:'Việt Phát · Wan2Care', groups:['Bao bì'], mark:'VICCI', colors:['#f6c35b','#5a1d10'],
-    description:'Thiết kế bao bì cho các dòng sản phẩm VICCI: nem nướng, nem nướng phô mai, chả giò gà, chả giò heo và chả giò chay, cùng name card.',
-    scope:['Bao bì','Name card','Banner sản phẩm'] },
-  { slug:'giuong-tu-dep-video', title:'Video nội thất dọc', brand:'Giường Tủ Đẹp', groups:['Video'], image:'images/video-noi-that.jpg', mark:'9:16', colors:['#b96b49','#211710'],
-    description:'Dựng video TikTok bằng CapCut PC. Nội dung tập trung vào sản phẩm thật, quá trình vận chuyển, lắp ráp và hoàn thiện giường, tủ.',
-    scope:['Video dọc','Thumbnail','Chỉnh ảnh sản phẩm'], link:'https://www.facebook.com/giuongtudep.vn', linkText:'Facebook Giường Tủ Đẹp' },
-  { slug:'san-pham-2025', title:'Các sản phẩm 2025', brand:'Ấn phẩm sản phẩm', groups:['Banner'], mark:'2025', colors:['#e9e3c8','#3a3220'],
-    description:'Ấn phẩm cho các sản phẩm năm 2025, gồm kem đánh răng P/S, poster affiliate và hỗ trợ chụp sản phẩm X3 Nano Xáo Tam Phần.',
-    scope:['Poster','Chụp ảnh sản phẩm'] },
-  { slug:'tra-hoa-lanh', title:'Trà Hoa Lành', brand:'Nhận diện thương hiệu', groups:['Nhận diện','Bao bì','Banner','Video'], image:'images/tra-hoa-lanh.jpg', mark:'Lành', colors:['#b3caa6','#233c36'],
-    description:'Nhận diện thương hiệu trà hoa và trà thảo mộc Lành: logo, typography, màu, mascot, pattern, bộ bao bì, ảnh sản phẩm, bộ quảng cáo, website, kịch bản và storyboard TVC.',
-    scope:['Logo','Bao bì','Poster · Standee · Banner','Brochure · Lịch · Catalogue','App · Website','Storyboard TVC'], link:canva, linkText:'Bản gốc trên Canva' },
-  { slug:'tvc-giay', title:'TVC giày chạy bộ', brand:'Video quảng cáo', groups:['Video'], image:'images/tvc-giay.jpg', mark:'TVC', colors:['#eb9c9e','#5c2429'],
-    description:'Video quảng cáo kể về một người trẻ yêu chạy bộ và đôi giày đã xuống cấp. Trình bày đủ tiền kỳ, kịch bản văn học, kịch bản phân cảnh, storyboard, thiết bị quay, kỹ thuật góc máy và hậu kỳ chỉnh màu.',
-    scope:['Kịch bản','Storyboard','Quay','Hậu kỳ'], link:canva, linkText:'Bản gốc trên Canva' },
-  { slug:'tvc-ps', title:'Ý tưởng TVC kem đánh răng P/S Trà Xanh', brand:'Ý tưởng TVC', groups:['Video'], mark:'P/S', colors:['#cfe8d6','#16402a'],
-    description:'Ý tưởng đề tài, kịch bản phân cảnh, storyboard và poster cho kem đánh răng P/S Trà Xanh.',
-    scope:['Ý tưởng','Kịch bản phân cảnh','Storyboard','Poster'] },
-  { slug:'phim-3d-khan-do', title:'Phim hoạt hình 3D Cô bé quàng khăn đỏ', brand:'Phim hoạt hình 3D', groups:['Video','3D'], mark:'3D', colors:['#e7cfa4','#4a2a14'],
-    description:'Phim hoạt hình 3D dựa trên truyện cổ Cô bé quàng khăn đỏ: ý nghĩa tên phim, storyline, kịch bản phân cảnh, thiết kế nhân vật (cô bé, bà ngoại, thợ săn, chó sói), storyboard và dựng bối cảnh 3D.',
-    scope:['Storyline','Nhân vật','Storyboard','Bối cảnh 3D'] },
-  { slug:'bear-cream', title:'Bear Cream', brand:'Nhận diện thương hiệu · Dự án nhóm', groups:['Nhận diện','Banner'], mark:'Bear', colors:['#f6d3dc','#6b3b22'],
-    description:'Nhận diện thương hiệu kem Bear Cream: logo và các phiên bản, linh vật Boo, hệ thống font, màu, lưới và khoảng cách an toàn, bộ nhận diện văn phòng, quà tặng, bộ quảng cáo, media và website.',
-    scope:['Logo','Linh vật','Bộ văn phòng','Quà tặng','Quảng cáo','Website'] },
-  { slug:'bougies', title:'Bougies', brand:'Nhận diện thương hiệu · Dự án nhóm', groups:['Nhận diện','Banner','Social post'], mark:'Bougies', colors:['#f3d9e3','#3d3550'],
-    description:'Nhận diện thương hiệu nến thơm Bougies: màu chủ đạo, mô hình workshop, phân tích đối thủ, logo, bộ nhận diện văn phòng, name card, ấn phẩm mạng xã hội, brochure, tờ rơi, standee, poster, banner và catalogue.',
-    scope:['Logo','Bộ văn phòng','Mạng xã hội','Brochure · Tờ rơi','Standee · Poster · Banner','Catalogue'] },
-  { slug:'jus-de-fruit', title:'Jus De Fruit', brand:'Dự án tốt nghiệp · FPT Polytechnic', groups:['Nhận diện','Bao bì'], mark:'Jus', colors:['#fbe4b0','#2f5a1e'],
-    description:'Thương hiệu nước ép trái cây Jus De Fruit: bộ nhận diện, bao bì lốc và chai, poster, standee, catalogue và website.',
-    scope:['Bộ nhận diện','Bao bì','Poster · Standee','Catalogue','Website'] },
-  { slug:'glow', title:'Glow Natural Soap', brand:'Dự án nhóm', groups:['Bao bì'], mark:'Glow', colors:['#d7e3f1','#16365c'],
-    description:'Thiết kế logo và bao bì ba cấp cho xà phòng tự nhiên Glow, kèm poster.',
-    scope:['Logo','Bao bì 3 cấp','Poster'] },
-  // 5 dự án dưới đây lấy từ Behance của Khoa (thêm 22/11/2026, Khoa đồng ý). Đã bỏ trang có tên thành viên/giảng viên và che thông tin liên hệ.
-  { slug:'tra-sakura', title:'Thương hiệu trà Sakura', brand:'Thiết kế thương hiệu và Marketing · Dự án nhóm', groups:['Nhận diện','Banner'], mark:'Sakura', colors:['#fbe1e6','#7a2a44'],
-    description:'Xây dựng thương hiệu trà Sakura từ nghiên cứu thị trường, đối thủ, khách hàng mục tiêu và SWOT, đến logo, lưới logo, font chữ, bộ nhận diện văn phòng, bộ quà tặng và bộ quảng cáo.',
-    scope:['Nghiên cứu','Logo','Bộ văn phòng','Quà tặng','Quảng cáo'], link:'https://www.behance.net/gallery/225233871/d-an-thuong-hiu-tra', linkText:'Xem trên Behance' },
-  { slug:'tokyo-sushi', title:'Bao bì Tokyo Sushi', brand:'Đồ án 2022 · Dự án nhóm', groups:['Bao bì','Nhận diện'], mark:'Sushi', colors:['#dbe4f7','#1a3a8f'],
-    description:'Thiết kế logo và hệ thống bao bì ba cấp cho thương hiệu sushi Tokyo Sushi: thông tin sản phẩm, cấu trúc hộp, dieline và túi giấy.',
-    scope:['Logo','Bao bì 3 cấp','Dieline'], link:'https://www.behance.net/gallery/225072615/d-an-sushi-2022', linkText:'Xem trên Behance' },
-  { slug:'viet-flavour', title:'Ấn phẩm ẩm thực Viet Flavour', brand:'Đồ án năm 1', groups:['Ấn phẩm in'], mark:'Flavour', colors:['#fdeccb','#2f5a2a'],
-    description:'Ấn phẩm 8 trang giới thiệu món ngon Sài Gòn: cơm tấm, hủ tiếu Nam Vang, bột chiên, bánh mì kẹp thịt và cà phê đá. Bố cục kiểu tạp chí, mỗi món một trang.',
-    scope:['Dàn trang','Editorial'], link:'https://www.behance.net/gallery/240564275/d-an-nam-1', linkText:'Xem trên Behance' },
-  { slug:'thai-khoa', title:'Logo & poster Thái Khoa', brand:'Vận Chuyển Quảng Cáo Thái Khoa · Freelance 2023', groups:['Nhận diện','Ấn phẩm in'], mark:'TK', colors:['#e6e8ee','#1e3360'],
-    description:'Thiết kế logo và hai poster giới thiệu dịch vụ vận chuyển hàng hoá của công ty Thái Khoa, xoay quanh khẩu hiệu "Sự hài lòng là phương châm của chúng tôi".',
-    scope:['Logo','Poster'] },
-  { slug:'thiet-ke-dau-tay', title:'Thiết kế đầu tay 2022–2023', brand:'Bài tập và thiết kế nhỏ', groups:['Ấn phẩm in','Nhận diện'], mark:'2022', colors:['#efe9df','#3b3a36'],
-    description:'Các thiết kế đầu tay: voucher giảm giá cho quán Cơm Tấm Ngon, brochure gấp ba du lịch Nhật Bản (bản phác thảo), tấm in logo MS.T và logo đội bóng The Rainbow FC.',
-    scope:['Voucher','Brochure','Logo'] },
-];
-</script>
-<script>
+const REPO = 'khoa878-wq/khoa878-wq.github.io', BRANCH = 'main';
+const EDIT = new URLSearchParams(location.search).has('sua');
+let C = JSON.parse(document.getElementById('content-data').textContent);
 const $ = s => document.querySelector(s);
 const filters = $('.filters'), cards = $('#cards'), home = $('#home'), caseView = $('#case');
 const viewer = $('#viewer'), viewerImg = $('#viewer-img'), viewerCount = $('#viewer-count');
 let viewing = { list:[], index:0, title:'' };
-let activeGroup = groups[0];
+let activeGroup = 'Tất cả';
 
 function el(tag, text, className) {
   const node = document.createElement(tag);
@@ -240,46 +209,126 @@ function el(tag, text, className) {
   if (className) node.className = className;
   return node;
 }
-const gallery = p => (WORK[p.slug] && WORK[p.slug].images) || [];
-function coverSrc(p) { const w = WORK[p.slug]; return w && w.images.length ? w.images[w.cover].src : null; }
+const shown = () => EDIT ? C.projects : C.projects.filter(p => !p.hidden);
+const imgSrc = item => item._preview || item.src;
+function coverSrc(p) { return p.images && p.images.length ? imgSrc(p.images[Math.min(p.cover || 0, p.images.length - 1)]) : null; }
 
+/* ---------- Sửa chữ tại chỗ ---------- */
+function editable(node, get, set, opts = {}) {
+  node.textContent = get() || '';
+  if (!EDIT || node.dataset.bound) return node;
+  node.dataset.bound = '1';
+  try { node.contentEditable = 'plaintext-only'; } catch { node.contentEditable = 'true'; }
+  node.spellcheck = false;
+  node.classList.add('ed');
+  node.dataset.ph = opts.ph || 'Bấm để nhập…';
+  node.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); });
+  node.addEventListener('keydown', e => { if (e.key === 'Enter' && !opts.multiline) { e.preventDefault(); node.blur(); } });
+  node.addEventListener('input', () => { set(node.innerText.replace(/ /g, ' ').trim()); changed(false); });
+  return node;
+}
+function toolBtn(label, title, fn) { const b = el('button', label); b.type = 'button'; b.title = title; b.setAttribute('aria-label', title); b.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); fn(); }); return b; }
+function move(arr, i, d) { const j = i + d; if (j < 0 || j >= arr.length) return; [arr[i], arr[j]] = [arr[j], arr[i]]; }
+
+/* ---------- Phần đầu, kinh nghiệm, kỹ năng ---------- */
+function renderSite() {
+  editable($('#site-label'), () => C.site.label, v => C.site.label = v);
+  editable($('#site-intro'), () => C.site.intro, v => C.site.intro = v, { multiline:true });
+  editable($('#stat-period'), () => C.site.period, v => C.site.period = v);
+  editable($('#site-email'), () => C.site.email, v => C.site.email = v);
+  $('#site-behance').href = C.site.behance;
+  const vis = shown().filter(p => !p.hidden);
+  $('#stat-projects').textContent = vis.length;
+  $('#stat-images').textContent = vis.reduce((n, p) => n + (p.images || []).length, 0);
+  $('#mosaic').replaceChildren(...C.mosaic.map(slug => C.projects.find(x => x.slug === slug && !x.hidden)).filter(Boolean).map(p => {
+    const a = el('a'); a.href = '#da-' + p.slug; a.setAttribute('aria-label', p.title);
+    const img = el('img'); img.src = coverSrc(p) || ''; img.alt = ''; a.append(img); return a;
+  }));
+}
+
+function renderHistory() {
+  const ul = $('#history');
+  ul.replaceChildren(...C.experience.map((x, i) => {
+    const li = el('li');
+    li.append(editable(el('time'), () => x.time, v => x.time = v, { ph:'Thời gian' }),
+      editable(el('h3'), () => x.title, v => x.title = v, { ph:'Nơi làm việc' }),
+      editable(el('p'), () => x.text, v => x.text = v, { multiline:true, ph:'Mô tả công việc' }));
+    if (x.link || EDIT) {
+      const a = el('a'); a.target = '_blank'; a.rel = 'noopener noreferrer'; a.href = x.link || '#';
+      editable(a, () => x.linkText, v => x.linkText = v, { ph:'Tên link (để trống nếu không có)' });
+      if (x.link || x.linkText || EDIT) li.append(a);
+    }
+    if (EDIT) {
+      const t = el('div', '', 'tools');
+      t.append(toolBtn('↑', 'Đưa lên', () => { move(C.experience, i, -1); changed(); }),
+        toolBtn('↓', 'Đưa xuống', () => { move(C.experience, i, 1); changed(); }),
+        toolBtn('Sửa địa chỉ link', 'Sửa địa chỉ link', () => { const v = prompt('Địa chỉ link (để trống để bỏ link):', x.link || ''); if (v !== null) { x.link = v.trim(); changed(); } }),
+        toolBtn('Xoá', 'Xoá mục này', () => { if (confirm('Xoá mục "' + x.title + '"?')) { C.experience.splice(i, 1); changed(); } }));
+      li.append(t);
+    }
+    return li;
+  }));
+  if (EDIT) { const b = toolBtn('+ Thêm kinh nghiệm', 'Thêm kinh nghiệm', () => { C.experience.unshift({ time:'', title:'', text:'', link:'', linkText:'' }); changed(); }); b.className = 'tool'; ul.append(b); }
+}
+
+function renderSkills() {
+  const dl = $('#skills'); dl.replaceChildren();
+  C.skills.forEach((s, i) => {
+    dl.append(editable(el('dt'), () => s.name, v => s.name = v, { ph:'Nhóm kỹ năng' }));
+    const dd = editable(el('dd'), () => s.value, v => s.value = v, { ph:'Công cụ, kỹ năng' });
+    dl.append(dd);
+    if (EDIT) { const t = el('div', '', 'tools'); t.append(toolBtn('↑', 'Đưa lên', () => { move(C.skills, i, -1); changed(); }), toolBtn('↓', 'Đưa xuống', () => { move(C.skills, i, 1); changed(); }), toolBtn('Xoá', 'Xoá kỹ năng', () => { C.skills.splice(i, 1); changed(); })); dl.append(t); }
+  });
+  if (EDIT) { const b = toolBtn('+ Thêm kỹ năng', 'Thêm kỹ năng', () => { C.skills.push({ name:'', value:'' }); changed(); }); b.className = 'tool'; dl.append(b); }
+}
+
+/* ---------- Lưới dự án ---------- */
 function artwork(p) {
   const art = el('span', '', 'art');
-  art.style.setProperty('--card-bg', p.colors[0]);
-  art.style.setProperty('--card-ink', p.colors[1]);
-  art.append(el('b', p.mark));
+  art.style.setProperty('--card-bg', (p.colors || [])[0] || '#eae8db');
+  art.style.setProperty('--card-ink', (p.colors || [])[1] || '#22241c');
+  art.append(el('b', p.mark || ''));
   const fallback = coverSrc(p);
-  const first = p.image || fallback;
+  const first = (!p._coverChanged && p.image) || fallback;
   if (first) {
-    const img = el('img');
-    img.alt = p.title + ' – ' + p.brand;
-    img.loading = 'lazy';
-    img.decoding = 'async';
+    const img = el('img'); img.alt = p.title + ' – ' + p.brand; img.loading = 'lazy'; img.decoding = 'async';
     img.addEventListener('error', () => { if (fallback && img.getAttribute('src') !== fallback) img.src = fallback; else img.remove(); });
-    img.src = first;
-    art.append(img);
+    img.src = first; art.append(img);
   } else art.setAttribute('aria-hidden', 'true');
   return art;
 }
 
-function renderGrid(group) {
-  activeGroup = group;
-  for (const b of filters.children) b.setAttribute('aria-pressed', String(b.textContent === group));
-  const visible = group === groups[0] ? projects : projects.filter(p => p.groups.includes(group));
+function renderFilters() {
+  filters.replaceChildren(...C.groups.map(g => { const b = el('button', g); b.type = 'button'; b.addEventListener('click', () => renderGrid(g)); return b; }));
+}
+
+function renderGrid(group = activeGroup) {
+  activeGroup = C.groups.includes(group) ? group : C.groups[0];
+  for (const b of filters.children) b.setAttribute('aria-pressed', String(b.textContent === activeGroup));
+  const all = shown();
+  const visible = activeGroup === C.groups[0] ? all : all.filter(p => p.groups.includes(activeGroup));
   cards.replaceChildren(...visible.map(p => {
-    const card = el('a', '', 'card');
+    const card = el('a', '', 'card' + (p.hidden ? ' is-hidden' : ''));
     card.href = '#da-' + p.slug;
     const copy = el('span', '', 'card-copy');
     const meta = el('span', '', 'meta');
-    const n = gallery(p).length;
+    const n = (p.images || []).length;
     meta.append(el('small', p.groups.join(' · ')), el('small', n ? n + ' thiết kế' : 'Đang cập nhật'));
     copy.append(el('small', p.brand), el('strong', p.title), meta);
     card.append(artwork(p), copy);
+    if (EDIT) {
+      if (p.hidden) card.append(el('span', 'Đang ẩn', 'badge'));
+      const t = el('span', '', 'tools'); const i = C.projects.indexOf(p);
+      if (activeGroup === C.groups[0]) t.append(toolBtn('←', 'Đưa lên trước', () => { move(C.projects, i, -1); changed(); }), toolBtn('→', 'Đưa ra sau', () => { move(C.projects, i, 1); changed(); }));
+      t.append(toolBtn(p.hidden ? 'Hiện' : 'Ẩn', p.hidden ? 'Hiện dự án trên web' : 'Ẩn dự án khỏi web', () => { p.hidden = !p.hidden; changed(); }));
+      card.append(t);
+    }
     return card;
   }));
   $('#result').textContent = visible.length + ' dự án';
 }
 
+/* ---------- Trang chi tiết ---------- */
 function majorityRatio(list) {
   if (!list.length) return '16/9';
   const square = list.filter(i => i.ratio < 1.25).length;
@@ -287,53 +336,136 @@ function majorityRatio(list) {
 }
 
 function renderCase(p) {
-  const list = gallery(p);
-  const i = projects.indexOf(p);
+  const list = p.images || [];
+  const all = shown();
+  const i = all.indexOf(p);
   const back = el('a', '← Tất cả dự án', 'back'); back.href = '#du-an';
   const head = el('header', '', 'case-head');
   const left = el('div');
-  const title = el("h2", p.title); title.id = "case-title"; title.tabIndex = -1;
-  left.append(el('p', p.brand, 'label'), title, el('p', p.description, 'case-desc'));
+  const title = el('h2'); title.id = 'case-title'; title.tabIndex = -1;
+  editable(title, () => p.title, v => { p.title = v; document.title = v + ' · Portfolio Nguyễn Khoa'; }, { ph:'Tên dự án' });
+  left.append(editable(el('p', '', 'label'), () => p.brand, v => p.brand = v, { ph:'Nhãn: thương hiệu / bối cảnh' }), title,
+    editable(el('p', '', 'case-desc'), () => p.description, v => p.description = v, { multiline:true, ph:'Mô tả dự án' }));
   const meta = el('dl', '', 'case-meta');
   const add = (label, node) => { const wrap = el('div'); const dd = el('dd'); dd.append(node); wrap.append(el('dt', label), dd); meta.append(wrap); };
-  const scope = el('div', '', 'chips'); p.scope.forEach(s => scope.append(el('span', s))); add('Hạng mục', scope);
-  const tags = el('div', '', 'chips'); p.groups.forEach(s => tags.append(el('span', s))); add('Nhóm', tags);
+  if (EDIT) {
+    add('Hạng mục (cách nhau bằng dấu ·)', editable(el('span'), () => (p.scope || []).join(' · '), v => p.scope = v.split(/[·,]/).map(s => s.trim()).filter(Boolean), { ph:'Logo · Bao bì · Poster' }));
+    const checks = el('div', '', 'checks');
+    C.groups.slice(1).forEach(g => { const l = el('label'); const c = el('input'); c.type = 'checkbox'; c.checked = p.groups.includes(g); c.addEventListener('change', () => { p.groups = C.groups.slice(1).filter(x => x === g ? c.checked : p.groups.includes(x)); changed(false); }); l.append(c, document.createTextNode(' ' + g)); checks.append(l); });
+    add('Nhóm (bộ lọc)', checks);
+  } else {
+    const scope = el('div', '', 'chips'); (p.scope || []).forEach(s => scope.append(el('span', s))); add('Hạng mục', scope);
+    const tags = el('div', '', 'chips'); p.groups.forEach(s => tags.append(el('span', s))); add('Nhóm', tags);
+  }
   add('Số thiết kế', document.createTextNode(list.length ? String(list.length) : 'Đang cập nhật'));
-  if (p.link) { const a = el('a', p.linkText || 'Xem thêm'); a.href = p.link; a.target = '_blank'; a.rel = 'noopener noreferrer'; add('Nguồn', a); }
+  if (p.link && !EDIT) { const a = el('a', p.linkText || 'Xem thêm'); a.href = p.link; a.target = '_blank'; a.rel = 'noopener noreferrer'; add('Nguồn', a); }
   head.append(left, meta);
 
+  const parts = [back, head];
+  if (EDIT) parts.push(editBox(p));
+
   let body;
-  if (list.length) {
+  const ratio = majorityRatio(list);
+  if (list.length || EDIT) {
     body = el('div', '', 'gallery');
-    const ratio = majorityRatio(list);
     body.style.setProperty('--ratio', ratio);
     body.style.setProperty('--cols', ratio === '1/1' ? 4 : 3);
     list.forEach((item, k) => {
-      const shot = el('button', '', 'shot'); shot.type = 'button';
-      shot.setAttribute('aria-label', 'Xem lớn thiết kế ' + (k + 1) + ' / ' + list.length);
+      const label = String(k + 1).padStart(2, '0') + ' / ' + String(list.length).padStart(2, '0');
       const frame = el('span', '', 'frame');
-      const img = el('img'); img.src = item.src; img.alt = p.title + ', thiết kế ' + (k + 1); img.loading = 'lazy'; img.decoding = 'async';
+      const img = el('img'); img.src = imgSrc(item); img.alt = p.title + ', thiết kế ' + (k + 1); img.loading = 'lazy'; img.decoding = 'async';
       frame.append(img);
-      shot.append(frame, el('small', String(k + 1).padStart(2, '0') + ' / ' + String(list.length).padStart(2, '0')));
-      shot.addEventListener('click', () => openViewer(list, k, p.title));
-      body.append(shot);
+      if (EDIT) {
+        const box = el('div', '', 'shot-edit' + (k === (p.cover || 0) ? ' is-cover' : ''));
+        frame.addEventListener('click', () => openViewer(list, k, p.title));
+        const t = el('div', '', 'tools');
+        t.append(toolBtn(k === (p.cover || 0) ? '★ Ảnh bìa' : '☆ Làm bìa', 'Đặt làm ảnh bìa', () => { p.cover = k; p._coverChanged = true; changed(); }),
+          toolBtn('←', 'Đưa lên trước', () => { move(list, k, -1); fixCover(p, k, k - 1); changed(); }),
+          toolBtn('→', 'Đưa ra sau', () => { move(list, k, 1); fixCover(p, k, k + 1); changed(); }),
+          toolBtn('Bỏ', 'Bỏ ảnh khỏi dự án', () => { if (confirm('Bỏ ảnh ' + (k + 1) + ' khỏi dự án? (File ảnh vẫn còn trong kho, chỉ không hiện nữa)')) { list.splice(k, 1); if ((p.cover || 0) >= list.length || (p.cover || 0) > k) p.cover = Math.max(0, (p.cover || 0) - ((p.cover || 0) > k ? 1 : 0)); if (p.cover >= list.length) p.cover = 0; changed(); } }));
+        box.append(frame, el('small', label), t);
+        body.append(box);
+      } else {
+        const shot = el('button', '', 'shot'); shot.type = 'button';
+        shot.setAttribute('aria-label', 'Xem lớn thiết kế ' + (k + 1) + ' / ' + list.length);
+        shot.append(frame, el('small', label));
+        shot.addEventListener('click', () => openViewer(list, k, p.title));
+        body.append(shot);
+      }
     });
+    if (EDIT) {
+      const addBtn = el('button', '+ Thêm ảnh', 'add-shot'); addBtn.type = 'button';
+      const input = el('input'); input.type = 'file'; input.accept = 'image/*'; input.multiple = true; input.hidden = true;
+      input.addEventListener('change', () => addImages(p, [...input.files]));
+      addBtn.addEventListener('click', () => input.click());
+      body.append(addBtn, input);
+    }
   } else {
     body = el('p', 'Ảnh của dự án này đang được cập nhật.', 'empty');
   }
+  parts.push(body);
 
-  const nav = el('nav', '', 'case-nav'); nav.setAttribute('aria-label', 'Dự án khác');
-  const prev = projects[(i - 1 + projects.length) % projects.length], next = projects[(i + 1) % projects.length];
-  for (const [p2, label] of [[prev, '← Dự án trước'], [next, 'Dự án sau →']]) {
-    const a = el('a'); a.href = '#da-' + p2.slug; a.append(el('small', label), el('strong', p2.title)); nav.append(a);
+  if (all.length > 1 && i >= 0) {
+    const nav = el('nav', '', 'case-nav'); nav.setAttribute('aria-label', 'Dự án khác');
+    const prev = all[(i - 1 + all.length) % all.length], next = all[(i + 1) % all.length];
+    for (const [p2, label] of [[prev, '← Dự án trước'], [next, 'Dự án sau →']]) {
+      const a = el('a'); a.href = '#da-' + p2.slug; a.append(el('small', label), el('strong', p2.title)); nav.append(a);
+    }
+    parts.push(nav);
   }
-  caseView.replaceChildren(back, head, body, nav);
+  caseView.replaceChildren(...parts);
+}
+function fixCover(p, from, to) { if ((p.cover || 0) === from) p.cover = to; else if ((p.cover || 0) === to) p.cover = from; p.cover = Math.max(0, Math.min(p.cover, p.images.length - 1)); }
+
+function editBox(p) {
+  const box = el('div', '', 'edit-box');
+  const hid = el('label'); const c = el('input'); c.type = 'checkbox'; c.checked = !!p.hidden;
+  c.addEventListener('change', () => { p.hidden = c.checked; changed(false); });
+  hid.append(c, document.createTextNode(' Ẩn dự án này khỏi web (người xem không thấy)'));
+  const mk = (label, key, ph) => { const l = el('label', label); const inp = el('input'); inp.type = 'text'; inp.value = p[key] || ''; inp.placeholder = ph; inp.addEventListener('input', () => { p[key] = inp.value.trim(); changed(false); }); l.append(inp); return l; };
+  const del = toolBtn('Xoá hẳn dự án', 'Xoá hẳn dự án', () => { if (confirm('Xoá hẳn dự án "' + p.title + '" khỏi web? Ảnh vẫn còn trong kho. Muốn tạm giấu thì dùng ô "Ẩn" thay vì xoá.')) { C.projects.splice(C.projects.indexOf(p), 1); changed(); location.hash = 'du-an'; } });
+  box.append(el('strong', 'Tuỳ chọn dự án'), hid, mk('Link nguồn', 'link', 'https://…'), mk('Chữ trên link', 'linkText', 'Xem trên Behance'), mk('Chữ trên thẻ khi chưa có ảnh', 'mark', 'VD: Sakura'), del);
+  return box;
 }
 
+/* ---------- Thêm ảnh: thu nhỏ ngay trên máy, lưu kèm khi bấm Lưu ---------- */
+const pending = new Map();   // đường dẫn trong kho → base64
+async function shrink(file) {
+  const bmp = await createImageBitmap(file);
+  const r = bmp.width / bmp.height, mx = r > 1.2 ? 1400 : 1200;
+  const s = Math.min(1, mx / Math.max(bmp.width, bmp.height));
+  const cv = document.createElement('canvas'); cv.width = Math.round(bmp.width * s); cv.height = Math.round(bmp.height * s);
+  const g = cv.getContext('2d'); g.fillStyle = '#fff'; g.fillRect(0, 0, cv.width, cv.height); g.drawImage(bmp, 0, 0, cv.width, cv.height);
+  return { url: cv.toDataURL('image/jpeg', 0.85), ratio: Math.round(r * 1000) / 1000 };
+}
+async function addImages(p, files) {
+  if (!files.length) return;
+  status('Đang xử lý ' + files.length + ' ảnh…');
+  for (const f of files) {
+    try {
+      const { url, ratio } = await shrink(f);
+      const path = 'work/' + p.slug + '/u' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5) + '.jpg';
+      pending.set(path, url.split(',')[1]);
+      p.images = p.images || []; p.images.push({ src:path, ratio, _preview:url });
+    } catch (e) { alert('Không đọc được ảnh ' + f.name); }
+  }
+  changed();
+}
+
+/* ---------- Dự án mới ---------- */
+function slugify(s) { return s.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'du-an'; }
+function newProject() {
+  const name = prompt('Tên dự án mới:'); if (!name || !name.trim()) return;
+  let slug = slugify(name), n = 2; while (C.projects.some(x => x.slug === slug)) slug = slugify(name) + '-' + n++;
+  C.projects.unshift({ slug, title:name.trim(), brand:'', groups:[], mark:name.trim().split(/\s+/)[0], colors:['#eae8db','#22241c'], description:'', scope:[], hidden:true, cover:0, images:[] });
+  changed(); location.hash = 'da-' + slug;
+}
+
+/* ---------- Xem ảnh lớn ---------- */
 function openViewer(list, index, title) { viewing = { list, index, title }; showShot(); if (!viewer.open) viewer.showModal(); }
 function showShot() {
   const { list, index, title } = viewing;
-  viewerImg.src = list[index].src;
+  viewerImg.src = imgSrc(list[index]);
   viewerImg.alt = title + ', thiết kế ' + (index + 1);
   viewerCount.textContent = title + ' · ' + (index + 1) + ' / ' + list.length;
 }
@@ -346,15 +478,16 @@ let touchX = null;
 viewer.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive:true });
 viewer.addEventListener('touchend', e => { if (touchX === null) return; const dx = e.changedTouches[0].clientX - touchX; if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1); touchX = null; });
 
+/* ---------- Điều hướng ---------- */
 function route() {
   const hash = decodeURIComponent(location.hash.slice(1));
-  const p = hash.startsWith('da-') && projects.find(x => x.slug === hash.slice(3));
+  const p = hash.startsWith('da-') && shown().find(x => x.slug === hash.slice(3));
   if (viewer.open) viewer.close();
   if (p) {
     renderCase(p);
     home.hidden = true; caseView.hidden = false;
     window.scrollTo(0, 0);
-    $('#case-title')?.focus?.();
+    if (!EDIT) $('#case-title')?.focus?.();
     document.title = p.title + ' · Portfolio Nguyễn Khoa';
   } else {
     const wasCase = !caseView.hidden;
@@ -365,17 +498,117 @@ function route() {
   }
 }
 
-for (const g of groups) { const b = el('button', g); b.type = 'button'; b.addEventListener('click', () => renderGrid(g)); filters.append(b); }
-const withImages = projects.filter(p => gallery(p).length);
-$('#stat-projects').textContent = projects.length;
-$('#stat-images').textContent = withImages.reduce((n, p) => n + gallery(p).length, 0);
-$('#mosaic').replaceChildren(...['wan2care-worldcup', 'tra-hoa-lanh', 'phim-3d-khan-do', 'bougies'].map(slug => {
-  const p = projects.find(x => x.slug === slug); const a = el('a'); a.href = '#da-' + slug; a.setAttribute('aria-label', p.title);
-  const img = el('img'); img.src = coverSrc(p) || ''; img.alt = ''; a.append(img); return a;
-}));
-renderGrid(groups[0]);
-window.addEventListener('hashchange', route);
-route();
+function renderAll() { renderSite(); renderFilters(); renderGrid(); renderHistory(); renderSkills(); }
+
+/* ---------- Thanh sửa + lưu lên GitHub ---------- */
+let dirty = false, contentSha = null, draftTimer = null;
+const tokenKey = 'portfolio-gh-token', draftKey = 'portfolio-draft';
+const getToken = () => { try { return localStorage.getItem(tokenKey) || ''; } catch { return ''; } };
+function status(t) { const s = $('#edit-status'); if (s) s.textContent = t; }
+function clean(obj) { return JSON.parse(JSON.stringify(obj, (k, v) => k.startsWith('_') ? undefined : v)); }
+function changed(rerender = true) {
+  dirty = true;
+  if (rerender) { renderAll(); if (!caseView.hidden) route(); }
+  status('Có thay đổi chưa lưu' + (pending.size ? ' · ' + pending.size + ' ảnh mới' : ''));
+  $('#btn-save').disabled = false;
+  clearTimeout(draftTimer);
+  draftTimer = setTimeout(() => { try { localStorage.setItem(draftKey, JSON.stringify({ at:Date.now(), C:clean(C) })); } catch {} }, 600);
+}
+async function gh(path, opt = {}) {
+  const r = await fetch('https://api.github.com/repos/' + REPO + path, { ...opt, cache:'no-store', headers:{ Authorization:'Bearer ' + getToken(), Accept:'application/vnd.github+json', 'X-GitHub-Api-Version':'2022-11-28', ...(opt.body ? { 'Content-Type':'application/json' } : {}) } });
+  if (!r.ok) { const t = await r.text(); const err = new Error(r.status + ' ' + t.slice(0, 160)); err.status = r.status; throw err; }
+  return r.json();
+}
+function b64ToText(b64) { const bin = atob(b64.replace(/\n/g, '')); return new TextDecoder().decode(Uint8Array.from(bin, ch => ch.charCodeAt(0))); }
+
+async function save() {
+  if (!getToken()) { openToken(); return; }
+  const btn = $('#btn-save'); btn.disabled = true; status('Đang lưu lên GitHub…');
+  try {
+    const ref = await gh('/git/ref/heads/' + BRANCH);
+    const head = ref.object.sha;
+    const commit = await gh('/git/commits/' + head);
+    const cur = await gh('/contents/content.json?ref=' + head);
+    if (contentSha && cur.sha !== contentSha && !confirm('Nội dung trên GitHub vừa được sửa ở nơi khác (có thể Claude vừa cập nhật). Bấm OK để ghi đè bằng bản của bạn, Huỷ để dừng và tải lại trang.')) { status('Đã dừng. Tải lại trang để lấy bản mới nhất.'); btn.disabled = false; return; }
+    const tree = [];
+    const used = new Set(C.projects.flatMap(p => (p.images || []).map(i => i.src)));
+    for (const [path, b64] of pending) {
+      if (!used.has(path)) continue;
+      const blob = await gh('/git/blobs', { method:'POST', body:JSON.stringify({ content:b64, encoding:'base64' }) });
+      tree.push({ path, mode:'100644', type:'blob', sha:blob.sha });
+    }
+    const blob = await gh('/git/blobs', { method:'POST', body:JSON.stringify({ content:JSON.stringify(clean(C), null, 1) + '\n', encoding:'utf-8' }) });
+    tree.push({ path:'content.json', mode:'100644', type:'blob', sha:blob.sha });
+    const t = await gh('/git/trees', { method:'POST', body:JSON.stringify({ base_tree:commit.tree.sha, tree }) });
+    const nc = await gh('/git/commits', { method:'POST', body:JSON.stringify({ message:'Khoa sửa trên web (' + new Date().toLocaleString('vi-VN') + ')', tree:t.sha, parents:[head] }) });
+    await gh('/git/refs/heads/' + BRANCH, { method:'PATCH', body:JSON.stringify({ sha:nc.sha }) });
+    contentSha = blob.sha; pending.clear(); dirty = false;
+    try { localStorage.removeItem(draftKey); } catch {}
+    status('Đã lưu ✓ Web cập nhật sau khoảng 1–2 phút.');
+  } catch (e) {
+    btn.disabled = false;
+    status(e.status === 401 || e.status === 403 || e.status === 404 ? 'Không lưu được: mã GitHub sai, hết hạn hoặc chưa có quyền ghi vào kho.' : 'Không lưu được: ' + e.message);
+    if (e.status === 401) openToken();
+  }
+}
+
+function openToken() { $('#token-input').value = ''; $('#token-dlg').showModal(); }
+function buildEditUI() {
+  document.body.classList.add('editing');
+  const bar = el('div', '', 'editbar'); bar.setAttribute('role', 'region'); bar.setAttribute('aria-label', 'Chế độ sửa');
+  const s = el('span', 'Đang tải nội dung…', 'grow'); s.id = 'edit-status';
+  const mk = (txt, fn, cls) => { const b = el('button', txt); b.type = 'button'; if (cls) b.className = cls; b.addEventListener('click', fn); return b; };
+  const saveBtn = mk('Lưu lên web', save, 'primary'); saveBtn.id = 'btn-save'; saveBtn.disabled = true;
+  bar.append(el('b', 'Chế độ sửa'), s, mk('+ Dự án mới', newProject), mk('Mã GitHub', openToken),
+    mk('Xem như khách', () => { if (!dirty || confirm('Còn thay đổi chưa lưu. Vẫn rời trang?')) { dirty = false; location.href = location.pathname + location.hash; } }),
+    mk('Huỷ thay đổi', () => { if (confirm('Bỏ mọi thay đổi chưa lưu?')) { dirty = false; try { localStorage.removeItem(draftKey); } catch {} location.reload(); } }), saveBtn);
+  document.body.append(bar);
+
+  const dlg = el('dialog', '', 'token-dlg'); dlg.id = 'token-dlg';
+  dlg.innerHTML = '<h3>Mã GitHub để lưu</h3><p style="color:var(--muted);margin:.5em 0">Chỉ cần làm một lần trên máy này. Mã được lưu trong trình duyệt của bạn, không gửi đi đâu ngoài GitHub.</p>' +
+    '<ol><li>Mở <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub → Fine-grained token mới</a> (đăng nhập tài khoản khoa878-wq).</li>' +
+    '<li>Token name: <b>Sua portfolio</b>. Expiration: chọn 90 ngày hoặc lâu hơn.</li>' +
+    '<li>Repository access: <b>Only select repositories</b> → chọn <b>khoa878-wq.github.io</b>.</li>' +
+    '<li>Permissions → Repository permissions → <b>Contents: Read and write</b>.</li>' +
+    '<li>Bấm Generate token, chép mã (bắt đầu bằng github_pat_) rồi dán vào ô dưới.</li></ol>' +
+    '<input id="token-input" type="password" autocomplete="off" placeholder="github_pat_…">' +
+    '<div class="row"><button type="button" id="token-forget">Quên mã trên máy này</button><button type="button" id="token-cancel">Đóng</button><button type="button" class="primary" id="token-ok">Lưu mã</button></div>';
+  document.body.append(dlg);
+  $('#token-cancel').onclick = () => dlg.close();
+  $('#token-forget').onclick = () => { try { localStorage.removeItem(tokenKey); } catch {} dlg.close(); status('Đã xoá mã khỏi máy này.'); };
+  $('#token-ok').onclick = async () => {
+    const v = $('#token-input').value.trim(); if (!v) return;
+    try { localStorage.setItem(tokenKey, v); } catch { alert('Trình duyệt chặn lưu mã (chế độ ẩn danh?).'); return; }
+    dlg.close(); status('Đang kiểm tra mã…');
+    try { const cur = await gh('/contents/content.json?ref=' + BRANCH); contentSha = cur.sha; status(dirty ? 'Mã hợp lệ ✓ Có thay đổi chưa lưu.' : 'Mã hợp lệ ✓ Sửa xong bấm "Lưu lên web".'); }
+    catch (e) { status('Mã chưa dùng được (' + (e.status || e.message) + '). Kiểm tra lại quyền Contents: Read and write cho kho khoa878-wq.github.io.'); }
+  };
+  window.addEventListener('beforeunload', e => { if (dirty) { e.preventDefault(); e.returnValue = ''; } });
+}
+
+async function loadLatest() {
+  if (EDIT && getToken()) {
+    try { const cur = await gh('/contents/content.json?ref=' + BRANCH); contentSha = cur.sha; return JSON.parse(b64ToText(cur.content)); } catch (e) { if (e.status === 401) status('Mã GitHub hết hạn hoặc sai. Bấm "Mã GitHub" để nhập lại.'); }
+  }
+  try { const r = await fetch('content.json?t=' + Date.now(), { cache:'no-store' }); if (r.ok) return await r.json(); } catch {}
+  return null;
+}
+
+(async function start() {
+  if (EDIT) buildEditUI();
+  if (C.projects) { renderAll(); route(); }
+  const fresh = await loadLatest();
+  if (fresh && JSON.stringify(fresh) !== JSON.stringify(C)) { C = fresh; renderAll(); route(); }
+  if (EDIT) {
+    let draft = null; try { draft = JSON.parse(localStorage.getItem(draftKey) || 'null'); } catch {}
+    if (draft && JSON.stringify(draft.C) !== JSON.stringify(clean(C)) && confirm('Có bản nháp chưa lưu từ ' + new Date(draft.at).toLocaleString('vi-VN') + '. Khôi phục bản nháp? (Ảnh mới thêm trong bản nháp không giữ được)')) {
+      const known = new Set(C.projects.flatMap(p => (p.images || []).map(i => i.src)));
+      C = draft.C; C.projects.forEach(p => { p.images = (p.images || []).filter(i => known.has(i.src)); if ((p.cover || 0) >= p.images.length) p.cover = 0; });
+      dirty = true; renderAll(); route(); $('#btn-save').disabled = false; status('Đã khôi phục bản nháp, chưa lưu.');
+    } else status(getToken() ? 'Bấm vào chữ có viền chấm để sửa. Sửa xong bấm "Lưu lên web".' : 'Bấm vào chữ có viền chấm để sửa. Lần đầu cần nhập "Mã GitHub" trước khi lưu.');
+  }
+  window.addEventListener('hashchange', route);
+})();
 </script>
 </body>
 </html>

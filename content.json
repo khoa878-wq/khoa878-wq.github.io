@@ -1,0 +1,1818 @@
+{
+ "site": {
+  "label": "Graphic designer · TP.HCM",
+  "intro": "Mình thiết kế ấn phẩm truyền thông, hình ảnh thương hiệu, bao bì và video ngắn cho mạng xã hội.",
+  "period": "2022–2026",
+  "email": "khnsz878@gmail.com",
+  "behance": "https://www.behance.net/khoangy2"
+ },
+ "groups": [
+  "Tất cả",
+  "Social post",
+  "Banner",
+  "Video",
+  "Nhận diện",
+  "Bao bì",
+  "Ấn phẩm in",
+  "3D",
+  "AI"
+ ],
+ "mosaic": [
+  "wan2care-worldcup",
+  "tra-hoa-lanh",
+  "phim-3d-khan-do",
+  "bougies"
+ ],
+ "experience": [
+  {
+   "time": "11/2026 – hiện tại",
+   "title": "Giường Tủ Đẹp",
+   "text": "Thiết kế thumbnail, chỉnh ảnh sản phẩm, dựng video nội thất và viết nội dung cho TikTok, Facebook, YouTube.",
+   "link": "https://www.facebook.com/giuongtudep.vn",
+   "linkText": "Facebook Giường Tủ Đẹp"
+  },
+  {
+   "time": "01–09/2026",
+   "title": "Việt Phát · Wan2Care",
+   "text": "Thiết kế nội dung hình ảnh cho Wan2Care, dịch vụ dọn nhà tại khu vực Toronto, Canada: bài đăng, banner, video và ứng dụng AI trong sản xuất nội dung.",
+   "link": "https://www.facebook.com/wan2care.ca",
+   "linkText": "Facebook Wan2Care"
+  },
+  {
+   "time": "05–11/2025",
+   "title": "Cộng Đồng Sống Hạnh Phúc · ACTA",
+   "text": "Thực tập thiết kế: ấn phẩm truyền thông, chỉnh sửa hình ảnh, video, viết nội dung và hỗ trợ studio.",
+   "link": "https://www.tiktok.com/@acta010825",
+   "linkText": "TikTok ACTA"
+  },
+  {
+   "time": "01–05/2025",
+   "title": "Viet Pickleball",
+   "text": "Nhân viên part-time: thiết kế ấn phẩm quảng cáo, quay dựng video, chụp ảnh và hỗ trợ vận hành.",
+   "link": "",
+   "linkText": ""
+  },
+  {
+   "time": "10–12/2024",
+   "title": "Góc Cà Phê",
+   "text": "Freelance quay video, viết kịch bản và thiết kế.",
+   "link": "https://www.facebook.com/people/G%C3%B3c-C%C3%A0-Ph%C3%AA/61567362864331/",
+   "linkText": "Facebook Góc Cà Phê"
+  },
+  {
+   "time": "01–08/2024",
+   "title": "Forward",
+   "text": "Thiết kế freelance logo, banner, poster và ấn phẩm truyền thông.",
+   "link": "",
+   "linkText": ""
+  },
+  {
+   "time": "09–11/2023",
+   "title": "Vận Chuyển Quảng Cáo Thái Khoa",
+   "text": "Freelance: thiết kế logo, poster và làm content.",
+   "link": "",
+   "linkText": ""
+  }
+ ],
+ "skills": [
+  {
+   "name": "Thiết kế 2D",
+   "value": "Photoshop, Illustrator, Canva"
+  },
+  {
+   "name": "Dựng video",
+   "value": "CapCut PC, Premiere Pro, After Effects"
+  },
+  {
+   "name": "Thiết kế 3D",
+   "value": "Cinema 4D, Maya"
+  },
+  {
+   "name": "Nội dung và AI",
+   "value": "Phát triển concept, viết kịch bản, tạo hình ảnh và video bằng AI"
+  }
+ ],
+ "projects": [
+  {
+   "slug": "wan2care-social",
+   "title": "Bài đăng mạng xã hội",
+   "brand": "Việt Phát · Wan2Care",
+   "groups": [
+    "Social post",
+    "AI"
+   ],
+   "image": "images/viet-phat.jpg",
+   "mark": "Wan2Care",
+   "colors": [
+    "#d4ee79",
+    "#22281b"
+   ],
+   "description": "Bài đăng cho dịch vụ dọn nhà Wan2Care tại Toronto: chủ đề dọn dẹp theo mùa, Lễ Tạ ơn, Tết, Black Friday, World Cup và các ngày lễ Canada. Có ứng dụng AI trong sản xuất hình ảnh.",
+   "scope": [
+    "Bài đăng",
+    "Ấn phẩm theo mùa",
+    "Hình ảnh AI"
+   ],
+   "hidden": false,
+   "cover": 6,
+   "images": [
+    {
+     "src": "work/wan2care-social/01.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/02.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/03.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/04.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/05.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/06.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/07.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/08.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/09.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/10.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/11.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/12.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/13.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/14.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/15.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/16.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/17.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/18.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/wan2care-social/19.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/wan2care-social/20.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/21.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/22.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/23.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/24.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/25.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/26.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/27.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/28.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/29.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/30.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/31.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/32.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/33.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/34.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/35.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/36.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/37.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/38.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/39.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/40.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/41.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/42.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/43.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/44.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/45.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/46.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/47.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/48.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/49.jpg",
+     "ratio": 1
+    }
+   ]
+  },
+  {
+   "slug": "wan2care-worldcup",
+   "title": "Chiến dịch World Cup 2026",
+   "brand": "Việt Phát · Wan2Care",
+   "groups": [
+    "Social post",
+    "Banner",
+    "AI"
+   ],
+   "image": "images/world-cup.jpg",
+   "mark": "World Cup",
+   "colors": [
+    "#d4ee79",
+    "#22281b"
+   ],
+   "description": "Thiết kế bài đăng và ấn phẩm quảng bá dịch vụ dọn nhà trong mùa World Cup. Bộ nội dung gồm bài khởi động, thử thách dự đoán, tỷ số các trận đấu và ưu đãi Winners’ Week.",
+   "scope": [
+    "Bài đăng",
+    "Poster",
+    "Tỷ số trận đấu",
+    "Minigame"
+   ],
+   "hidden": false,
+   "cover": 0,
+   "images": [
+    {
+     "src": "work/wan2care-worldcup/01.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-worldcup/02.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-worldcup/03.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-worldcup/04.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-worldcup/05.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-worldcup/06.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-worldcup/07.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-worldcup/08.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-worldcup/09.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-worldcup/10.jpg",
+     "ratio": 1
+    }
+   ]
+  },
+  {
+   "slug": "wan2care-tuyen-dung",
+   "title": "Banner tuyển cộng tác viên",
+   "brand": "Việt Phát · Wan2Care",
+   "groups": [
+    "Banner",
+    "Social post"
+   ],
+   "image": "images/banner-tuyen-dung.jpg",
+   "mark": "Wan2Care",
+   "colors": [
+    "#cbd7fa",
+    "#1d3263"
+   ],
+   "description": "Thiết kế banner cho chiến dịch tuyển người làm dịch vụ dọn dẹp và giới thiệu ứng dụng Wan2Care. Phát triển nội dung tuyển dụng dựa trên hệ thống hình ảnh của thương hiệu.",
+   "scope": [
+    "Banner",
+    "Bài tuyển dụng",
+    "Banner ứng dụng"
+   ],
+   "hidden": false,
+   "cover": 0,
+   "images": [
+    {
+     "src": "work/wan2care-tuyen-dung/01.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-tuyen-dung/02.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-tuyen-dung/03.jpg",
+     "ratio": 2.505
+    },
+    {
+     "src": "work/wan2care-tuyen-dung/04.jpg",
+     "ratio": 2.505
+    },
+    {
+     "src": "work/wan2care-tuyen-dung/05.jpg",
+     "ratio": 2.505
+    },
+    {
+     "src": "work/wan2care-tuyen-dung/06.jpg",
+     "ratio": 2.505
+    },
+    {
+     "src": "work/wan2care-tuyen-dung/07.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-tuyen-dung/08.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-tuyen-dung/09.jpg",
+     "ratio": 1
+    }
+   ]
+  },
+  {
+   "slug": "vicci-bao-bi",
+   "title": "Bao bì VICCI · Vietcan Fresh",
+   "brand": "Việt Phát · Wan2Care",
+   "groups": [
+    "Bao bì"
+   ],
+   "mark": "VICCI",
+   "colors": [
+    "#f6c35b",
+    "#5a1d10"
+   ],
+   "description": "Thiết kế bao bì cho các dòng sản phẩm VICCI: nem nướng, nem nướng phô mai, chả giò gà, chả giò heo và chả giò chay, cùng name card.",
+   "scope": [
+    "Bao bì",
+    "Name card",
+    "Banner sản phẩm"
+   ],
+   "hidden": false,
+   "cover": 0,
+   "images": [
+    {
+     "src": "work/vicci-bao-bi/01.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/vicci-bao-bi/02.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/vicci-bao-bi/03.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/vicci-bao-bi/04.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/vicci-bao-bi/05.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/vicci-bao-bi/06.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/vicci-bao-bi/07.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/vicci-bao-bi/08.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/vicci-bao-bi/09.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/vicci-bao-bi/10.jpg",
+     "ratio": 1.778
+    }
+   ]
+  },
+  {
+   "slug": "giuong-tu-dep-video",
+   "title": "Video nội thất dọc",
+   "brand": "Giường Tủ Đẹp",
+   "groups": [
+    "Video"
+   ],
+   "image": "images/video-noi-that.jpg",
+   "mark": "9:16",
+   "colors": [
+    "#b96b49",
+    "#211710"
+   ],
+   "description": "Dựng video TikTok bằng CapCut PC. Nội dung tập trung vào sản phẩm thật, quá trình vận chuyển, lắp ráp và hoàn thiện giường, tủ.",
+   "scope": [
+    "Video dọc",
+    "Thumbnail",
+    "Chỉnh ảnh sản phẩm"
+   ],
+   "link": "https://www.facebook.com/giuongtudep.vn",
+   "linkText": "Facebook Giường Tủ Đẹp",
+   "hidden": false,
+   "cover": 0,
+   "images": [
+    {
+     "src": "work/giuong-tu-dep-video/01.jpg",
+     "ratio": 0.562
+    }
+   ]
+  },
+  {
+   "slug": "san-pham-2025",
+   "title": "Các sản phẩm 2025",
+   "brand": "Ấn phẩm sản phẩm",
+   "groups": [
+    "Banner"
+   ],
+   "mark": "2025",
+   "colors": [
+    "#e9e3c8",
+    "#3a3220"
+   ],
+   "description": "Ấn phẩm cho các sản phẩm năm 2025, gồm kem đánh răng P/S, poster affiliate và hỗ trợ chụp sản phẩm X3 Nano Xáo Tam Phần.",
+   "scope": [
+    "Poster",
+    "Chụp ảnh sản phẩm"
+   ],
+   "hidden": false,
+   "cover": 0,
+   "images": [
+    {
+     "src": "work/san-pham-2025/01.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/san-pham-2025/02.jpg",
+     "ratio": 1.778
+    }
+   ]
+  },
+  {
+   "slug": "tra-hoa-lanh",
+   "title": "Trà Hoa Lành",
+   "brand": "Nhận diện thương hiệu",
+   "groups": [
+    "Nhận diện",
+    "Bao bì",
+    "Banner",
+    "Video"
+   ],
+   "image": "images/tra-hoa-lanh.jpg",
+   "mark": "Lành",
+   "colors": [
+    "#b3caa6",
+    "#233c36"
+   ],
+   "description": "Nhận diện thương hiệu trà hoa và trà thảo mộc Lành: logo, typography, màu, mascot, pattern, bộ bao bì, ảnh sản phẩm, bộ quảng cáo, website, kịch bản và storyboard TVC.",
+   "scope": [
+    "Logo",
+    "Bao bì",
+    "Poster · Standee · Banner",
+    "Brochure · Lịch · Catalogue",
+    "App · Website",
+    "Storyboard TVC"
+   ],
+   "link": "https://canva.link/1189w578b5p6p26",
+   "linkText": "Bản gốc trên Canva",
+   "hidden": false,
+   "cover": 39,
+   "images": [
+    {
+     "src": "work/tra-hoa-lanh/01.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/02.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/03.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/04.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/05.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/06.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/07.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/08.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/09.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/10.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/11.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/12.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/13.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/14.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/15.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/16.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/17.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/18.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/19.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/20.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/21.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/22.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/23.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/24.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/25.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/26.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/27.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/28.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/29.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/30.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/31.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/32.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/33.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/34.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/35.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/36.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/37.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/38.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/39.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/40.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/41.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/42.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/43.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/44.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/45.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/46.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/47.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/48.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/49.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/50.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/51.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/52.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/53.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/54.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/55.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/56.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/57.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/58.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/59.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/60.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/61.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/62.jpg",
+     "ratio": 1.778
+    }
+   ]
+  },
+  {
+   "slug": "tvc-giay",
+   "title": "TVC giày chạy bộ",
+   "brand": "Video quảng cáo",
+   "groups": [
+    "Video"
+   ],
+   "image": "images/tvc-giay.jpg",
+   "mark": "TVC",
+   "colors": [
+    "#eb9c9e",
+    "#5c2429"
+   ],
+   "description": "Video quảng cáo kể về một người trẻ yêu chạy bộ và đôi giày đã xuống cấp. Trình bày đủ tiền kỳ, kịch bản văn học, kịch bản phân cảnh, storyboard, thiết bị quay, kỹ thuật góc máy và hậu kỳ chỉnh màu.",
+   "scope": [
+    "Kịch bản",
+    "Storyboard",
+    "Quay",
+    "Hậu kỳ"
+   ],
+   "link": "https://canva.link/1189w578b5p6p26",
+   "linkText": "Bản gốc trên Canva",
+   "hidden": false,
+   "cover": 0,
+   "images": [
+    {
+     "src": "work/tvc-giay/01.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/02.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/03.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/04.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/05.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/06.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/07.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/08.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/09.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/10.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/11.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/12.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/13.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/14.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/15.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/16.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/17.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/18.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/19.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/20.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/21.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/22.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/23.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/24.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/25.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/26.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/27.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-giay/28.jpg",
+     "ratio": 1.778
+    }
+   ]
+  },
+  {
+   "slug": "tvc-ps",
+   "title": "Ý tưởng TVC kem đánh răng P/S Trà Xanh",
+   "brand": "Ý tưởng TVC",
+   "groups": [
+    "Video"
+   ],
+   "mark": "P/S",
+   "colors": [
+    "#cfe8d6",
+    "#16402a"
+   ],
+   "description": "Ý tưởng đề tài, kịch bản phân cảnh, storyboard và poster cho kem đánh răng P/S Trà Xanh.",
+   "scope": [
+    "Ý tưởng",
+    "Kịch bản phân cảnh",
+    "Storyboard",
+    "Poster"
+   ],
+   "hidden": false,
+   "cover": 6,
+   "images": [
+    {
+     "src": "work/tvc-ps/01.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-ps/02.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-ps/03.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-ps/04.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-ps/05.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-ps/06.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/tvc-ps/07.jpg",
+     "ratio": 1.778
+    }
+   ]
+  },
+  {
+   "slug": "phim-3d-khan-do",
+   "title": "Phim hoạt hình 3D Cô bé quàng khăn đỏ",
+   "brand": "Phim hoạt hình 3D",
+   "groups": [
+    "Video",
+    "3D"
+   ],
+   "mark": "3D",
+   "colors": [
+    "#e7cfa4",
+    "#4a2a14"
+   ],
+   "description": "Phim hoạt hình 3D dựa trên truyện cổ Cô bé quàng khăn đỏ: ý nghĩa tên phim, storyline, kịch bản phân cảnh, thiết kế nhân vật (cô bé, bà ngoại, thợ săn, chó sói), storyboard và dựng bối cảnh 3D.",
+   "scope": [
+    "Storyline",
+    "Nhân vật",
+    "Storyboard",
+    "Bối cảnh 3D"
+   ],
+   "hidden": false,
+   "cover": 2,
+   "images": [
+    {
+     "src": "work/phim-3d-khan-do/01.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/phim-3d-khan-do/02.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/phim-3d-khan-do/03.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/phim-3d-khan-do/04.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/phim-3d-khan-do/05.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/phim-3d-khan-do/06.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/phim-3d-khan-do/07.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/phim-3d-khan-do/08.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/phim-3d-khan-do/09.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/phim-3d-khan-do/10.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/phim-3d-khan-do/11.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/phim-3d-khan-do/12.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/phim-3d-khan-do/13.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/phim-3d-khan-do/14.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/phim-3d-khan-do/15.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/phim-3d-khan-do/16.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/phim-3d-khan-do/17.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/phim-3d-khan-do/18.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/phim-3d-khan-do/19.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/phim-3d-khan-do/20.jpg",
+     "ratio": 1.778
+    }
+   ]
+  },
+  {
+   "slug": "bear-cream",
+   "title": "Bear Cream",
+   "brand": "Nhận diện thương hiệu · Dự án nhóm",
+   "groups": [
+    "Nhận diện",
+    "Banner"
+   ],
+   "mark": "Bear",
+   "colors": [
+    "#f6d3dc",
+    "#6b3b22"
+   ],
+   "description": "Nhận diện thương hiệu kem Bear Cream: logo và các phiên bản, linh vật Boo, hệ thống font, màu, lưới và khoảng cách an toàn, bộ nhận diện văn phòng, quà tặng, bộ quảng cáo, media và website.",
+   "scope": [
+    "Logo",
+    "Linh vật",
+    "Bộ văn phòng",
+    "Quà tặng",
+    "Quảng cáo",
+    "Website"
+   ],
+   "hidden": false,
+   "cover": 16,
+   "images": [
+    {
+     "src": "work/bear-cream/01.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/02.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/03.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/04.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/05.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/06.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/07.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/08.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/09.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/10.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/11.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/12.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/13.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/14.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/15.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/16.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/17.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/18.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/19.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/20.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/21.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/22.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/23.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/24.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/25.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/26.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bear-cream/27.jpg",
+     "ratio": 1
+    }
+   ]
+  },
+  {
+   "slug": "bougies",
+   "title": "Bougies",
+   "brand": "Nhận diện thương hiệu · Dự án nhóm",
+   "groups": [
+    "Nhận diện",
+    "Banner",
+    "Social post"
+   ],
+   "mark": "Bougies",
+   "colors": [
+    "#f3d9e3",
+    "#3d3550"
+   ],
+   "description": "Nhận diện thương hiệu nến thơm Bougies: màu chủ đạo, mô hình workshop, phân tích đối thủ, logo, bộ nhận diện văn phòng, name card, ấn phẩm mạng xã hội, brochure, tờ rơi, standee, poster, banner và catalogue.",
+   "scope": [
+    "Logo",
+    "Bộ văn phòng",
+    "Mạng xã hội",
+    "Brochure · Tờ rơi",
+    "Standee · Poster · Banner",
+    "Catalogue"
+   ],
+   "hidden": false,
+   "cover": 19,
+   "images": [
+    {
+     "src": "work/bougies/01.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bougies/02.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bougies/03.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bougies/04.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bougies/05.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bougies/06.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bougies/07.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bougies/08.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bougies/09.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bougies/10.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bougies/11.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bougies/12.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bougies/13.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bougies/14.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bougies/15.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bougies/16.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bougies/17.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bougies/18.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bougies/19.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bougies/20.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/bougies/21.jpg",
+     "ratio": 1.778
+    }
+   ]
+  },
+  {
+   "slug": "jus-de-fruit",
+   "title": "Jus De Fruit",
+   "brand": "Dự án tốt nghiệp · FPT Polytechnic",
+   "groups": [
+    "Nhận diện",
+    "Bao bì"
+   ],
+   "mark": "Jus",
+   "colors": [
+    "#fbe4b0",
+    "#2f5a1e"
+   ],
+   "description": "Thương hiệu nước ép trái cây Jus De Fruit: bộ nhận diện, bao bì lốc và chai, poster, standee, catalogue và website.",
+   "scope": [
+    "Bộ nhận diện",
+    "Bao bì",
+    "Poster · Standee",
+    "Catalogue",
+    "Website"
+   ],
+   "hidden": false,
+   "cover": 0,
+   "images": [
+    {
+     "src": "work/jus-de-fruit/01.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/jus-de-fruit/02.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/jus-de-fruit/03.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/jus-de-fruit/04.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/jus-de-fruit/05.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/jus-de-fruit/06.jpg",
+     "ratio": 1.778
+    }
+   ]
+  },
+  {
+   "slug": "glow",
+   "title": "Glow Natural Soap",
+   "brand": "Dự án nhóm",
+   "groups": [
+    "Bao bì"
+   ],
+   "mark": "Glow",
+   "colors": [
+    "#d7e3f1",
+    "#16365c"
+   ],
+   "description": "Thiết kế logo và bao bì ba cấp cho xà phòng tự nhiên Glow, kèm poster.",
+   "scope": [
+    "Logo",
+    "Bao bì 3 cấp",
+    "Poster"
+   ],
+   "hidden": false,
+   "cover": 3,
+   "images": [
+    {
+     "src": "work/glow/01.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/glow/02.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/glow/03.jpg",
+     "ratio": 1.778
+    },
+    {
+     "src": "work/glow/04.jpg",
+     "ratio": 1.778
+    }
+   ]
+  },
+  {
+   "slug": "tra-sakura",
+   "title": "Thương hiệu trà Sakura",
+   "brand": "Thiết kế thương hiệu và Marketing · Dự án nhóm",
+   "groups": [
+    "Nhận diện",
+    "Banner"
+   ],
+   "mark": "Sakura",
+   "colors": [
+    "#fbe1e6",
+    "#7a2a44"
+   ],
+   "description": "Xây dựng thương hiệu trà Sakura từ nghiên cứu thị trường, đối thủ, khách hàng mục tiêu và SWOT, đến logo, lưới logo, font chữ, bộ nhận diện văn phòng, bộ quà tặng và bộ quảng cáo.",
+   "scope": [
+    "Nghiên cứu",
+    "Logo",
+    "Bộ văn phòng",
+    "Quà tặng",
+    "Quảng cáo"
+   ],
+   "link": "https://www.behance.net/gallery/225233871/d-an-thuong-hiu-tra",
+   "linkText": "Xem trên Behance",
+   "hidden": false,
+   "cover": 0,
+   "images": [
+    {
+     "src": "work/tra-sakura/01.jpg",
+     "ratio": 2.055
+    },
+    {
+     "src": "work/tra-sakura/02.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/03.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/04.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/05.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/06.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/07.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/08.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/09.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/10.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/11.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/12.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/13.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/14.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/15.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/16.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/17.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/18.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/19.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/20.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/21.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/22.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/23.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/24.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/25.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/26.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/27.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/28.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/29.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tra-sakura/30.jpg",
+     "ratio": 1.777
+    }
+   ]
+  },
+  {
+   "slug": "tokyo-sushi",
+   "title": "Bao bì Tokyo Sushi",
+   "brand": "Đồ án 2022 · Dự án nhóm",
+   "groups": [
+    "Bao bì",
+    "Nhận diện"
+   ],
+   "mark": "Sushi",
+   "colors": [
+    "#dbe4f7",
+    "#1a3a8f"
+   ],
+   "description": "Thiết kế logo và hệ thống bao bì ba cấp cho thương hiệu sushi Tokyo Sushi: thông tin sản phẩm, cấu trúc hộp, dieline và túi giấy.",
+   "scope": [
+    "Logo",
+    "Bao bì 3 cấp",
+    "Dieline"
+   ],
+   "link": "https://www.behance.net/gallery/225072615/d-an-sushi-2022",
+   "linkText": "Xem trên Behance",
+   "hidden": false,
+   "cover": 0,
+   "images": [
+    {
+     "src": "work/tokyo-sushi/01.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tokyo-sushi/02.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tokyo-sushi/03.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tokyo-sushi/04.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tokyo-sushi/05.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tokyo-sushi/06.jpg",
+     "ratio": 1.777
+    },
+    {
+     "src": "work/tokyo-sushi/07.jpg",
+     "ratio": 1.777
+    }
+   ]
+  },
+  {
+   "slug": "viet-flavour",
+   "title": "Ấn phẩm ẩm thực Viet Flavour",
+   "brand": "Đồ án năm 1",
+   "groups": [
+    "Ấn phẩm in"
+   ],
+   "mark": "Flavour",
+   "colors": [
+    "#fdeccb",
+    "#2f5a2a"
+   ],
+   "description": "Ấn phẩm 8 trang giới thiệu món ngon Sài Gòn: cơm tấm, hủ tiếu Nam Vang, bột chiên, bánh mì kẹp thịt và cà phê đá. Bố cục kiểu tạp chí, mỗi món một trang.",
+   "scope": [
+    "Dàn trang",
+    "Editorial"
+   ],
+   "link": "https://www.behance.net/gallery/240564275/d-an-nam-1",
+   "linkText": "Xem trên Behance",
+   "hidden": false,
+   "cover": 0,
+   "images": [
+    {
+     "src": "work/viet-flavour/01.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/viet-flavour/02.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/viet-flavour/03.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/viet-flavour/04.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/viet-flavour/05.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/viet-flavour/06.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/viet-flavour/07.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/viet-flavour/08.jpg",
+     "ratio": 1
+    }
+   ]
+  },
+  {
+   "slug": "thai-khoa",
+   "title": "Logo & poster Thái Khoa",
+   "brand": "Vận Chuyển Quảng Cáo Thái Khoa · Freelance 2023",
+   "groups": [
+    "Nhận diện",
+    "Ấn phẩm in"
+   ],
+   "mark": "TK",
+   "colors": [
+    "#e6e8ee",
+    "#1e3360"
+   ],
+   "description": "Thiết kế logo và hai poster giới thiệu dịch vụ vận chuyển hàng hoá của công ty Thái Khoa, xoay quanh khẩu hiệu \"Sự hài lòng là phương châm của chúng tôi\".",
+   "scope": [
+    "Logo",
+    "Poster"
+   ],
+   "hidden": false,
+   "cover": 1,
+   "images": [
+    {
+     "src": "work/thai-khoa/01.jpg",
+     "ratio": 1.414
+    },
+    {
+     "src": "work/thai-khoa/02.jpg",
+     "ratio": 0.75
+    },
+    {
+     "src": "work/thai-khoa/03.jpg",
+     "ratio": 0.717
+    }
+   ]
+  },
+  {
+   "slug": "thiet-ke-dau-tay",
+   "title": "Thiết kế đầu tay 2022–2023",
+   "brand": "Bài tập và thiết kế nhỏ",
+   "groups": [
+    "Ấn phẩm in",
+    "Nhận diện"
+   ],
+   "mark": "2022",
+   "colors": [
+    "#efe9df",
+    "#3b3a36"
+   ],
+   "description": "Các thiết kế đầu tay: voucher giảm giá cho quán Cơm Tấm Ngon, brochure gấp ba du lịch Nhật Bản (bản phác thảo), tấm in logo MS.T và logo đội bóng The Rainbow FC.",
+   "scope": [
+    "Voucher",
+    "Brochure",
+    "Logo"
+   ],
+   "hidden": false,
+   "cover": 0,
+   "images": [
+    {
+     "src": "work/thiet-ke-dau-tay/01.jpg",
+     "ratio": 1.116
+    },
+    {
+     "src": "work/thiet-ke-dau-tay/02.jpg",
+     "ratio": 1.475
+    },
+    {
+     "src": "work/thiet-ke-dau-tay/03.jpg",
+     "ratio": 1.475
+    },
+    {
+     "src": "work/thiet-ke-dau-tay/04.jpg",
+     "ratio": 1.414
+    },
+    {
+     "src": "work/thiet-ke-dau-tay/05.jpg",
+     "ratio": 0.898
+    }
+   ]
+  }
+ ]
+}

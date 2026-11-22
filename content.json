@@ -8,14 +8,10 @@
  },
  "groups": [
   "Tất cả",
-  "Social post",
-  "Banner",
-  "Video",
-  "Nhận diện",
-  "Bao bì",
-  "Ấn phẩm in",
-  "3D",
-  "AI"
+  "Mạng xã hội & Banner",
+  "Thương hiệu & Bao bì",
+  "Video & 3D",
+  "Ấn phẩm in"
  ],
  "mosaic": [
   "wan2care-worldcup",
@@ -98,8 +94,7 @@
    "title": "Bài đăng mạng xã hội",
    "brand": "Việt Phát · Wan2Care",
    "groups": [
-    "Social post",
-    "AI"
+    "Mạng xã hội & Banner"
    ],
    "image": "images/viet-phat.jpg",
    "mark": "Wan2Care",
@@ -312,16 +307,15 @@
      "src": "work/wan2care-social/49.jpg",
      "ratio": 1
     }
-   ]
+   ],
+   "video": "video/wan2care-social.mp4"
   },
   {
    "slug": "wan2care-worldcup",
    "title": "Chiến dịch World Cup 2026",
    "brand": "Việt Phát · Wan2Care",
    "groups": [
-    "Social post",
-    "Banner",
-    "AI"
+    "Mạng xã hội & Banner"
    ],
    "image": "images/world-cup.jpg",
    "mark": "World Cup",
@@ -379,15 +373,15 @@
      "src": "work/wan2care-worldcup/10.jpg",
      "ratio": 1
     }
-   ]
+   ],
+   "video": "video/wan2care-worldcup.mp4"
   },
   {
    "slug": "wan2care-tuyen-dung",
    "title": "Banner tuyển cộng tác viên",
    "brand": "Việt Phát · Wan2Care",
    "groups": [
-    "Banner",
-    "Social post"
+    "Mạng xã hội & Banner"
    ],
    "image": "images/banner-tuyen-dung.jpg",
    "mark": "Wan2Care",
@@ -440,14 +434,15 @@
      "src": "work/wan2care-tuyen-dung/09.jpg",
      "ratio": 1
     }
-   ]
+   ],
+   "video": "video/wan2care-tuyen-dung.mp4"
   },
   {
    "slug": "vicci-bao-bi",
    "title": "Bao bì VICCI · Vietcan Fresh",
    "brand": "Việt Phát · Wan2Care",
    "groups": [
-    "Bao bì"
+    "Thương hiệu & Bao bì"
    ],
    "mark": "VICCI",
    "colors": [
@@ -503,14 +498,15 @@
      "src": "work/vicci-bao-bi/10.jpg",
      "ratio": 1.778
     }
-   ]
+   ],
+   "video": "video/vicci-bao-bi.mp4"
   },
   {
    "slug": "giuong-tu-dep-video",
    "title": "Video nội thất dọc",
    "brand": "Giường Tủ Đẹp",
    "groups": [
-    "Video"
+    "Video & 3D"
    ],
    "image": "images/video-noi-that.jpg",
    "mark": "9:16",
@@ -533,14 +529,15 @@
      "src": "work/giuong-tu-dep-video/01.jpg",
      "ratio": 0.562
     }
-   ]
+   ],
+   "video": "video/giuong-tu-dep-video.mp4"
   },
   {
    "slug": "san-pham-2025",
    "title": "Các sản phẩm 2025",
    "brand": "Ấn phẩm sản phẩm",
    "groups": [
-    "Banner"
+    "Mạng xã hội & Banner"
    ],
    "mark": "2025",
    "colors": [
@@ -563,14 +560,15 @@
      "src": "work/san-pham-2025/02.jpg",
      "ratio": 1.778
     }
-   ]
+   ],
+   "video": "video/san-pham-2025.mp4"
   },
   {
    "slug": "banner-acta",
    "title": "Banner Affiliate thực chiến",
    "brand": "Cộng Đồng Sống Hạnh Phúc · ACTA",
    "groups": [
-    "Banner"
+    "Mạng xã hội & Banner"
    ],
    "mark": "ACTA",
    "colors": [
@@ -599,17 +597,17 @@
      "src": "work/banner-acta/03.jpg",
      "ratio": 1.6
     }
-   ]
+   ],
+   "video": "video/banner-acta.mp4"
   },
   {
    "slug": "tra-hoa-lanh",
    "title": "Trà Hoa Lành",
-   "brand": "Nhận diện thương hiệu",
+   "brand": "Nhận diện thương hiệu · Dự án nhóm",
    "groups": [
-    "Nhận diện",
-    "Bao bì",
-    "Banner",
-    "Video"
+    "Thương hiệu & Bao bì",
+    "Mạng xã hội & Banner",
+    "Video & 3D"
    ],
    "image": "images/tra-hoa-lanh.jpg",
    "mark": "Lành",
@@ -923,14 +921,15 @@
      "src": "work/tra-hoa-lanh/62.jpg",
      "ratio": 1.778
     }
-   ]
+   ],
+   "video": "video/tra-hoa-lanh.mp4"
   },
   {
    "slug": "tvc-giay",
    "title": "TVC giày chạy bộ",
    "brand": "Video quảng cáo",
    "groups": [
-    "Video"
+    "Video & 3D"
    ],
    "image": "images/tvc-giay.jpg",
    "mark": "TVC",
@@ -1062,14 +1061,15 @@
      "src": "work/tvc-giay/28.jpg",
      "ratio": 1.778
     }
-   ]
+   ],
+   "video": "video/tvc-giay.mp4"
   },
   {
    "slug": "tvc-ps",
    "title": "Ý tưởng TVC kem đánh răng P/S Trà Xanh",
    "brand": "Ý tưởng TVC",
    "groups": [
-    "Video"
+    "Video & 3D"
    ],
    "mark": "P/S",
    "colors": [
@@ -1120,15 +1120,15 @@
     }
    ],
    "link": "https://www.behance.net/gallery/240552517/kch-bn-qung-cao-storyboard",
-   "linkText": "Xem video trên Behance"
+   "linkText": "Xem video trên Behance",
+   "video": "video/tvc-ps.mp4"
   },
   {
    "slug": "phim-3d-khan-do",
    "title": "Phim hoạt hình 3D Cô bé quàng khăn đỏ",
    "brand": "Phim hoạt hình 3D",
    "groups": [
-    "Video",
-    "3D"
+    "Video & 3D"
    ],
    "mark": "3D",
    "colors": [
@@ -1231,14 +1231,15 @@
     }
    ],
    "link": "https://www.behance.net/gallery/240536109/little-red-ridinh-hood-video-Final",
-   "linkText": "Xem phim trên Behance"
+   "linkText": "Xem phim trên Behance",
+   "video": "video/phim-3d-khan-do.mp4"
   },
   {
    "slug": "dung-hinh-3d-maya",
    "title": "Dựng hình 3D với Maya",
    "brand": "Môn Dựng hình Maya · FPT Polytechnic",
    "groups": [
-    "3D"
+    "Video & 3D"
    ],
    "mark": "Maya",
    "colors": [
@@ -1264,15 +1265,16 @@
      "src": "work/dung-hinh-3d-maya/02.jpg",
      "ratio": 0.693
     }
-   ]
+   ],
+   "video": "video/dung-hinh-3d-maya.mp4"
   },
   {
    "slug": "bear-cream",
    "title": "Bear Cream",
    "brand": "Nhận diện thương hiệu · Dự án nhóm",
    "groups": [
-    "Nhận diện",
-    "Banner"
+    "Thương hiệu & Bao bì",
+    "Mạng xã hội & Banner"
    ],
    "mark": "Bear",
    "colors": [
@@ -1399,16 +1401,16 @@
      "src": "work/bear-cream/27.jpg",
      "ratio": 1
     }
-   ]
+   ],
+   "video": "video/bear-cream.mp4"
   },
   {
    "slug": "bougies",
    "title": "Bougies",
    "brand": "Nhận diện thương hiệu · Dự án nhóm",
    "groups": [
-    "Nhận diện",
-    "Banner",
-    "Social post"
+    "Thương hiệu & Bao bì",
+    "Mạng xã hội & Banner"
    ],
    "mark": "Bougies",
    "colors": [
@@ -1511,15 +1513,15 @@
      "src": "work/bougies/21.jpg",
      "ratio": 1.778
     }
-   ]
+   ],
+   "video": "video/bougies.mp4"
   },
   {
    "slug": "jus-de-fruit",
    "title": "Jus De Fruit",
    "brand": "Dự án tốt nghiệp · FPT Polytechnic",
    "groups": [
-    "Nhận diện",
-    "Bao bì"
+    "Thương hiệu & Bao bì"
    ],
    "mark": "Jus",
    "colors": [
@@ -1561,14 +1563,15 @@
      "src": "work/jus-de-fruit/06.jpg",
      "ratio": 1.778
     }
-   ]
+   ],
+   "video": "video/jus-de-fruit.mp4"
   },
   {
    "slug": "glow",
    "title": "Glow Natural Soap",
    "brand": "Dự án nhóm",
    "groups": [
-    "Bao bì"
+    "Thương hiệu & Bao bì"
    ],
    "mark": "Glow",
    "colors": [
@@ -1600,15 +1603,16 @@
      "src": "work/glow/04.jpg",
      "ratio": 1.778
     }
-   ]
+   ],
+   "video": "video/glow.mp4"
   },
   {
    "slug": "tra-sakura",
    "title": "Thương hiệu trà Sakura",
    "brand": "Thiết kế thương hiệu và Marketing · Dự án nhóm",
    "groups": [
-    "Nhận diện",
-    "Banner"
+    "Thương hiệu & Bao bì",
+    "Mạng xã hội & Banner"
    ],
    "mark": "Sakura",
    "colors": [
@@ -1748,15 +1752,15 @@
      "src": "work/tra-sakura/30.jpg",
      "ratio": 1.777
     }
-   ]
+   ],
+   "video": "video/tra-sakura.mp4"
   },
   {
    "slug": "tokyo-sushi",
    "title": "Bao bì Tokyo Sushi",
    "brand": "Đồ án 2022 · Dự án nhóm",
    "groups": [
-    "Bao bì",
-    "Nhận diện"
+    "Thương hiệu & Bao bì"
    ],
    "mark": "Sushi",
    "colors": [
@@ -1818,7 +1822,8 @@
      "src": "work/tokyo-sushi/07.jpg",
      "ratio": 1.777
     }
-   ]
+   ],
+   "video": "video/tokyo-sushi.mp4"
   },
   {
    "slug": "viet-flavour",
@@ -1874,14 +1879,15 @@
      "src": "work/viet-flavour/08.jpg",
      "ratio": 1
     }
-   ]
+   ],
+   "video": "video/viet-flavour.mp4"
   },
   {
    "slug": "thai-khoa",
    "title": "Logo & poster Thái Khoa",
    "brand": "Vận Chuyển Quảng Cáo Thái Khoa · Freelance 2023",
    "groups": [
-    "Nhận diện",
+    "Thương hiệu & Bao bì",
     "Ấn phẩm in"
    ],
    "mark": "TK",
@@ -1909,7 +1915,8 @@
      "src": "work/thai-khoa/03.jpg",
      "ratio": 0.717
     }
-   ]
+   ],
+   "video": "video/thai-khoa.mp4"
   },
   {
    "slug": "thiet-ke-dau-tay",
@@ -1917,7 +1924,7 @@
    "brand": "Bài tập và thiết kế nhỏ",
    "groups": [
     "Ấn phẩm in",
-    "Nhận diện"
+    "Thương hiệu & Bao bì"
    ],
    "mark": "2022",
    "colors": [
@@ -1957,7 +1964,8 @@
      "src": "work/thiet-ke-dau-tay/sausaeeg.jpg",
      "ratio": 1.0
     }
-   ]
+   ],
+   "video": "video/thiet-ke-dau-tay.mp4"
   }
  ]
 }

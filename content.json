@@ -1062,7 +1062,13 @@
      "ratio": 1.778
     }
    ],
-   "video": "video/tvc-giay.mp4"
+   "video": "video/tvc-giay.mp4",
+   "compare": {
+    "before": "work/tvc-giay/11.jpg",
+    "after": "work/tvc-giay/28.jpg",
+    "beforeLabel": "Storyboard cảnh 1",
+    "afterLabel": "Cảnh quay thật"
+   }
   },
   {
    "slug": "tvc-ps",
@@ -1232,7 +1238,13 @@
    ],
    "link": "https://www.behance.net/gallery/240536109/little-red-ridinh-hood-video-Final",
    "linkText": "Xem phim trên Behance",
-   "video": "video/phim-3d-khan-do.mp4"
+   "video": "video/phim-3d-khan-do.mp4",
+   "compare": {
+    "before": "work/phim-3d-khan-do/14.jpg",
+    "after": "work/phim-3d-khan-do/17.jpg",
+    "beforeLabel": "Storyboard",
+    "afterLabel": "Cảnh dựng 3D"
+   }
   },
   {
    "slug": "dung-hinh-3d-maya",
@@ -1823,7 +1835,13 @@
      "ratio": 1.777
     }
    ],
-   "video": "video/tokyo-sushi.mp4"
+   "video": "video/tokyo-sushi.mp4",
+   "compare": {
+    "before": "work/tokyo-sushi/b04.jpg",
+    "after": "work/tokyo-sushi/04.jpg",
+    "beforeLabel": "Dieline",
+    "afterLabel": "Bao bì hoàn thiện"
+   }
   },
   {
    "slug": "viet-flavour",
@@ -1967,5 +1985,11 @@
    ],
    "video": "video/thiet-ke-dau-tay.mp4"
   }
+ ],
+ "featured": [
+  "tra-hoa-lanh",
+  "bear-cream",
+  "wan2care-social",
+  "phim-3d-khan-do"
  ]
 }

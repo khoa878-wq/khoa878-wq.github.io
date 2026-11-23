@@ -324,7 +324,17 @@
     }
    ],
    "video": "video/wan2care-social.mp4",
-   "bannerImage": "banners/wan2care-social-a.jpg"
+   "bannerImage": "banners/wan2care-social-a.jpg",
+   "socials": [
+    {
+     "name": "Website",
+     "url": "https://www.wan2care.ca"
+    },
+    {
+     "name": "Facebook",
+     "url": "https://www.facebook.com/wan2care.ca"
+    }
+   ]
   },
   {
    "slug": "wan2care-worldcup",
@@ -392,7 +402,17 @@
    ],
    "video": "video/wan2care-worldcup.mp4",
    "banner": "work/wan2care-worldcup/01.jpg",
-   "bannerImage": "banners/wan2care-worldcup-a.jpg"
+   "bannerImage": "banners/wan2care-worldcup-a.jpg",
+   "socials": [
+    {
+     "name": "Website",
+     "url": "https://www.wan2care.ca"
+    },
+    {
+     "name": "Facebook",
+     "url": "https://www.facebook.com/wan2care.ca"
+    }
+   ]
   },
   {
    "slug": "wan2care-tuyen-dung",
@@ -454,7 +474,17 @@
     }
    ],
    "video": "video/wan2care-tuyen-dung.mp4",
-   "bannerImage": "banners/wan2care-tuyen-dung-a.jpg"
+   "bannerImage": "banners/wan2care-tuyen-dung-a.jpg",
+   "socials": [
+    {
+     "name": "Website",
+     "url": "https://www.wan2care.ca"
+    },
+    {
+     "name": "Facebook",
+     "url": "https://www.facebook.com/wan2care.ca"
+    }
+   ]
   },
   {
    "slug": "vicci-bao-bi",

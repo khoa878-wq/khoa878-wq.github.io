@@ -130,8 +130,8 @@ h2 mark { background:linear-gradient(transparent 58%, var(--yellow) 58% 92%, tra
 .contact { display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:center; padding-bottom:110px; }
 .contact h2 { font-size:clamp(3rem, 7vw, 6rem); }
 .contact h2 .q { color:var(--red); }
-.mailnote { position:relative; padding:34px 28px 30px; transform:rotate(2deg); }
-.mailnote a.mail { display:block; font-weight:800; font-size:clamp(1.1rem, 2.2vw, 1.5rem); margin:8px 0 18px; word-break:break-all; }
+.note.mailnote { position:relative; width:auto; max-width:440px; padding:34px 28px 30px; transform:rotate(2deg); }
+.mailnote a.mail { display:block; font-weight:800; font-size:clamp(1.1rem, 2.2vw, 1.5rem); margin:8px 0 18px; overflow-wrap:anywhere; }
 footer { border-top:2px solid var(--ink); padding-block:22px 34px; font-size:.9rem; }
 footer .wrap { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
 
@@ -175,8 +175,38 @@ h2 mark { background:none; color:var(--lime); padding:0; }
 .slip { background:#fff; } .slip:nth-child(4n+2) { background:#eef9d6; } .slip:nth-child(4n+3) { background:#f4f4ef; } .slip:nth-child(4n) { background:#dff3d4; }
 footer { border-top-color:#ffffff26; color:var(--muted); }
 
+
+/* ===== Trang chi tiết dự án (gộp bản đầy đủ vào trang chủ, 23/11/2026) ===== */
+#case { display:none; padding-block:34px 90px; }
+body.viewing main { display:none; }
+body.viewing #case { display:block; }
+.case-banner { margin-top:22px; border-radius:10px; overflow:hidden; border:2px solid #ffffff1f; }
+.case-banner img { width:100%; aspect-ratio:16/9; object-fit:cover; }
+.case-head { display:grid; grid-template-columns:1.4fr 1fr; gap:44px; margin-top:34px; padding-bottom:30px; border-bottom:1px solid #ffffff26; }
+.case-head h1 { font-size:clamp(2.2rem, 5vw, 4rem); line-height:1.05; letter-spacing:-.05em; font-weight:900; margin-top:6px; }
+.case-head .desc { color:var(--muted); font-size:1.08rem; margin-top:14px; max-width:62ch; }
+.case-meta dt { color:var(--muted); font-size:.8rem; text-transform:uppercase; letter-spacing:.1em; margin-top:16px; }
+.case-meta dt:first-child { margin-top:0; }
+.case-meta dd { margin:6px 0 0; }
+.case-meta a { color:var(--lime); }
+.case-reel { margin-top:34px; border-radius:10px; overflow:hidden; aspect-ratio:16/9; background:#000; }
+.case-reel video { width:100%; height:100%; object-fit:cover; }
+.gallery { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:26px; margin-top:40px; }
+.gallery a { display:block; background:#fafaf6; padding:10px 10px 34px; position:relative; box-shadow:0 12px 26px #0006; transition:transform .25s; }
+.gallery a:nth-child(odd) { transform:rotate(-.6deg); } .gallery a:nth-child(even) { transform:rotate(.6deg); }
+.gallery a:hover { transform:none; }
+.gallery img { width:100%; height:auto; background:#e8e8e2; }
+.gallery small { position:absolute; left:12px; bottom:9px; color:#55574e; font-family:var(--hand); font-size:1rem; }
+.case-nav { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:56px; padding-top:24px; border-top:1px solid #ffffff26; }
+.case-nav a { text-decoration:none; display:grid; gap:2px; }
+.case-nav a:last-child { text-align:right; }
+.case-nav small { color:var(--muted); }
+.case-nav strong { font-size:1.2rem; }
+.case-nav a:hover strong { color:var(--lime); }
+@media (max-width:760px) { .case-head { grid-template-columns:1fr; gap:22px; } .gallery { grid-template-columns:1fr; } }
+
 @media (max-width:900px) {
-  nav { display:none; }
+  header nav { display:none; }
   .board, .skills { grid-template-columns:repeat(2, minmax(0, 1fr)); }
   .about, .contact { grid-template-columns:1fr; }
   .note { width:150px; font-size:1rem; padding:18px 14px 14px; }
@@ -256,10 +286,11 @@ footer { border-top-color:#ffffff26; color:var(--muted); }
     <p class="lead">Nếu bạn cần một graphic designer hoặc video editor, nhắn mình qua email hoặc xem thêm trên Behance.</p>
   </div>
   <div class="note y mailnote rv"><span class="pin"></span><span class="hand" style="font-size:1.2rem">Gửi email cho mình</span><a class="mail" id="mail" href="mailto:khnsz878@gmail.com">khnsz878@gmail.com</a>
-    <a class="btn dark" id="be" href="https://www.behance.net/khoangy2" target="_blank" rel="noopener noreferrer">Behance ↗</a> <a class="btn" href="index.html">Trang chính</a></div>
+    <a class="btn dark" id="be" href="https://www.behance.net/khoangy2" target="_blank" rel="noopener noreferrer">Behance ↗</a></div>
 </section>
 </main>
-<footer><div class="wrap"><span>© 2026 Nguyễn Khoa</span><a href="index.html">Xem bản đầy đủ →</a></div></footer>
+<section id="case" class="wrap" aria-live="polite"></section>
+<footer><div class="wrap"><span>© 2026 Nguyễn Khoa</span><a href="#top">Lên đầu trang ↑</a></div></footer>
 
 <script>
 const $ = id => document.getElementById(id);
@@ -283,7 +314,7 @@ fetch('content.json?t=' + Date.now()).then(r => r.json()).then(C => {
   // polaroid dự án
   const rot = [-2.2, 1.6, -1, 2.4, -1.8, 1.1];
   $('board').append(...P.map((p, i) => {
-    const a = el('a', 'card rv'); a.href = 'index.html#da-' + p.slug; a.dataset.groups = (p.groups || []).join('|');
+    const a = el('a', 'card rv'); a.href = '#da-' + p.slug; a.dataset.groups = (p.groups || []).join('|');
     a.style.setProperty('--r', rot[i % rot.length] + 'deg'); a.style.setProperty('--c', (p.colors || [])[0] || '#ddd');
     a.append(el('span', i % 3 === 1 ? 'tape' : 'pin'));
     const box = el('div', 'img'); const im = el('img'); im.src = ((p.images || [])[p.cover || 0] || {}).src || ''; im.alt = p.title; im.loading = 'lazy'; im.decoding = 'async'; box.append(im);
@@ -298,8 +329,45 @@ fetch('content.json?t=' + Date.now()).then(r => r.json()).then(C => {
   // kỹ năng + học vấn
   const items = [...C.skills.map(s => [s.name, s.value]), ...(C.education || []).map(e => ['Học vấn · ' + e.time, e.title + ' · ' + e.text])];
   $('skills').append(...items.map(([h, v], i) => { const d = el('div', 'skill rv'); d.style.background = pastel[i % pastel.length]; d.append(el('span', 'no', String(i + 1).padStart(2, '0')), el('h3', '', h), el('p', '', v)); return d; }));
+  P_ = P; route(); addEventListener('hashchange', route);
   reveal();
 }).catch(() => { $('board').textContent = 'Không tải được dữ liệu. Thử tải lại trang.'; });
+
+
+// ===== Xem chi tiết dự án ngay trong trang (link #da-<slug>) =====
+let P_ = [], wasCase = false;
+const baseTitle = document.title;
+function route() {
+  const h = decodeURIComponent(location.hash.slice(1));
+  const p = h.startsWith('da-') && P_.find(x => 'da-' + x.slug === h);
+  if (p) { renderCase(p); document.body.classList.add('viewing'); document.title = p.title + ' · Nguyễn Khoa'; scrollTo(0, 0); wasCase = true; return; }
+  document.body.classList.remove('viewing'); document.title = baseTitle;
+  $('case').replaceChildren();
+  const t = h && document.getElementById(h);
+  if (t) t.scrollIntoView({ behavior:'instant' }); else if (wasCase) scrollTo(0, 0);
+  wasCase = false;
+}
+function renderCase(p) {
+  const i = P_.indexOf(p), prev = P_[(i - 1 + P_.length) % P_.length], next = P_[(i + 1) % P_.length];
+  const box = $('case'); box.replaceChildren();
+  const back = el('a', 'btn', '← Tất cả dự án'); back.href = '#du-an'; box.append(back);
+  if (p.bannerImage) { const b = el('div', 'case-banner'); const im = el('img'); im.src = p.bannerImage; im.alt = 'Banner ' + p.title; b.append(im); box.append(b); }
+  const head = el('header', 'case-head'), left = el('div');
+  left.append(el('p', 'kicker', p.brand), el('h1', '', p.title), el('p', 'desc', p.description || ''));
+  const meta = el('dl', 'case-meta');
+  const add = (k, node) => meta.append(el('dt', '', k), (() => { const d = el('dd'); d.append(node); return d; })());
+  const chips = el('div', 'chips'); (p.scope || []).forEach(x => chips.append(el('span', '', x))); add('Hạng mục', chips);
+  add('Số thiết kế', document.createTextNode(String((p.images || []).length)));
+  if (p.link) { const a = el('a', '', p.linkText || 'Xem thêm'); a.href = p.link; a.target = '_blank'; a.rel = 'noopener noreferrer'; add('Nguồn', a); }
+  head.append(left, meta); box.append(head);
+  if (p.video) { const r = el('div', 'case-reel'); const v = el('video'); v.muted = true; v.loop = true; v.playsInline = true; v.controls = true; v.preload = 'metadata'; v.poster = p.video.replace(/\.mp4$/, '.jpg'); v.src = p.video; v.setAttribute('aria-label', 'Clip ' + p.title); if (!matchMedia('(prefers-reduced-motion: reduce)').matches) v.autoplay = true; r.append(v); box.append(r); }
+  const g = el('div', 'gallery');
+  (p.images || []).forEach((im, k) => { const a = el('a'); a.href = im.src; a.target = '_blank'; a.rel = 'noopener'; const img = el('img'); img.src = im.src; img.alt = p.title + ', thiết kế ' + (k + 1); img.loading = 'lazy'; img.decoding = 'async'; if (im.ratio) img.style.aspectRatio = im.ratio; a.append(img, el('small', '', String(k + 1).padStart(2, '0'))); g.append(a); });
+  box.append(g);
+  const nav = el('nav', 'case-nav'); nav.setAttribute('aria-label', 'Dự án khác');
+  [[prev, '← Dự án trước'], [next, 'Dự án tiếp →']].forEach(([q, t]) => { const a = el('a'); a.href = '#da-' + q.slug; a.append(el('small', '', t), el('strong', '', q.title)); nav.append(a); });
+  box.append(nav);
+}
 
 function reveal() {
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), { rootMargin:'0px 0px -8% 0px' });

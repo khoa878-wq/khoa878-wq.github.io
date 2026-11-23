@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Tác phẩm · Nguyễn Khoa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;650;800&display=swap" rel="stylesheet">
+<!-- Trang thử: quả cầu tác phẩm (ý tưởng từ mẫu "Hanoi" của TopFolio, tự dựng lại bằng CSS 3D, chỉ dùng thiết kế thật của Khoa).
+     Ảnh nhỏ: images/cau/ (tools/make_cau.py). Kéo để xoay, bấm thẻ để mở dự án. -->
+<style>
+:root { --bg:#171815; --ink:#f6f4e9; --muted:#c2c0b2; --lime:#dbfa76; --line:#41433a; }
+* { box-sizing:border-box; }
+html, body { margin:0; height:100%; }
+body { background:radial-gradient(ellipse at 50% 55%, #2a2c22 0%, var(--bg) 62%); color:var(--ink); font-family:'Be Vietnam Pro', system-ui, sans-serif; overflow:hidden; -webkit-font-smoothing:antialiased; }
+a { color:inherit; text-decoration:none; }
+a:focus-visible { outline:3px solid var(--lime); outline-offset:3px; }
+header { position:fixed; inset:0 0 auto; display:flex; justify-content:space-between; align-items:center; padding:20px clamp(16px, 4vw, 48px); z-index:5; }
+.brand { font-weight:800; font-size:1.5rem; letter-spacing:-.04em; }
+.brand span, .title span { color:var(--lime); }
+.back { border:1px solid var(--line); background:#171815b3; backdrop-filter:blur(8px); padding:9px 18px; border-radius:99px; font-weight:650; font-size:.92rem; }
+.back:hover { border-color:var(--lime); }
+.stage { position:fixed; inset:0; perspective:1300px; cursor:grab; touch-action:none; user-select:none; -webkit-user-select:none; }
+.stage.drag { cursor:grabbing; }
+.globe { position:absolute; left:50%; top:50%; width:0; height:0; transform-style:preserve-3d; }
+.card { position:absolute; left:0; top:0; border-radius:10px; overflow:hidden; background:#2a2b24; backface-visibility:hidden; box-shadow:0 10px 28px #0008; transition:outline-color .15s; outline:2px solid transparent; }
+.card img { display:block; width:100%; height:100%; object-fit:cover; pointer-events:none; -webkit-user-drag:none; }
+.card:hover, .card:focus-visible { outline:2px solid var(--lime); outline-offset:0; }
+.title { position:fixed; left:50%; top:50%; transform:translate(-50%, -50%); text-align:center; pointer-events:none; z-index:3; }
+.title h1 { margin:0; font-size:clamp(3.2rem, 11vw, 9rem); font-weight:800; letter-spacing:-.05em; line-height:1; text-shadow:0 6px 40px #000c, 0 2px 8px #0009; }
+.title p { display:inline-block; white-space:nowrap; margin:14px 0 0; background:#171815cc; border:1px solid var(--line); backdrop-filter:blur(8px); padding:7px 16px; border-radius:99px; font-size:.92rem; color:var(--muted); }
+.title b { color:var(--ink); }
+.cap { position:fixed; left:50%; bottom:clamp(18px, 4vh, 36px); transform:translateX(-50%); z-index:4; text-align:center; background:#171815e6; border:1px solid var(--line); border-radius:14px; padding:10px 18px; min-width:min(360px, calc(100vw - 32px)); max-width:calc(100vw - 32px); backdrop-filter:blur(8px); }
+.cap small { display:block; color:var(--lime); font-size:.8rem; font-weight:650; }
+.cap strong { display:block; font-size:1.02rem; }
+.cap .hint { color:var(--muted); font-size:.88rem; }
+@media (prefers-reduced-motion: reduce) { .card { transition:none; } }
+</style>
+</head>
+<body>
+<header><a class="brand" href="index.html">NK<span>.</span></a><a class="back" href="index.html">Về trang chính</a></header>
+<div class="stage" id="stage"><div class="globe" id="globe"></div></div>
+<div class="title"><h1>Tác phẩm<span>.</span></h1><p id="count">Đang tải…</p></div>
+<div class="cap" id="cap" aria-live="polite"><span class="hint">Kéo để xoay · bấm vào thẻ để xem dự án</span></div>
+<script>
+const stage = document.getElementById('stage'), globe = document.getElementById('globe'), cap = document.getElementById('cap');
+const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+let rx = -12, ry = 0, vx = 0, vy = 0, R = 400, cards = [], dragging = false, moved = 0, idle = 0;
+const esc = s => String(s || '').replace(/[&<>"]/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[c]));
+
+fetch('images/cau/cau.json').then(r => r.json()).then(items => {
+  const n = items.length, golden = Math.PI * (3 - Math.sqrt(5));
+  document.getElementById('count').innerHTML = `<b>${new Set(items.map(i => i.slug)).size} dự án</b> · ${n} thiết kế chọn lọc`;
+  cards = items.map((it, i) => {
+    const y = 1 - 2 * (i + .5) / n;                       // điểm Fibonacci rải đều trên mặt cầu
+    const a = document.createElement('a');
+    a.className = 'card'; a.href = 'index.html#da-' + it.slug; a.draggable = false;
+    a.setAttribute('aria-label', it.title + ' – ' + it.brand);
+    a.innerHTML = `<img src="${esc(it.src)}" alt="" loading="eager" decoding="async">`;
+    a.addEventListener('pointerenter', () => show(it));
+    a.addEventListener('focus', () => { show(it); ry = -c.lon; rx = c.lat; vx = vy = 0; });
+    a.addEventListener('click', e => { if (moved > 6) e.preventDefault(); });
+    globe.append(a);
+    const c = { el:a, ratio:Math.max(.7, Math.min(1.6, it.ratio || 1)), lon:(i * golden * 180 / Math.PI) % 360, lat:Math.asin(y) * 180 / Math.PI };
+    return c;
+  });
+  layout(); addEventListener('resize', layout);
+  requestAnimationFrame(tick);
+}).catch(() => { document.getElementById('count').textContent = 'Không tải được ảnh. Thử tải lại trang.'; });
+
+function show(it) { cap.innerHTML = `<small>${esc(it.brand)}</small><strong>${esc(it.title)}</strong>`; }
+
+function layout() {
+  const s = Math.min(innerWidth, innerHeight);
+  R = innerWidth < 700 ? s * .62 : s * .52;
+  const w = Math.max(60, Math.min(160, R * .27));
+  for (const c of cards) {
+    const h = w / c.ratio;
+    c.el.style.width = w + 'px'; c.el.style.height = h + 'px';
+    c.el.style.transform = `translate(-50%, -50%) rotateY(${c.lon}deg) rotateX(${c.lat}deg) translateZ(${R}px)`;
+  }
+}
+
+function tick() {
+  if (!dragging) {
+    if (!still && ++idle > 90) vy += (0.06 - vy) * .02;       // tự xoay chậm khi không chạm
+    ry += vy; rx += vx; vx *= .94; if (still) vy *= .92;
+  }
+  rx = Math.max(-60, Math.min(60, rx));
+  globe.style.transform = `translateZ(${-R}px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+  requestAnimationFrame(tick);
+}
+
+let px = 0, py = 0;
+stage.addEventListener('pointerdown', e => { dragging = true; moved = 0; idle = 0; px = e.clientX; py = e.clientY; vx = vy = 0; stage.classList.add('drag'); });
+addEventListener('pointermove', e => {
+  if (!dragging) return;
+  const dx = e.clientX - px, dy = e.clientY - py; px = e.clientX; py = e.clientY;
+  moved += Math.abs(dx) + Math.abs(dy);
+  if (moved > 6 && !stage.hasPointerCapture(e.pointerId)) stage.setPointerCapture(e.pointerId); // chỉ giữ chuột khi đã kéo, để bấm thẻ vẫn mở được
+  vy = dx * .25; vx = -dy * .25; ry += vy; rx += vx;
+});
+addEventListener('pointerup', () => { dragging = false; idle = 0; stage.classList.remove('drag'); });
+addEventListener('pointercancel', () => { dragging = false; stage.classList.remove('drag'); });
+addEventListener('keydown', e => {
+  const k = { ArrowLeft:[0, -8], ArrowRight:[0, 8], ArrowUp:[8, 0], ArrowDown:[-8, 0] }[e.key];
+  if (k) { rx += k[0]; ry += k[1]; idle = 0; e.preventDefault(); }
+});
+</script>
+</body>
+</html>

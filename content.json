@@ -438,7 +438,8 @@
      "ratio": 1
     }
    ],
-   "video": "video/wan2care-tuyen-dung.mp4"
+   "video": "video/wan2care-tuyen-dung.mp4",
+   "bannerImage": "banners/wan2care-tuyen-dung-a.jpg"
   },
   {
    "slug": "vicci-bao-bi",
@@ -535,7 +536,8 @@
      "ratio": 0.562
     }
    ],
-   "video": "video/giuong-tu-dep-video.mp4"
+   "video": "video/giuong-tu-dep-video.mp4",
+   "bannerImage": "banners/giuong-tu-dep-video-a.jpg"
   },
   {
    "slug": "san-pham-2025",
@@ -566,7 +568,8 @@
      "ratio": 1.778
     }
    ],
-   "video": "video/san-pham-2025.mp4"
+   "video": "video/san-pham-2025.mp4",
+   "bannerImage": "banners/san-pham-2025-a.jpg"
   },
   {
    "slug": "banner-acta",
@@ -603,12 +606,13 @@
      "ratio": 1.6
     }
    ],
-   "video": "video/banner-acta.mp4"
+   "video": "video/banner-acta.mp4",
+   "bannerImage": "banners/banner-acta-a.jpg"
   },
   {
    "slug": "tra-hoa-lanh",
    "title": "Trà Hoa Lành",
-   "brand": "Nhận diện thương hiệu · Dự án nhóm",
+   "brand": "Nhận diện thương hiệu · Dự án nhóm · 2025",
    "groups": [
     "Thương hiệu & Bao bì",
     "Mạng xã hội & Banner",
@@ -925,6 +929,10 @@
     {
      "src": "work/tra-hoa-lanh/62.jpg",
      "ratio": 1.778
+    },
+    {
+     "src": "work/tra-hoa-lanh/b12.jpg",
+     "ratio": 0.448
     }
    ],
    "video": "video/tra-hoa-lanh.mp4",
@@ -1075,7 +1083,8 @@
     "after": "work/tvc-giay/28.jpg",
     "beforeLabel": "Storyboard cảnh 1",
     "afterLabel": "Cảnh quay thật"
-   }
+   },
+   "bannerImage": "banners/tvc-giay-a.jpg"
   },
   {
    "slug": "tvc-ps",
@@ -1134,7 +1143,8 @@
    ],
    "link": "https://www.behance.net/gallery/240552517/kch-bn-qung-cao-storyboard",
    "linkText": "Xem video trên Behance",
-   "video": "video/tvc-ps.mp4"
+   "video": "video/tvc-ps.mp4",
+   "bannerImage": "banners/tvc-ps-a.jpg"
   },
   {
    "slug": "phim-3d-khan-do",
@@ -1291,7 +1301,8 @@
      "ratio": 0.693
     }
    ],
-   "video": "video/dung-hinh-3d-maya.mp4"
+   "video": "video/dung-hinh-3d-maya.mp4",
+   "bannerImage": "banners/dung-hinh-3d-maya-a.jpg"
   },
   {
    "slug": "bear-cream",
@@ -1545,7 +1556,8 @@
      "ratio": 1.778
     }
    ],
-   "video": "video/bougies.mp4"
+   "video": "video/bougies.mp4",
+   "bannerImage": "banners/bougies-a.jpg"
   },
   {
    "slug": "jus-de-fruit",
@@ -1637,7 +1649,13 @@
      "ratio": 1.778
     }
    ],
-   "video": "video/glow.mp4"
+   "video": "video/glow.mp4",
+   "banner": "work/glow/02.jpg",
+   "bannerExtras": [
+    "work/glow/01.jpg",
+    "work/glow/04.jpg"
+   ],
+   "bannerImage": "banners/glow-a.jpg"
   },
   {
    "slug": "tra-sakura",
@@ -1786,7 +1804,8 @@
      "ratio": 1.777
     }
    ],
-   "video": "video/tra-sakura.mp4"
+   "video": "video/tra-sakura.mp4",
+   "bannerImage": "banners/tra-sakura-a.jpg"
   },
   {
    "slug": "tokyo-sushi",
@@ -1862,7 +1881,13 @@
     "after": "work/tokyo-sushi/04.jpg",
     "beforeLabel": "Dieline",
     "afterLabel": "Bao bì hoàn thiện"
-   }
+   },
+   "banner": "work/tokyo-sushi/04.jpg",
+   "bannerExtras": [
+    "work/tokyo-sushi/03.jpg",
+    "work/tokyo-sushi/b04.jpg"
+   ],
+   "bannerImage": "banners/tokyo-sushi-a.jpg"
   },
   {
    "slug": "viet-flavour",
@@ -1919,7 +1944,8 @@
      "ratio": 1
     }
    ],
-   "video": "video/viet-flavour.mp4"
+   "video": "video/viet-flavour.mp4",
+   "bannerImage": "banners/viet-flavour-a.jpg"
   },
   {
    "slug": "thai-khoa",
@@ -1955,7 +1981,8 @@
      "ratio": 0.717
     }
    ],
-   "video": "video/thai-khoa.mp4"
+   "video": "video/thai-khoa.mp4",
+   "bannerImage": "banners/thai-khoa-a.jpg"
   },
   {
    "slug": "thiet-ke-dau-tay",
@@ -2004,7 +2031,8 @@
      "ratio": 1
     }
    ],
-   "video": "video/thiet-ke-dau-tay.mp4"
+   "video": "video/thiet-ke-dau-tay.mp4",
+   "bannerImage": "banners/thiet-ke-dau-tay-a.jpg"
   }
  ],
  "featured": [

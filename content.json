@@ -4,7 +4,8 @@
   "intro": "Chào bạn, mình là Nguyễn Khoa, graphic designer tại TP.HCM, sinh năm 2006 (20 tuổi). Mình thiết kế nhận diện thương hiệu, bao bì, ấn phẩm truyền thông và video ngắn cho mạng xã hội. Mình thích chụp ảnh, khám phá cách phối màu và bố cục, xem các dự án sáng tạo trên Behance và thử nghiệm hiệu ứng dựng video.",
   "period": "2022–2026",
   "email": "khnsz878@gmail.com",
-  "behance": "https://www.behance.net/khoangy2"
+  "behance": "https://www.behance.net/khoangy2",
+  "goal": "Hướng tới trở thành designer đa phương tiện vững kỹ thuật, có tư duy hình ảnh và khả năng triển khai ý tưởng từ concept đến sản phẩm hoàn chỉnh, không ngừng học hỏi, tối ưu kỹ năng và đóng góp giá trị cho công việc."
  },
  "groups": [
   "Tất cả",
@@ -32,42 +33,48 @@
    "title": "Việt Phát · Wan2Care",
    "text": "Thiết kế nội dung hình ảnh cho Wan2Care, dịch vụ dọn nhà tại khu vực Toronto, Canada: bài đăng, banner, video và ứng dụng AI trong sản xuất nội dung.",
    "link": "https://www.facebook.com/wan2care.ca",
-   "linkText": "Facebook Wan2Care"
+   "linkText": "Facebook Wan2Care",
+   "role": "Graphic designer"
   },
   {
    "time": "05–11/2025",
    "title": "Cộng Đồng Sống Hạnh Phúc · ACTA",
-   "text": "Thực tập thiết kế: ấn phẩm truyền thông, chỉnh sửa hình ảnh, video, viết nội dung và hỗ trợ studio.",
+   "text": "Thiết kế ấn phẩm truyền thông, chỉnh sửa hình ảnh, video, viết nội dung và hỗ trợ studio.",
    "link": "https://www.tiktok.com/@acta010825",
-   "linkText": "TikTok ACTA"
+   "linkText": "TikTok ACTA",
+   "role": "Graphic designer intern"
   },
   {
    "time": "01–05/2025",
    "title": "Viet Pickleball",
-   "text": "Nhân viên part-time: thiết kế ấn phẩm quảng cáo, quay dựng video, chụp ảnh và hỗ trợ vận hành.",
+   "text": "Thiết kế ấn phẩm quảng cáo, quay dựng video, chụp ảnh và hỗ trợ vận hành.",
    "link": "",
-   "linkText": ""
+   "linkText": "",
+   "role": "Nhân viên part-time"
   },
   {
    "time": "10–12/2024",
    "title": "Góc Cà Phê",
-   "text": "Freelance quay video, viết kịch bản và thiết kế.",
+   "text": "Quay dựng video, viết kịch bản và thiết kế nội dung truyền thông.",
    "link": "https://www.facebook.com/people/G%C3%B3c-C%C3%A0-Ph%C3%AA/61567362864331/",
-   "linkText": "Facebook Góc Cà Phê"
+   "linkText": "Facebook Góc Cà Phê",
+   "role": "Graphic designer"
   },
   {
    "time": "01–08/2024",
    "title": "Forward",
-   "text": "Thiết kế freelance logo, banner, poster và ấn phẩm truyền thông.",
+   "text": "Thiết kế logo, banner, poster và ấn phẩm truyền thông.",
    "link": "",
-   "linkText": ""
+   "linkText": "",
+   "role": "Freelance designer"
   },
   {
    "time": "09–11/2023",
    "title": "Vận Chuyển Quảng Cáo Thái Khoa",
-   "text": "Freelance: thiết kế logo, poster và làm content.",
+   "text": "Thiết kế logo, poster và làm content.",
    "link": "",
-   "linkText": ""
+   "linkText": "",
+   "role": "Freelance designer"
   }
  ],
  "skills": [
@@ -86,6 +93,14 @@
   {
    "name": "Nội dung và AI",
    "value": "Phát triển concept, viết kịch bản, tạo hình ảnh và video bằng AI"
+  },
+  {
+   "name": "Kỹ năng mềm",
+   "value": "Giao tiếp, làm việc nhóm, giải quyết vấn đề, quản lý cảm xúc và áp lực"
+  },
+  {
+   "name": "Ngoại ngữ",
+   "value": "Tiếng Anh"
   }
  ],
  "projects": [
@@ -2048,5 +2063,12 @@
   "bear-cream",
   "jus-de-fruit",
   "phim-3d-khan-do"
+ ],
+ "education": [
+  {
+   "time": "2024 – 2026",
+   "title": "Cao đẳng FPT Polytechnic",
+   "text": "Chuyên ngành Graphic Design · Tốt nghiệp loại Khá"
+  }
  ]
 }

@@ -140,6 +140,41 @@ footer .wrap { display:flex; justify-content:space-between; flex-wrap:wrap; gap:
 .rv.on { opacity:1; transform:none; }
 .card.rv.on { transform:rotate(var(--r, 0deg)); }
 
+
+/* ===== Bảng màu đen · trắng · xanh lá (Khoa chọn 23/11/2026) ===== */
+:root { --paper:#121311; --ink:#f4f4ef; --muted:#a9ab9f; --red:#b8ee5a; --dk:#141412; --green:#2f7a35; --lime:#dbfa76; --yellow:#dbfa76; --pink:#ffffff; --blue:#cdeec0; }
+html { overflow-x:clip; }
+body { background-color:var(--paper); background-image:linear-gradient(#ffffff0d 1px, transparent 1px), linear-gradient(90deg, #ffffff0d 1px, transparent 1px); }
+header { background:#121311e6; border-bottom:1px solid #ffffff14; }
+.btn { background:var(--paper); color:var(--ink); border-color:var(--ink); box-shadow:3px 3px 0 var(--lime); }
+.btn:hover { box-shadow:5px 5px 0 var(--lime); }
+.btn.dark { background:var(--lime); color:var(--dk); border-color:var(--lime); box-shadow:3px 3px 0 #ffffff55; }
+/* giấy sáng màu → chữ tối */
+.note, .card, .slip, .skill, .photo, .polaroid-me { color:var(--dk); }
+.note small, .card small, .slip p, .skill p { color:#55574e; }
+.note b em, .slip time, .skill .no { color:var(--green); }
+.skill p::before { color:var(--green); }
+.note .btn { background:var(--dk); color:#fff; border-color:var(--dk); box-shadow:3px 3px 0 #0005; }
+.note .btn.dark { color:var(--lime); }
+.pin { background:radial-gradient(circle at 35% 35%, #eaffb0, #9fdc3c 55%, #3d6a12); }
+.tape { background:#ffffff59; }
+.big .dot { background:var(--lime); }
+.big .dot::after { border-color:#1414128c; }
+.stamp { color:var(--ink); }
+.stamp svg text { fill:currentColor; }
+h2 mark { background:none; color:var(--lime); padding:0; }
+.ribbon { background:var(--ink); color:var(--dk); border-color:var(--ink); }
+.ribbon .track i { color:var(--green); }
+.ribbon.lite { background:var(--lime); color:var(--dk); }
+.filters button { background:transparent; color:var(--ink); border-color:var(--ink); box-shadow:2px 2px 0 var(--lime); }
+.filters button[aria-pressed="true"] { background:var(--lime); color:var(--dk); border-color:var(--lime); }
+.chips span { background:transparent; border-color:var(--ink); }
+.card { background:#fafaf6; }
+.card .go { border-color:var(--dk); }
+.card:hover .go { background:var(--dk); color:var(--lime); }
+.slip { background:#fff; } .slip:nth-child(4n+2) { background:#eef9d6; } .slip:nth-child(4n+3) { background:#f4f4ef; } .slip:nth-child(4n) { background:#dff3d4; }
+footer { border-top-color:#ffffff26; color:var(--muted); }
+
 @media (max-width:900px) {
   nav { display:none; }
   .board, .skills { grid-template-columns:repeat(2, minmax(0, 1fr)); }
@@ -229,7 +264,7 @@ footer .wrap { display:flex; justify-content:space-between; flex-wrap:wrap; gap:
 <script>
 const $ = id => document.getElementById(id);
 const el = (t, cls, txt) => { const e = document.createElement(t); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
-const pastel = ['var(--yellow)', 'var(--pink)', 'var(--blue)', '#fff'];
+const pastel = ['var(--lime)', '#ffffff', '#cdeec0', '#f4f4ef'];
 fetch('content.json?t=' + Date.now()).then(r => r.json()).then(C => {
   const P = C.projects.filter(p => !p.hidden), S = C.site;
   const total = P.reduce((n, p) => n + (p.images || []).length, 0);

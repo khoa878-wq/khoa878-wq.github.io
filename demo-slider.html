@@ -27,6 +27,7 @@ a:focus-visible, button:focus-visible { outline:2px solid #fff; outline-offset:4
 .word { position:absolute; left:0; width:100%; text-align:center; font-weight:800; line-height:1; white-space:nowrap; color:#fff; opacity:.92; }
 .shadow { position:absolute; border-radius:50%; background:radial-gradient(closest-side, rgba(30,20,10,.26), transparent); filter:blur(calc(4 * var(--u))); }
 .hero { position:absolute; border-radius:calc(10 * var(--u)); overflow:hidden; box-shadow:0 calc(30 * var(--u)) calc(60 * var(--u)) rgba(20,15,10,.28); background:#fff; }
+.hero.wide { scale:var(--hs,1); }
 .hero img, .piece img { width:100%; height:100%; object-fit:cover; display:block; }
 .piece { position:absolute; }
 .bob { width:100%; height:100%; border-radius:calc(8 * var(--u)); overflow:hidden; box-shadow:0 calc(14 * var(--u)) calc(28 * var(--u)) rgba(20,15,10,.25); background:#fff;
@@ -37,7 +38,7 @@ a:focus-visible, button:focus-visible { outline:2px solid #fff; outline-offset:4
 .ui { position:fixed; inset:0; z-index:10; pointer-events:none; }
 .top { position:absolute; left:calc(50 * var(--n)); right:calc(50 * var(--n)); top:calc(26 * var(--n)); height:calc(50 * var(--n)); display:flex; align-items:center; }
 .logo { font-family:'Baloo 2', sans-serif; font-weight:800; font-size:calc(51 * var(--n)); letter-spacing:-.02em; line-height:1; }
-.tabs { position:absolute; left:50%; transform:translateX(-50%); display:flex; gap:calc(60 * var(--n)); font-weight:500; font-size:calc(19 * var(--n)); }
+.tabs { position:absolute; left:50%; transform:translateX(-50%); display:flex; gap:calc(36 * var(--n)); font-weight:500; font-size:calc(18 * var(--n)); }
 .tabs button { padding:6px 0; white-space:nowrap; }
 .underline { position:absolute; left:0; bottom:calc(-2 * var(--n)); height:2px; border-radius:2px; background:#fff; transition:transform .6s cubic-bezier(.65,0,.35,1), width .6s cubic-bezier(.65,0,.35,1); }
 .account { margin-left:auto; display:flex; gap:calc(22 * var(--n)); font-weight:500; font-size:calc(19 * var(--n)); align-items:center; }
@@ -82,11 +83,11 @@ const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const W = 1440;
 // Vị trí mảnh bay (px thiết kế): 5 mảnh rõ + 2 mảnh mờ ở góc, theo bố cục đặc tả Blendy.
 const PIECES = [
-  { x:360, y:150, w:150, r:-8 }, { x:960, y:205, w:160, r:6 }, { x:250, y:470, w:175, r:-6 },
-  { x:1195, y:430, w:180, r:12 }, { x:965, y:590, w:150, r:-10 },
+  { x:215, y:130, w:150, r:-8 }, { x:1085, y:150, w:160, r:6 }, { x:110, y:470, w:175, r:-6 },
+  { x:1175, y:455, w:180, r:12 }, { x:1010, y:650, w:150, r:-10 },
 ];
 const CORNERS = [ { x:-30, y:600, w:280, r:0 }, { x:1250, y:30, w:220, r:10 } ];
-const SHADOWS = [ [330,668,190,24], [720,724,560,34], [1290,640,180,22], [1040,770,160,22] ];
+const SHADOWS = [ [200,670,190,24], [720,760,700,36], [1265,665,180,22], [1085,790,160,22] ];
 const FACT = { word:.40, shadow:.30, hero:.15, fruit:.55, corner:.75 };
 const COVER = [[0,0],[.031,.006],[.134,.012],[.206,.023],[.278,.047],[.34,.07],[.412,.105],[.485,.158],[.546,.246],[.583,.55],[.62,.825],[.69,.9],[.79,.94],[.85,.956],[.93,.975],[1,1]];
 
@@ -98,7 +99,7 @@ function cover(t) {
 }
 const easeOutQuad = k => 1 - (1 - k) * (1 - k);
 // Màu nền: lấy màu sáng của dự án, đậm thêm một chút để chữ trắng đọc được.
-const bgOf = p => `color-mix(in srgb, ${(p.colors || [])[0] || '#b3caa6'} 78%, ${(p.colors || [])[1] || '#22241c'})`;
+const bgOf = p => `color-mix(in srgb, ${(p.colors || [])[0] || '#b3caa6'} 90%, ${(p.colors || [])[1] || '#22241c'})`;
 
 let P = [], slides = [], cur = 0, busy = false, lastTouch = 0;
 
@@ -107,6 +108,7 @@ function layout() {
   const u = mobile ? Math.min(vw / 640, (vh - 200) / 620) : Math.min(vw / 1440, vh / 900);
   const root = document.documentElement.style;
   root.setProperty('--u', u + 'px'); root.setProperty('--fy', mobile ? '8px' : '0px');
+  const hs = mobile ? Math.min(1, (vw / u - 40) / 760) : 1; root.setProperty('--hs', hs); // banner ngang vừa màn hình điện thoại
   root.setProperty('--n', mobile ? '1px' : Math.max(.5, Math.min(1.3, Math.min(vw / 1440, vh / 900))) + 'px');
   const visW = mobile ? Math.min(W, vw / u) * .92 : 1330;
   const ctx = (layout.c ||= document.createElement('canvas').getContext('2d'));
@@ -117,7 +119,8 @@ function layout() {
     if (ink * F > visW) { ls = -.035; F = Math.min(400, (mobile ? visW : 1400) / ink); }
     else if (ink * F < visW * .85) F = Math.min(600, visW * .85 / ink); // chữ ngắn (3D, Bear) phóng to để lộ hai bên banner
     s.word.style.fontSize = `calc(${F} * var(--u))`; s.word.style.letterSpacing = ls + 'em';
-    const base = 403.5 + .70 * F / 2; s.word.style.top = `calc(${base - .85 * F} * var(--u))`;
+    const top = mobile ? 440 - s.hh * (s.wide ? hs : 1) / 2 - 14 - .85 * F : 403.5 + .70 * F / 2 - .85 * F; // điện thoại: đặt trên banner để không bị che
+    s.word.style.top = `calc(${top} * var(--u))`;
   });
   moveUnderline();
 }
@@ -130,11 +133,12 @@ function build(p, i) {
   for (const k of ['word', 'shadow', 'hero', 'fruit', 'corner']) L[k] = el('div', 'layer l-' + k, f);
   const word = el('div', 'word', L.word); word.textContent = p.mark || p.title;
   SHADOWS.forEach(([cx, cy, w, h]) => box(el('div', 'shadow', L.shadow), cx - w / 2, cy - h / 2, w, h));
-  const imgs = p.images || [], c = Math.min(p.cover || 0, imgs.length - 1), coverImg = imgs[c];
+  const imgs = p.images || [];
+  const coverImg = imgs.find(x => x.src === p.banner) || imgs[Math.min(p.cover || 0, imgs.length - 1)], c = imgs.indexOf(coverImg);
   const ratio = coverImg ? Math.max(.7, Math.min(1.8, coverImg.ratio)) : 1.6;
-  const hw = ratio >= 1 ? 560 : 400, hh = hw / ratio;
-  const hero = el('a', 'hero', L.hero); hero.href = 'index.html#da-' + p.slug; hero.setAttribute('aria-label', 'Xem dự án ' + p.title);
-  box(hero, 720 - hw / 2, 430 - hh / 2, hw, hh);
+  const hw = ratio >= 1.2 ? 760 : 500, hh = hw / ratio;
+  const hero = el('a', 'hero' + (hw === 760 ? ' wide' : ''), L.hero); hero.href = 'index.html#da-' + p.slug; hero.setAttribute('aria-label', 'Xem dự án ' + p.title);
+  box(hero, 720 - hw / 2, 440 - hh / 2, hw, hh);
   if (coverImg) { const im = el('img', '', hero); im.src = coverImg.src; im.alt = p.title; im.decoding = 'async'; }
   const rest = imgs.filter((_, k) => k !== c);
   const pick = n => rest[n % Math.max(1, rest.length)];
@@ -148,7 +152,7 @@ function build(p, i) {
   };
   PIECES.forEach((sp, n) => place(sp, L.fruit, n));
   CORNERS.forEach((sp, n) => place(sp, L.corner, n + 5));
-  return { s, L, word, p };
+  return { s, L, word, p, hh, wide: hw === 760 };
 }
 
 function setX(sl, k, px) { sl.L[k].style.transform = px ? `translateX(${px}px)` : ''; }
@@ -190,7 +194,7 @@ const touch = () => { lastTouch = Date.now(); };
 
 async function start() {
   const C = await (await fetch('content.json?t=' + Date.now(), { cache:'no-store' })).json();
-  P = (C.featured || []).map(s => C.projects.find(p => p.slug === s && !p.hidden && (p.images || []).length)).filter(Boolean);
+  P = (C.showcase || C.featured || []).map(s => C.projects.find(p => p.slug === s && !p.hidden && (p.images || []).length)).filter(Boolean);
   if (!P.length) P = C.projects.filter(p => !p.hidden && (p.images || []).length).slice(0, 4);
   slides = P.map(build);
   P.forEach((p, i) => { const b = el('button', '', tabs); b.textContent = p.mark || p.title; b.title = p.title;
@@ -203,7 +207,7 @@ async function start() {
   }
   document.querySelectorAll('.lift').forEach(e => setTimeout(() => e.classList.add('in'), REDUCED ? 0 : +e.dataset.d));
   setTimeout(() => document.querySelectorAll('.lift').forEach(e => e.classList.add('in')), 3000);
-  setInterval(() => { if (!document.hidden && Date.now() - lastTouch > 6000) step(1); }, 4000);
+  setInterval(() => { if (!document.hidden && Date.now() - lastTouch > 6000) step(1); }, 5000);
 }
 prev.addEventListener('click', () => { touch(); step(-1); });
 next.addEventListener('click', () => { touch(); step(1); });

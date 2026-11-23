@@ -374,7 +374,8 @@
      "ratio": 1
     }
    ],
-   "video": "video/wan2care-worldcup.mp4"
+   "video": "video/wan2care-worldcup.mp4",
+   "banner": "work/wan2care-worldcup/01.jpg"
   },
   {
    "slug": "wan2care-tuyen-dung",
@@ -499,7 +500,8 @@
      "ratio": 1.778
     }
    ],
-   "video": "video/vicci-bao-bi.mp4"
+   "video": "video/vicci-bao-bi.mp4",
+   "banner": "work/vicci-bao-bi/01.jpg"
   },
   {
    "slug": "giuong-tu-dep-video",
@@ -922,7 +924,8 @@
      "ratio": 1.778
     }
    ],
-   "video": "video/tra-hoa-lanh.mp4"
+   "video": "video/tra-hoa-lanh.mp4",
+   "banner": "work/tra-hoa-lanh/37.jpg"
   },
   {
    "slug": "tvc-giay",
@@ -1244,7 +1247,8 @@
     "after": "work/phim-3d-khan-do/17.jpg",
     "beforeLabel": "Storyboard",
     "afterLabel": "Cảnh dựng 3D"
-   }
+   },
+   "banner": "work/phim-3d-khan-do/03.jpg"
   },
   {
    "slug": "dung-hinh-3d-maya",
@@ -1414,7 +1418,8 @@
      "ratio": 1
     }
    ],
-   "video": "video/bear-cream.mp4"
+   "video": "video/bear-cream.mp4",
+   "banner": "work/bear-cream/27.jpg"
   },
   {
    "slug": "bougies",
@@ -1576,7 +1581,8 @@
      "ratio": 1.778
     }
    ],
-   "video": "video/jus-de-fruit.mp4"
+   "video": "video/jus-de-fruit.mp4",
+   "banner": "work/jus-de-fruit/01.jpg"
   },
   {
    "slug": "glow",
@@ -1990,6 +1996,14 @@
   "tra-hoa-lanh",
   "bear-cream",
   "wan2care-social",
+  "phim-3d-khan-do"
+ ],
+ "showcase": [
+  "wan2care-worldcup",
+  "vicci-bao-bi",
+  "tra-hoa-lanh",
+  "bear-cream",
+  "jus-de-fruit",
   "phim-3d-khan-do"
  ]
 }

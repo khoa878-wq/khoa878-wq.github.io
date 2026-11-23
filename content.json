@@ -208,91 +208,113 @@
     },
     {
      "src": "work/wan2care-social/21.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 4
     },
     {
      "src": "work/wan2care-social/22.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 4
     },
     {
      "src": "work/wan2care-social/23.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 4
     },
     {
      "src": "work/wan2care-social/24.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 4
     },
     {
      "src": "work/wan2care-social/25.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 4
     },
     {
      "src": "work/wan2care-social/26.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 4
     },
     {
      "src": "work/wan2care-social/27.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 4
     },
     {
      "src": "work/wan2care-social/28.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 4
     },
     {
      "src": "work/wan2care-social/29.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 4
     },
     {
      "src": "work/wan2care-social/30.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 4
     },
     {
      "src": "work/wan2care-social/31.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 4
     },
     {
      "src": "work/wan2care-social/32.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 4
     },
     {
      "src": "work/wan2care-social/33.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 4
     },
     {
      "src": "work/wan2care-social/34.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 4
     },
     {
      "src": "work/wan2care-social/35.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 4
     },
     {
      "src": "work/wan2care-social/36.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 3
     },
     {
      "src": "work/wan2care-social/37.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 4
     },
     {
      "src": "work/wan2care-social/38.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 4
     },
     {
      "src": "work/wan2care-social/39.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 4
     },
     {
      "src": "work/wan2care-social/40.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 4
     },
     {
      "src": "work/wan2care-social/41.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 2
     },
     {
      "src": "work/wan2care-social/42.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 2
     },
     {
      "src": "work/wan2care-social/43.jpg",
@@ -300,26 +322,40 @@
     },
     {
      "src": "work/wan2care-social/44.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 4
     },
     {
      "src": "work/wan2care-social/45.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 4
     },
     {
      "src": "work/wan2care-social/46.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 4
     },
     {
      "src": "work/wan2care-social/47.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 3
     },
     {
      "src": "work/wan2care-social/48.jpg",
-     "ratio": 1
+     "ratio": 1,
+     "n": 4
     },
     {
      "src": "work/wan2care-social/49.jpg",
+     "ratio": 1,
+     "n": 4
+    },
+    {
+     "src": "work/wan2care-social/50.jpg",
+     "ratio": 1
+    },
+    {
+     "src": "work/wan2care-social/51.jpg",
      "ratio": 1
     }
    ],
@@ -398,6 +434,10 @@
     {
      "src": "work/wan2care-worldcup/10.jpg",
      "ratio": 1
+    },
+    {
+     "src": "work/wan2care-worldcup/11.jpg",
+     "ratio": 1
     }
    ],
    "video": "video/wan2care-worldcup.mp4",
@@ -471,6 +511,14 @@
     {
      "src": "work/wan2care-tuyen-dung/09.jpg",
      "ratio": 1
+    },
+    {
+     "src": "work/wan2care-tuyen-dung/10.jpg",
+     "ratio": 2.111
+    },
+    {
+     "src": "work/wan2care-tuyen-dung/11.jpg",
+     "ratio": 2.111
     }
    ],
    "video": "video/wan2care-tuyen-dung.mp4",

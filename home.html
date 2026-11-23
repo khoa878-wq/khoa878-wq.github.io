@@ -252,7 +252,7 @@ body.viewing #case { display:block; }
 <main id="top">
 <div class="hero wrap">
   <figure class="polaroid-me"><span class="tape"></span><img src="images/khoa-avatar-2.jpg" alt="Ảnh Nguyễn Khoa" width="480" height="480"><span>Khoa, 2026</span></figure>
-  <div class="note y n1"><span class="pin"></span><b>21 dự án<br><em>333</em> thiết kế<br><em>63</em> video</b><small id="period">2022–2026</small></div>
+  <div class="note y n1"><span class="pin"></span><b>21 dự án<br><em>416</em> thiết kế<br><em>63</em> video</b><small id="period">2022–2026</small></div>
   <div class="note w n2"><span class="pin"></span><b>Nguyễn <em>Khoa</em></b><small>Graphic designer · TP.HCM</small></div>
   <div class="note p n3"><span class="tape"></span>Nhận diện · bao bì · ấn phẩm · video ngắn</div>
   <div class="note b n4"><span class="pin"></span>“Từ concept đến sản phẩm hoàn chỉnh.”<small>— mục tiêu nghề nghiệp</small></div>
@@ -312,10 +312,11 @@ body.viewing #case { display:block; }
 <script>
 const $ = id => document.getElementById(id);
 const el = (t, cls, txt) => { const e = document.createElement(t); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
+const designs = p => (p.images || []).reduce((n, i) => n + (i.n || 1), 0); // ảnh lưới ghi n = số bài bên trong
 const pastel = ['var(--lime)', '#ffffff', '#cdeec0', '#f4f4ef'];
 fetch('content.json?t=' + Date.now()).then(r => r.json()).then(C => {
   const P = C.projects.filter(p => !p.hidden), S = C.site;
-  const total = P.reduce((n, p) => n + (p.images || []).length, 0);
+  const total = P.reduce((n, p) => n + designs(p), 0);
   const clips = P.reduce((n, p) => n + (p.clips || []).length, 0);
   $('intro').textContent = S.intro; $('period').textContent = S.period;
   $('mail').href = 'mailto:' + S.email; $('mail').textContent = S.email; $('be').href = S.behance;
@@ -375,7 +376,7 @@ function renderCase(p) {
   const meta = el('dl', 'case-meta');
   const add = (k, node) => meta.append(el('dt', '', k), (() => { const d = el('dd'); d.append(node); return d; })());
   const chips = el('div', 'chips'); (p.scope || []).forEach(x => chips.append(el('span', '', x))); add('Hạng mục', chips);
-  add('Số thiết kế', document.createTextNode(String((p.images || []).length)));
+  add('Số thiết kế', document.createTextNode(String(designs(p))));
   if (p.clips) add('Video đã dựng', document.createTextNode(p.clips.length + ' clip · ' + (p.clipsNote || '')));
   if (p.socials) { const so = el('div', 'socials'); p.socials.forEach(x => { const a = el('a', 'btn', x.name + ' ↗'); a.href = x.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; so.append(a); }); add('Kênh', so); }
   if (p.link) { const a = el('a', '', p.linkText || 'Xem thêm'); a.href = p.link; a.target = '_blank'; a.rel = 'noopener noreferrer'; add('Nguồn', a); }

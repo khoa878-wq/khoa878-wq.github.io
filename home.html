@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Nguyễn Khoa · Graphic Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800;900&family=Patrick+Hand&display=swap" rel="stylesheet">
+<!-- Trang chủ (từ 23/11/2026) kiểu "bàn làm việc giấy" (tham khảo phong cách trang TopFolio của Khoa, 23/11/2026): giấy kẻ ô, giấy note, ghim, khung polaroid.
+     Toàn bộ nội dung lấy từ content.json (dự án, kinh nghiệm, kỹ năng, học vấn thật). Không dùng dự án/số liệu mẫu của TopFolio. -->
+<style>
+:root { --paper:#ecebe5; --ink:#161614; --muted:#5d5d55; --red:#d9302c; --yellow:#f9e27a; --pink:#f4c9d0; --blue:#c9dcef; --lime:#dbfa76; --hand:'Patrick Hand', 'Comic Sans MS', cursive; }
+* { box-sizing:border-box; margin:0; }
+html { scroll-behavior:smooth; }
+body { background:var(--paper); background-image:linear-gradient(#0000000c 1px, transparent 1px), linear-gradient(90deg, #0000000c 1px, transparent 1px); background-size:28px 28px; color:var(--ink); font-family:'Be Vietnam Pro', system-ui, sans-serif; line-height:1.55; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+a { color:inherit; }
+img { display:block; max-width:100%; height:auto; }
+:focus-visible { outline:3px solid var(--red); outline-offset:3px; }
+.wrap { width:min(1160px, calc(100% - 48px)); margin-inline:auto; }
+.hand { font-family:var(--hand); }
+
+/* Đầu trang */
+header { position:sticky; top:0; z-index:30; background:#ecebe5e6; backdrop-filter:blur(6px); }
+.bar { display:flex; align-items:center; justify-content:space-between; gap:20px; padding-block:16px; }
+.brand { font-family:var(--hand); font-size:1.5rem; line-height:1; text-decoration:none; }
+.brand small { display:block; font-family:'Be Vietnam Pro'; font-size:.62rem; letter-spacing:.3em; font-weight:700; }
+nav { display:flex; gap:24px; font-weight:600; font-size:.95rem; }
+nav a { text-decoration:none; }
+nav a:hover { color:var(--red); }
+.btn { display:inline-flex; align-items:center; gap:8px; border:2px solid var(--ink); background:#fff; padding:9px 18px; border-radius:10px; font-weight:700; text-decoration:none; box-shadow:3px 3px 0 var(--ink); transition:transform .15s, box-shadow .15s; }
+.btn:hover { transform:translate(-2px, -2px); box-shadow:5px 5px 0 var(--ink); }
+.btn:active { transform:translate(2px, 2px); box-shadow:1px 1px 0 var(--ink); }
+.btn.dark { background:var(--ink); color:var(--lime); }
+
+/* Hero */
+.hero { position:relative; min-height:min(86vh, 820px); display:grid; place-items:center; padding-block:40px 120px; }
+.big { position:relative; text-align:center; font-weight:900; font-size:clamp(4.2rem, 15vw, 13rem); line-height:.86; letter-spacing:-.06em; text-transform:uppercase; }
+.big .dot { display:inline-block; width:.62em; height:.62em; border-radius:50%; background:var(--red); vertical-align:.04em; box-shadow:inset 0 0 0 .05em #fff3; position:relative; }
+.big .dot::after { content:''; position:absolute; inset:16%; border:3px dashed #fff8; border-radius:50%; }
+.sub { margin-top:22px; text-align:center; font-family:var(--hand); font-size:clamp(1.8rem, 3.6vw, 2.8rem); }
+.note { position:absolute; width:clamp(170px, 18vw, 230px); padding:22px 18px 18px; font-family:var(--hand); font-size:1.18rem; line-height:1.3; box-shadow:0 10px 22px #0002, 0 2px 4px #0002; z-index:2; }
+.note::after { content:''; position:absolute; right:0; bottom:0; border-width:0 0 22px 22px; border-style:solid; border-color:transparent transparent #0000001a #fff6; }
+.pin { position:absolute; left:50%; top:-9px; width:18px; height:18px; margin-left:-9px; border-radius:50%; background:radial-gradient(circle at 35% 35%, #ff8b84, var(--red) 55%, #8d1411); box-shadow:2px 4px 5px #0004; z-index:3; }
+.tape { position:absolute; left:50%; top:-12px; width:84px; height:24px; margin-left:-42px; background:#efe2b0cc; transform:rotate(-3deg); box-shadow:0 1px 2px #0001; z-index:3; }
+.y { background:var(--yellow); } .p { background:var(--pink); } .b { background:var(--blue); } .w { background:#fff; }
+.n1 { left:4%; top:40%; transform:rotate(-6deg); }
+.n2 { right:4%; top:6%; transform:rotate(5deg); }
+.n3 { right:6%; top:52%; transform:rotate(-3deg); }
+.n4 { left:7%; bottom:16%; transform:rotate(4deg); }
+.note b { font-family:'Be Vietnam Pro'; font-size:1.15rem; display:block; line-height:1.2; }
+.note b em { font-style:normal; color:var(--red); }
+.note small { display:block; color:var(--muted); font-size:.95rem; }
+.polaroid-me { position:absolute; left:4%; top:4%; width:150px; background:#fff; padding:10px 10px 30px; transform:rotate(-8deg); box-shadow:0 12px 24px #0003; z-index:2; }
+.polaroid-me img { aspect-ratio:1; object-fit:cover; }
+.polaroid-me span { position:absolute; left:0; right:0; bottom:6px; text-align:center; font-family:var(--hand); }
+.stamp { position:absolute; right:22%; bottom:8%; width:120px; height:120px; border-radius:50%; display:grid; place-items:center; animation:spin 18s linear infinite; }
+.stamp svg { width:100%; height:100%; }
+.stamp::after { content:''; position:absolute; width:34px; height:34px; border-radius:50%; background:var(--ink); box-shadow:0 0 0 7px var(--paper), 0 0 0 9px var(--ink); }
+@keyframes spin { to { transform:rotate(360deg); } }
+
+/* Băng chạy */
+.ribbon { overflow:hidden; border-block:2px solid var(--ink); background:var(--ink); color:#fff; transform:rotate(-2deg); margin:-30px -20px 0; position:relative; z-index:5; }
+.ribbon.lite { background:var(--yellow); color:var(--ink); transform:rotate(1.2deg); margin-top:-6px; z-index:4; }
+.track { display:flex; width:max-content; animation:run 28s linear infinite; }
+.ribbon.lite .track { animation-duration:36s; animation-direction:reverse; }
+.track span { padding:12px 22px; font-weight:900; font-size:1.3rem; letter-spacing:.04em; white-space:nowrap; }
+.ribbon.lite .track span { font-family:var(--hand); font-weight:400; font-size:1.25rem; letter-spacing:0; }
+.track i { color:var(--red); font-style:normal; }
+@keyframes run { to { transform:translateX(-50%); } }
+
+/* Khối chung */
+section { padding-block:96px 40px; }
+.kicker { display:flex; align-items:center; gap:10px; color:var(--red); font-family:var(--hand); font-size:1.15rem; }
+.kicker::before { content:''; width:34px; height:2px; background:var(--red); }
+h2 { font-size:clamp(2.4rem, 5.4vw, 4.4rem); line-height:1; letter-spacing:-.05em; font-weight:900; margin-top:8px; }
+h2 mark { background:linear-gradient(transparent 58%, var(--yellow) 58% 92%, transparent 92%); color:inherit; padding:0 4px; }
+.lead { max-width:62ch; color:var(--muted); margin-top:14px; font-size:1.05rem; }
+
+/* Giới thiệu */
+.about { display:grid; grid-template-columns:.8fr 1.2fr; gap:56px; align-items:center; }
+.photo { position:relative; background:#fff; padding:14px 14px 54px; transform:rotate(-3deg); box-shadow:0 18px 36px #0003; max-width:380px; }
+.photo img { aspect-ratio:4/5; object-fit:cover; object-position:50% 30%; }
+.photo span { position:absolute; left:0; right:0; bottom:14px; text-align:center; font-family:var(--hand); font-size:1.2rem; }
+.chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
+.chips span { border:2px solid var(--ink); border-radius:99px; padding:4px 14px; font-weight:600; font-size:.9rem; background:#fff; }
+.stats { display:flex; gap:28px; margin-top:28px; flex-wrap:wrap; }
+.stats div { border-left:3px solid var(--red); padding-left:12px; }
+.stats b { display:block; font-size:2.2rem; font-weight:900; letter-spacing:-.04em; line-height:1; }
+.stats small { color:var(--muted); font-family:var(--hand); font-size:1.05rem; }
+
+/* Dự án: polaroid */
+.filters { display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+.filters button { font:inherit; font-weight:700; font-size:.92rem; border:2px solid var(--ink); background:#fff; padding:7px 16px; border-radius:99px; cursor:pointer; box-shadow:2px 2px 0 var(--ink); }
+.filters button[aria-pressed="true"] { background:var(--ink); color:var(--lime); }
+.filters sup { font-size:.7rem; margin-left:3px; }
+.board { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:44px 34px; margin-top:44px; }
+.card { position:relative; display:block; background:#fdfcf8; padding:12px 12px 16px; text-decoration:none; box-shadow:0 12px 26px #00000024, 0 2px 4px #0001; transform:rotate(var(--r, 0deg)); transition:transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s; }
+.card:hover, .card:focus-visible { transform:rotate(0) translateY(-6px) scale(1.02); box-shadow:0 22px 40px #0003; z-index:2; }
+.card .img { aspect-ratio:4/3; overflow:hidden; background:var(--c, #ddd); }
+.card img { width:100%; height:100%; object-fit:cover; transition:transform .6s; }
+.card:hover img { transform:scale(1.05); }
+.card .cap { display:flex; justify-content:space-between; align-items:flex-end; gap:12px; margin-top:12px; }
+.card strong { font-family:var(--hand); font-size:1.45rem; font-weight:400; line-height:1.1; display:block; }
+.card small { color:var(--muted); font-size:.82rem; display:block; margin-top:3px; }
+.card .go { flex:none; width:38px; height:38px; border:2px solid var(--ink); border-radius:50%; display:grid; place-items:center; font-weight:800; }
+.card:hover .go { background:var(--ink); color:var(--lime); }
+.card[hidden] { display:none; }
+
+/* Kinh nghiệm: giấy xé */
+.exp { display:grid; grid-template-columns:repeat(auto-fill, minmax(250px, 1fr)); gap:26px; margin-top:40px; }
+.slip { position:relative; padding:28px 22px 26px; background:#fff; box-shadow:0 10px 22px #0002; --mask:conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / 16px 100%; -webkit-mask:var(--mask); mask:var(--mask); }
+.slip:nth-child(4n+2) { background:#fbf3d2; } .slip:nth-child(4n+3) { background:#e7f0f8; } .slip:nth-child(4n) { background:#f8e5e8; }
+.slip time { font-family:var(--hand); color:var(--red); font-size:1.1rem; }
+.slip h3 { font-size:1.15rem; line-height:1.25; margin-top:4px; letter-spacing:-.02em; }
+.slip .role { font-weight:700; font-size:.9rem; margin-top:2px; }
+.slip p { color:var(--muted); font-size:.9rem; margin-top:8px; }
+
+/* Kỹ năng */
+.skills { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:30px; margin-top:44px; }
+.skill { position:relative; padding:30px 22px 24px; box-shadow:0 10px 22px #0002; }
+.skill:nth-child(odd) { transform:rotate(-1.5deg); } .skill:nth-child(even) { transform:rotate(1.2deg); }
+.skill .no { position:absolute; right:16px; top:12px; font-weight:800; font-size:.8rem; border-bottom:2px solid currentColor; }
+.skill h3 { font-family:var(--hand); font-weight:400; font-size:1.6rem; line-height:1.1; }
+.skill p { margin-top:10px; font-size:.95rem; }
+.skill p::before { content:'✓ '; color:var(--red); font-weight:900; }
+
+/* Liên hệ */
+.contact { display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:center; padding-bottom:110px; }
+.contact h2 { font-size:clamp(3rem, 7vw, 6rem); }
+.contact h2 .q { color:var(--red); }
+.mailnote { position:relative; padding:34px 28px 30px; transform:rotate(2deg); }
+.mailnote a.mail { display:block; font-weight:800; font-size:clamp(1.1rem, 2.2vw, 1.5rem); margin:8px 0 18px; word-break:break-all; }
+footer { border-top:2px solid var(--ink); padding-block:22px 34px; font-size:.9rem; }
+footer .wrap { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+
+/* Hiện dần khi cuộn */
+.rv { opacity:0; transform:translateY(24px); transition:opacity .7s, transform .7s cubic-bezier(.2,.8,.2,1); }
+.rv.on { opacity:1; transform:none; }
+.card.rv.on { transform:rotate(var(--r, 0deg)); }
+
+@media (max-width:900px) {
+  nav { display:none; }
+  .board, .skills { grid-template-columns:repeat(2, minmax(0, 1fr)); }
+  .about, .contact { grid-template-columns:1fr; }
+  .note { width:150px; font-size:1rem; padding:18px 14px 14px; }
+  .note b { font-size:1rem; }
+  .polaroid-me { width:110px; left:4%; top:0; }
+  .n1 { left:2%; top:auto; bottom:4%; } .n2 { right:2%; top:0; } .n3 { display:none; } .n4 { display:none; }
+  .stamp { width:90px; height:90px; right:6%; bottom:2%; }
+  .hero { min-height:auto; padding-block:170px 190px; }
+}
+@media (max-width:560px) {
+  .wrap { width:calc(100% - 32px); }
+  .board, .skills { grid-template-columns:1fr; gap:34px; }
+  .bar .btn { padding:7px 12px; font-size:.85rem; }
+  .stamp { display:none; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation:none !important; transition:none !important; } .rv { opacity:1; transform:none; } }
+</style>
+</head>
+<body>
+<header><div class="wrap bar">
+  <a class="brand" href="#top">Nguyễn Khoa<small>PORTFOLIO</small></a>
+  <nav><a href="#gioi-thieu">Giới thiệu</a><a href="#du-an">Dự án</a><a href="#kinh-nghiem">Kinh nghiệm</a><a href="#ky-nang">Kỹ năng</a><a href="#lien-he">Liên hệ</a></nav>
+  <a class="btn" href="#lien-he">Liên hệ →</a>
+</div></header>
+
+<main id="top">
+<div class="hero wrap">
+  <figure class="polaroid-me"><span class="tape"></span><img src="images/khoa-avatar.png" alt="Ảnh Nguyễn Khoa" width="360" height="360"><span>Khoa, 2026</span></figure>
+  <div class="note y n1"><span class="pin"></span><b>21 dự án<br><em>333</em> thiết kế</b><small id="period">2022–2026</small></div>
+  <div class="note w n2"><span class="pin"></span><b>Nguyễn <em>Khoa</em></b><small>Graphic designer · TP.HCM</small></div>
+  <div class="note p n3"><span class="tape"></span>Nhận diện · bao bì · ấn phẩm · video ngắn</div>
+  <div class="note b n4"><span class="pin"></span>“Từ concept đến sản phẩm hoàn chỉnh.”<small>— mục tiêu nghề nghiệp</small></div>
+  <div>
+    <h1 class="big" aria-label="Nguyễn Khoa">Nguyễn<br>Kh<span class="dot" aria-hidden="true"></span>a</h1>
+    <p class="sub">Graphic Designer</p>
+  </div>
+  <div class="stamp" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><path id="c" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs><text font-family="Be Vietnam Pro" font-weight="800" font-size="11" letter-spacing="3"><textPath href="#c">PORTFOLIO • 2022–2026 • NGUYỄN KHOA •</textPath></text></svg></div>
+</div>
+<div class="ribbon" aria-hidden="true"><div class="track" id="r1"></div></div>
+<div class="ribbon lite" aria-hidden="true"><div class="track" id="r2"></div></div>
+
+<section id="gioi-thieu" class="wrap about">
+  <figure class="photo rv"><span class="pin"></span><img src="images/khoa.jpg" alt="Nguyễn Khoa tại nơi làm việc" width="1000" height="1256" loading="lazy"><span>ở chỗ làm, 2026</span></figure>
+  <div class="rv">
+    <p class="kicker">Về mình</p>
+    <h2>Xin chào,<br>mình là <mark>Khoa</mark></h2>
+    <p class="lead" id="intro"></p>
+    <div class="chips" id="groups"></div>
+    <div class="stats" id="stats"></div>
+  </div>
+</section>
+
+<section id="du-an" class="wrap">
+  <p class="kicker rv">Tuyển tập 2022 — 2026</p>
+  <h2 class="rv">Dự án <mark>nổi bật</mark></h2>
+  <p class="lead rv">Bấm vào từng tấm ảnh để xem đầy đủ thiết kế, bối cảnh và hạng mục trên trang chính.</p>
+  <div class="filters" id="filters" role="group" aria-label="Lọc dự án"></div>
+  <div class="board" id="board"></div>
+</section>
+
+<section id="kinh-nghiem" class="wrap">
+  <p class="kicker rv">Đã làm ở đâu</p>
+  <h2 class="rv">Kinh <mark>nghiệm</mark></h2>
+  <div class="exp" id="exp"></div>
+</section>
+
+<section id="ky-nang" class="wrap">
+  <p class="kicker rv">Mình làm được gì</p>
+  <h2 class="rv">Kỹ năng &amp; <mark>học vấn</mark></h2>
+  <div class="skills" id="skills"></div>
+</section>
+
+<section id="lien-he" class="wrap contact">
+  <div class="rv">
+    <p class="kicker">Liên hệ</p>
+    <h2>Cùng làm<br>dự án nhé<span class="q">?</span></h2>
+    <p class="lead">Nếu bạn cần một graphic designer hoặc video editor, nhắn mình qua email hoặc xem thêm trên Behance.</p>
+  </div>
+  <div class="note y mailnote rv"><span class="pin"></span><span class="hand" style="font-size:1.2rem">Gửi email cho mình</span><a class="mail" id="mail" href="mailto:khnsz878@gmail.com">khnsz878@gmail.com</a>
+    <a class="btn dark" id="be" href="https://www.behance.net/khoangy2" target="_blank" rel="noopener noreferrer">Behance ↗</a> <a class="btn" href="index.html">Trang chính</a></div>
+</section>
+</main>
+<footer><div class="wrap"><span>© 2026 Nguyễn Khoa</span><a href="index.html">Xem bản đầy đủ →</a></div></footer>
+
+<script>
+const $ = id => document.getElementById(id);
+const el = (t, cls, txt) => { const e = document.createElement(t); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
+const pastel = ['var(--yellow)', 'var(--pink)', 'var(--blue)', '#fff'];
+fetch('content.json?t=' + Date.now()).then(r => r.json()).then(C => {
+  const P = C.projects.filter(p => !p.hidden), S = C.site;
+  const total = P.reduce((n, p) => n + (p.images || []).length, 0);
+  $('intro').textContent = S.intro; $('period').textContent = S.period;
+  $('mail').href = 'mailto:' + S.email; $('mail').textContent = S.email; $('be').href = S.behance;
+  document.querySelector('.n1 b').innerHTML = `${P.length} dự án<br><em>${total}</em> thiết kế`;
+  $('groups').append(...C.groups.slice(1).map(g => el('span', '', g)));
+  $('stats').append(...[[P.length, 'dự án'], [total, 'thiết kế'], [C.experience.length, 'nơi đã làm']].map(([b, s]) => { const d = el('div'); d.append(el('b', '', b), el('small', '', s)); return d; }));
+
+  // băng chạy: hạng mục thật của các dự án
+  const words = [...new Set(P.flatMap(p => p.scope || []))].slice(0, 10).map(w => w.toUpperCase());
+  const fillTrack = (t, list, sep) => { const h = list.map(w => `<span>${w}</span><span><i>${sep}</i></span>`).join(''); t.innerHTML = h + h; };
+  fillTrack($('r1'), words, '✦');
+  fillTrack($('r2'), ['Photoshop', 'Illustrator', 'CapCut PC', 'Premiere Pro', 'After Effects', 'Cinema 4D', 'Maya', 'Canva'], '·');
+
+  // polaroid dự án
+  const rot = [-2.2, 1.6, -1, 2.4, -1.8, 1.1];
+  $('board').append(...P.map((p, i) => {
+    const a = el('a', 'card rv'); a.href = 'index.html#da-' + p.slug; a.dataset.groups = (p.groups || []).join('|');
+    a.style.setProperty('--r', rot[i % rot.length] + 'deg'); a.style.setProperty('--c', (p.colors || [])[0] || '#ddd');
+    a.append(el('span', i % 3 === 1 ? 'tape' : 'pin'));
+    const box = el('div', 'img'); const im = el('img'); im.src = ((p.images || [])[p.cover || 0] || {}).src || ''; im.alt = p.title; im.loading = 'lazy'; im.decoding = 'async'; box.append(im);
+    const cap = el('div', 'cap'); const t = el('div'); t.append(el('strong', '', p.title), el('small', '', p.brand)); cap.append(t, el('span', 'go', '→'));
+    a.append(box, cap); return a;
+  }));
+  const btns = C.groups.map(g => { const b = el('button', '', g); const n = g === C.groups[0] ? P.length : P.filter(p => (p.groups || []).includes(g)).length; b.append(el('sup', '', n)); b.setAttribute('aria-pressed', g === C.groups[0]); b.onclick = () => { btns.forEach(x => x.setAttribute('aria-pressed', x === b)); document.querySelectorAll('.card').forEach(c => c.hidden = g !== C.groups[0] && !c.dataset.groups.split('|').includes(g)); }; return b; });
+  $('filters').append(...btns);
+
+  // kinh nghiệm
+  $('exp').append(...C.experience.map(x => { const s = el('article', 'slip rv'); s.append(el('time', '', x.time), el('h3', '', x.title)); if (x.role) s.append(el('p', 'role', x.role)); if (x.text) s.append(el('p', '', x.text)); return s; }));
+  // kỹ năng + học vấn
+  const items = [...C.skills.map(s => [s.name, s.value]), ...(C.education || []).map(e => ['Học vấn · ' + e.time, e.title + ' · ' + e.text])];
+  $('skills').append(...items.map(([h, v], i) => { const d = el('div', 'skill rv'); d.style.background = pastel[i % pastel.length]; d.append(el('span', 'no', String(i + 1).padStart(2, '0')), el('h3', '', h), el('p', '', v)); return d; }));
+  reveal();
+}).catch(() => { $('board').textContent = 'Không tải được dữ liệu. Thử tải lại trang.'; });
+
+function reveal() {
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), { rootMargin:'0px 0px -8% 0px' });
+  document.querySelectorAll('.rv').forEach(x => io.observe(x));
+}
+</script>
+</body>
+</html>

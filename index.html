@@ -428,7 +428,7 @@ function renderCase(p) {
           toolBtn(p.compare && p.compare.after === item.src ? '● Sau' : 'Sau', 'Đặt làm ảnh Sau (so sánh)', () => { p.compare = Object.assign({ beforeLabel:'Phác thảo', afterLabel:'Hoàn thiện' }, p.compare, { after:item.src }); changed(); }),
           toolBtn('←', 'Đưa lên trước', () => { move(list, k, -1); fixCover(p, k, k - 1); changed(); }),
           toolBtn('→', 'Đưa ra sau', () => { move(list, k, 1); fixCover(p, k, k + 1); changed(); }),
-          toolBtn('Bỏ', 'Bỏ ảnh khỏi dự án', () => { if (confirm('Bỏ ảnh ' + (k + 1) + ' khỏi dự án? (File ảnh vẫn còn trong kho, chỉ không hiện nữa)')) { list.splice(k, 1); if ((p.cover || 0) >= list.length || (p.cover || 0) > k) p.cover = Math.max(0, (p.cover || 0) - ((p.cover || 0) > k ? 1 : 0)); if (p.cover >= list.length) p.cover = 0; changed(); } }));
+          toolBtn('Bỏ', 'Bỏ ảnh khỏi dự án', () => { if (confirm('Bỏ ảnh ' + (k + 1) + ' khỏi dự án? (File ảnh vẫn còn trong kho, chỉ không hiện nữa)')) { list.splice(k, 1); if (p.compare && [p.compare.before, p.compare.after].includes(item.src)) delete p.compare; if ((p.cover || 0) >= list.length || (p.cover || 0) > k) p.cover = Math.max(0, (p.cover || 0) - ((p.cover || 0) > k ? 1 : 0)); if (p.cover >= list.length) p.cover = 0; changed(); } }));
         box.append(frame, el('small', label), t);
         body.append(box);
       } else {
@@ -469,7 +469,7 @@ function editBox(p) {
   c.addEventListener('change', () => { p.hidden = c.checked; changed(false); });
   hid.append(c, document.createTextNode(' Ẩn dự án này khỏi web (người xem không thấy)'));
   const mk = (label, key, ph) => { const l = el('label', label); const inp = el('input'); inp.type = 'text'; inp.value = p[key] || ''; inp.placeholder = ph; inp.addEventListener('input', () => { p[key] = inp.value.trim(); changed(false); }); l.append(inp); return l; };
-  const del = toolBtn('Xoá hẳn dự án', 'Xoá hẳn dự án', () => { if (confirm('Xoá hẳn dự án "' + p.title + '" khỏi web? Ảnh vẫn còn trong kho. Muốn tạm giấu thì dùng ô "Ẩn" thay vì xoá.')) { C.projects.splice(C.projects.indexOf(p), 1); changed(); location.hash = 'du-an'; } });
+  const del = toolBtn('Xoá hẳn dự án', 'Xoá hẳn dự án', () => { if (confirm('Xoá hẳn dự án "' + p.title + '" khỏi web? Ảnh vẫn còn trong kho. Muốn tạm giấu thì dùng ô "Ẩn" thay vì xoá.')) { C.projects.splice(C.projects.indexOf(p), 1); C.featured = (C.featured || []).filter(x => x !== p.slug); changed(); location.hash = 'du-an'; } });
   box.append(el('strong', 'Tuỳ chọn dự án'), hid, mk('Link nguồn', 'link', 'https://…'), mk('Chữ trên link', 'linkText', 'Xem trên Behance'), mk('Chữ trên thẻ khi chưa có ảnh', 'mark', 'VD: Sakura'), mk('Clip (đường dẫn .mp4, để trống nếu không có)', 'video', 'video/ten-du-an.mp4'), cmpBox(p), del);
   return box;
 }

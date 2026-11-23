@@ -107,6 +107,8 @@ h1 { font-size:clamp(4rem,11vw,9rem); line-height:.88; letter-spacing:-.09em; ma
 .history a { display:inline-block; text-decoration:underline; margin-top:5px; }
 .history a:focus-visible { outline-color:var(--paper-ink); }
 .skills dd { margin:2px 0 14px; }
+.me { margin:24px 0 0; max-width:340px; border-radius:8px; overflow:hidden; border:1px solid #a8a99c; }
+.me img { display:block; width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; object-position:50% 30%; }
 .history .role { font-weight:600; color:#4a4b40; margin-top:1px; }
 h2.sub { margin-top:42px; font-size:clamp(1.5rem, 2.6vw, 2.1rem); }
 .goal { margin-top:16px; border-top:1px solid #a8a99c; padding-top:12px; line-height:1.6; }
@@ -218,7 +220,7 @@ body.editing { padding-bottom:84px; }
   <div class="grid" id="cards"></div>
 </section>
 <div class="lower"><div class="wrap details">
-<section id="kinh-nghiem"><h2>Kinh nghiệm</h2><ul class="history" id="history"></ul></section>
+<section id="kinh-nghiem"><h2>Kinh nghiệm</h2><figure class="me"><img src="images/khoa.jpg" alt="Nguyễn Khoa tại nơi làm việc" width="1000" height="1256" loading="lazy" decoding="async"></figure><ul class="history" id="history"></ul></section>
 <section id="ky-nang"><h2>Kỹ năng</h2><dl class="skills" id="skills"></dl>
 <h2 class="sub">Học vấn</h2><ul class="history" id="education"></ul>
 <h2 class="sub">Mục tiêu nghề nghiệp</h2><p class="goal" id="site-goal"></p></section>

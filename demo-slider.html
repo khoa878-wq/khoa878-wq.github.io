@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Nguyễn Khoa — Dự án tiêu biểu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&family=Be+Vietnam+Pro:wght@500;600;800&display=swap" rel="stylesheet">
+<!-- Demo bố cục: kiểu trang trượt toàn màn hình (tham khảo đặc tả "Blendy"), dùng ảnh thiết kế thật của Khoa từ content.json (mục featured). -->
+<style>
+:root { --u:1px; --n:1px; --fy:0px; }
+* { box-sizing:border-box; }
+html, body { height:100%; margin:0; overflow:hidden; }
+body { background:#b3caa6; font-family:'Be Vietnam Pro', system-ui, sans-serif; color:#fff; -webkit-font-smoothing:antialiased; touch-action:pan-y; }
+a, button { color:#fff; font:inherit; background:none; border:0; text-decoration:none; cursor:pointer; pointer-events:auto; }
+a:focus-visible, button:focus-visible { outline:2px solid #fff; outline-offset:4px; border-radius:4px; }
+.ui-text { text-shadow:0 1px 6px rgba(40,30,20,.28); }
+
+.stage { position:fixed; inset:0; overflow:hidden; user-select:none; }
+.slide { position:absolute; inset:0; overflow:hidden; visibility:hidden; }
+.slide.on { visibility:visible; z-index:2; }
+.frame { position:absolute; width:calc(1440 * var(--u)); height:calc(900 * var(--u)); left:calc(50% - 720 * var(--u)); top:calc(50% - 450 * var(--u) + var(--fy)); }
+.layer { position:absolute; inset:0; will-change:transform; }
+
+.word { position:absolute; left:0; width:100%; text-align:center; font-weight:800; line-height:1; white-space:nowrap; color:#fff; opacity:.92; }
+.shadow { position:absolute; border-radius:50%; background:radial-gradient(closest-side, rgba(30,20,10,.26), transparent); filter:blur(calc(4 * var(--u))); }
+.hero { position:absolute; border-radius:calc(10 * var(--u)); overflow:hidden; box-shadow:0 calc(30 * var(--u)) calc(60 * var(--u)) rgba(20,15,10,.28); background:#fff; }
+.hero img, .piece img { width:100%; height:100%; object-fit:cover; display:block; }
+.piece { position:absolute; }
+.bob { width:100%; height:100%; border-radius:calc(8 * var(--u)); overflow:hidden; box-shadow:0 calc(14 * var(--u)) calc(28 * var(--u)) rgba(20,15,10,.25); background:#fff;
+  animation:bob var(--d,4s) ease-in-out var(--dl,0s) infinite alternate; transform:rotate(var(--r,0deg)); }
+.corner .bob { filter:blur(calc(9 * var(--u))); }
+@keyframes bob { from { transform:translateY(calc(-7 * var(--u))) rotate(calc(var(--r,0deg) - 3deg)); } to { transform:translateY(calc(7 * var(--u))) rotate(calc(var(--r,0deg) + 3deg)); } }
+
+.ui { position:fixed; inset:0; z-index:10; pointer-events:none; }
+.top { position:absolute; left:calc(50 * var(--n)); right:calc(50 * var(--n)); top:calc(26 * var(--n)); height:calc(50 * var(--n)); display:flex; align-items:center; }
+.logo { font-family:'Baloo 2', sans-serif; font-weight:800; font-size:calc(51 * var(--n)); letter-spacing:-.02em; line-height:1; }
+.tabs { position:absolute; left:50%; transform:translateX(-50%); display:flex; gap:calc(60 * var(--n)); font-weight:500; font-size:calc(19 * var(--n)); }
+.tabs button { padding:6px 0; white-space:nowrap; }
+.underline { position:absolute; left:0; bottom:calc(-2 * var(--n)); height:2px; border-radius:2px; background:#fff; transition:transform .6s cubic-bezier(.65,0,.35,1), width .6s cubic-bezier(.65,0,.35,1); }
+.account { margin-left:auto; display:flex; gap:calc(22 * var(--n)); font-weight:500; font-size:calc(19 * var(--n)); align-items:center; }
+.account span { opacity:.9; }
+.cta { position:absolute; left:50%; transform:translateX(-50%); bottom:calc(36 * var(--n)); font-weight:600; font-size:calc(19 * var(--n)); letter-spacing:.2em; padding:calc(10 * var(--n)) calc(16 * var(--n)); white-space:nowrap; }
+.arrow { position:absolute; bottom:calc(30 * var(--n)); width:calc(52 * var(--n)); height:calc(52 * var(--n)); display:grid; place-items:center; }
+.arrow svg { width:calc(28 * var(--n)); height:calc(28 * var(--n)); }
+.prev { left:calc(36 * var(--n)); } .next { right:calc(36 * var(--n)); }
+.cap { position:absolute; left:50%; transform:translateX(-50%); bottom:calc(92 * var(--n)); font-size:calc(15 * var(--n)); opacity:.95; white-space:nowrap; }
+.lift { opacity:0; translate:0 14px; }
+.lift.in { opacity:1; translate:0 0; transition:opacity 1s cubic-bezier(.22,.8,.3,1), translate 1s cubic-bezier(.22,.8,.3,1); }
+
+@media (max-width:820px), (orientation:portrait) {
+  :root { --n:1px !important; }
+  .top { left:20px; right:20px; top:16px; height:40px; }
+  .logo { font-size:34px; }
+  .account { font-size:15px; gap:10px; }
+  .tabs { top:52px; transform:translateX(-50%); gap:18px; font-size:15px; max-width:calc(100vw - 24px); overflow-x:auto; scrollbar-width:none; }
+  .cta { font-size:15px; bottom:22px; }
+  .cap { font-size:13px; bottom:70px; }
+  .arrow { width:48px; height:48px; bottom:12px; } .arrow svg { width:24px; height:24px; }
+  .prev { left:8px; } .next { right:8px; }
+}
+@media (prefers-reduced-motion:reduce) { .bob { animation:none; } .underline { transition:none; } .lift { opacity:1; translate:none; } }
+</style>
+</head>
+<body>
+<div class="stage" id="stage"></div>
+<div class="ui">
+  <div class="top">
+    <a class="logo ui-text lift" href="index.html" data-d="250">NK.</a>
+    <nav class="tabs ui-text lift" id="tabs" aria-label="Dự án tiêu biểu" data-d="330"><span class="underline" id="ul"></span></nav>
+    <div class="account ui-text lift" data-d="410"><a href="index.html#du-an">Tất cả dự án</a><span>|</span><a href="index.html#kinh-nghiem">Kinh nghiệm</a></div>
+  </div>
+  <p class="cap ui-text lift" id="cap" data-d="530"></p>
+  <button class="arrow prev ui-text lift" id="prev" aria-label="Dự án trước" data-d="490"><svg viewBox="0 0 28 28" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 14H4 M12 6l-8 8 8 8"/></svg></button>
+  <a class="cta ui-text lift" id="cta" href="index.html" data-d="570">XEM DỰ ÁN</a>
+  <button class="arrow next ui-text lift" id="next" aria-label="Dự án tiếp theo" data-d="650"><svg viewBox="0 0 28 28" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h20 M16 6l8 8-8 8"/></svg></button>
+</div>
+<script>
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const W = 1440;
+// Vị trí mảnh bay (px thiết kế): 5 mảnh rõ + 2 mảnh mờ ở góc, theo bố cục đặc tả Blendy.
+const PIECES = [
+  { x:360, y:150, w:150, r:-8 }, { x:960, y:205, w:160, r:6 }, { x:250, y:470, w:175, r:-6 },
+  { x:1195, y:430, w:180, r:12 }, { x:965, y:590, w:150, r:-10 },
+];
+const CORNERS = [ { x:-30, y:600, w:280, r:0 }, { x:1250, y:30, w:220, r:10 } ];
+const SHADOWS = [ [330,668,190,24], [720,724,560,34], [1290,640,180,22], [1040,770,160,22] ];
+const FACT = { word:.40, shadow:.30, hero:.15, fruit:.55, corner:.75 };
+const COVER = [[0,0],[.031,.006],[.134,.012],[.206,.023],[.278,.047],[.34,.07],[.412,.105],[.485,.158],[.546,.246],[.583,.55],[.62,.825],[.69,.9],[.79,.94],[.85,.956],[.93,.975],[1,1]];
+
+function el(tag, cls, parent) { const e = document.createElement(tag); if (cls) e.className = cls; if (parent) parent.append(e); return e; }
+function cover(t) {
+  for (let i = 1; i < COVER.length; i++) { const [t1, c1] = COVER[i], [t0, c0] = COVER[i - 1];
+    if (t <= t1) { const k = (t - t0) / (t1 - t0); return c0 + (c1 - c0) * (3 * k * k - 2 * k * k * k); } }
+  return 1;
+}
+const easeOutQuad = k => 1 - (1 - k) * (1 - k);
+// Màu nền: lấy màu sáng của dự án, đậm thêm một chút để chữ trắng đọc được.
+const bgOf = p => `color-mix(in srgb, ${(p.colors || [])[0] || '#b3caa6'} 78%, ${(p.colors || [])[1] || '#22241c'})`;
+
+let P = [], slides = [], cur = 0, busy = false, lastTouch = 0;
+
+function layout() {
+  const vw = innerWidth, vh = innerHeight, mobile = vw <= 820 || vh > vw;
+  const u = mobile ? Math.min(vw / 640, (vh - 200) / 620) : Math.min(vw / 1440, vh / 900);
+  const root = document.documentElement.style;
+  root.setProperty('--u', u + 'px'); root.setProperty('--fy', mobile ? '8px' : '0px');
+  root.setProperty('--n', mobile ? '1px' : Math.max(.5, Math.min(1.3, Math.min(vw / 1440, vh / 900))) + 'px');
+  const visW = mobile ? Math.min(W, vw / u) * .92 : 1330;
+  const ctx = (layout.c ||= document.createElement('canvas').getContext('2d'));
+  ctx.font = '800 100px "Be Vietnam Pro"';
+  slides.forEach(s => {
+    const m = ctx.measureText(s.word.textContent); const ink = (m.actualBoundingBoxLeft + m.actualBoundingBoxRight) / 100;
+    let F = 400, ls = .005;
+    if (ink * F > visW) { ls = -.035; F = Math.min(400, (mobile ? visW : 1400) / ink); }
+    else if (ink * F < visW * .85) F = Math.min(600, visW * .85 / ink); // chữ ngắn (3D, Bear) phóng to để lộ hai bên banner
+    s.word.style.fontSize = `calc(${F} * var(--u))`; s.word.style.letterSpacing = ls + 'em';
+    const base = 403.5 + .70 * F / 2; s.word.style.top = `calc(${base - .85 * F} * var(--u))`;
+  });
+  moveUnderline();
+}
+
+function box(e, x, y, w, h) { Object.assign(e.style, { left:`calc(${x} * var(--u))`, top:`calc(${y} * var(--u))`, width:`calc(${w} * var(--u))`, height:`calc(${h} * var(--u))` }); }
+
+function build(p, i) {
+  const s = el('section', 'slide', stage); s.style.background = bgOf(p); s.setAttribute('aria-label', p.title);
+  const f = el('div', 'frame', s), L = {};
+  for (const k of ['word', 'shadow', 'hero', 'fruit', 'corner']) L[k] = el('div', 'layer l-' + k, f);
+  const word = el('div', 'word', L.word); word.textContent = p.mark || p.title;
+  SHADOWS.forEach(([cx, cy, w, h]) => box(el('div', 'shadow', L.shadow), cx - w / 2, cy - h / 2, w, h));
+  const imgs = p.images || [], c = Math.min(p.cover || 0, imgs.length - 1), coverImg = imgs[c];
+  const ratio = coverImg ? Math.max(.7, Math.min(1.8, coverImg.ratio)) : 1.6;
+  const hw = ratio >= 1 ? 560 : 400, hh = hw / ratio;
+  const hero = el('a', 'hero', L.hero); hero.href = 'index.html#da-' + p.slug; hero.setAttribute('aria-label', 'Xem dự án ' + p.title);
+  box(hero, 720 - hw / 2, 430 - hh / 2, hw, hh);
+  if (coverImg) { const im = el('img', '', hero); im.src = coverImg.src; im.alt = p.title; im.decoding = 'async'; }
+  const rest = imgs.filter((_, k) => k !== c);
+  const pick = n => rest[n % Math.max(1, rest.length)];
+  const place = (spec, layer, n) => {
+    const it = pick(n); if (!it) return;
+    const w = spec.w, h = w / Math.max(.6, Math.min(1.9, it.ratio));
+    const o = el('div', 'piece' + (layer === L.corner ? ' corner' : ''), layer); box(o, spec.x, spec.y, w, h);
+    const b = el('div', 'bob', o); b.style.setProperty('--r', spec.r + 'deg');
+    b.style.setProperty('--d', (3.2 + Math.random() * 1.8).toFixed(2) + 's'); b.style.setProperty('--dl', (-Math.random() * 4).toFixed(2) + 's');
+    const im = el('img', '', b); im.src = it.src; im.alt = ''; im.decoding = 'async'; // không lazy: slide ẩn cần ảnh sẵn trước khi trượt vào
+  };
+  PIECES.forEach((sp, n) => place(sp, L.fruit, n));
+  CORNERS.forEach((sp, n) => place(sp, L.corner, n + 5));
+  return { s, L, word, p };
+}
+
+function setX(sl, k, px) { sl.L[k].style.transform = px ? `translateX(${px}px)` : ''; }
+function frameW() { return 1440 * parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--u')); }
+
+function go(to, dir) {
+  if (busy || to === cur || !slides.length) return;
+  const A = slides[cur], B = slides[to]; cur = to; updateUI();
+  if (REDUCED) { A.s.classList.remove('on'); B.s.classList.add('on'); return; }
+  busy = true; const fw = frameW();
+  B.s.style.visibility = 'visible'; B.s.style.zIndex = 1;
+  const t0 = performance.now(), DUR = 970;
+  (function tick(now) {
+    const t = (now - t0) / DUR, c = cover(Math.min(1, t));
+    if (t <= 1) {
+      A.s.style.clipPath = dir > 0 ? `inset(0 ${c * 100}% 0 0)` : `inset(0 0 0 ${c * 100}%)`;
+      for (const k in FACT) setX(A, k, -dir * c * .14 * fw);
+    }
+    const k = easeOutQuad(Math.max(0, Math.min(1, (t - .5) / .42)));
+    for (const key in FACT) setX(B, key, dir * (1 - k) * FACT[key] * fw);
+    if (t < 1 || k < 1) return requestAnimationFrame(tick);
+    A.s.classList.remove('on'); A.s.style.clipPath = ''; for (const key in FACT) setX(A, key, 0);
+    B.s.classList.add('on'); B.s.style.visibility = ''; B.s.style.zIndex = ''; busy = false;
+  })(t0);
+}
+const step = d => go((cur + d + slides.length) % slides.length, d);
+
+function moveUnderline() {
+  const t = tabs.querySelectorAll('button')[cur], ul = document.getElementById('ul'); if (!t) return;
+  ul.style.width = t.offsetWidth + 'px'; ul.style.transform = `translateX(${t.offsetLeft}px)`;
+}
+function updateUI() {
+  const p = slides[cur].p;
+  tabs.querySelectorAll('button').forEach((b, i) => b.toggleAttribute('aria-current', i === cur));
+  cta.href = 'index.html#da-' + p.slug; cap.textContent = p.brand + ' · ' + p.images.length + ' thiết kế';
+  document.body.style.background = bgOf(p); moveUnderline();
+}
+const touch = () => { lastTouch = Date.now(); };
+
+async function start() {
+  const C = await (await fetch('content.json?t=' + Date.now(), { cache:'no-store' })).json();
+  P = (C.featured || []).map(s => C.projects.find(p => p.slug === s && !p.hidden && (p.images || []).length)).filter(Boolean);
+  if (!P.length) P = C.projects.filter(p => !p.hidden && (p.images || []).length).slice(0, 4);
+  slides = P.map(build);
+  P.forEach((p, i) => { const b = el('button', '', tabs); b.textContent = p.mark || p.title; b.title = p.title;
+    b.addEventListener('click', () => { touch(); const d = i > cur ? 1 : -1; go(i, d); }); });
+  slides[0].s.classList.add('on');
+  await document.fonts.ready; layout(); updateUI();
+  if (!REDUCED) {
+    const fw = frameW(), A = slides[0];
+    for (const k in FACT) { A.L[k].animate([{ transform:`translateX(${FACT[k] * fw}px)` }, { transform:'translateX(0)' }], { duration:900, easing:'cubic-bezier(.22,.8,.3,1)' }); }
+  }
+  document.querySelectorAll('.lift').forEach(e => setTimeout(() => e.classList.add('in'), REDUCED ? 0 : +e.dataset.d));
+  setTimeout(() => document.querySelectorAll('.lift').forEach(e => e.classList.add('in')), 3000);
+  setInterval(() => { if (!document.hidden && Date.now() - lastTouch > 6000) step(1); }, 4000);
+}
+prev.addEventListener('click', () => { touch(); step(-1); });
+next.addEventListener('click', () => { touch(); step(1); });
+addEventListener('keydown', e => { if (e.key === 'ArrowLeft') { touch(); step(-1); } if (e.key === 'ArrowRight') { touch(); step(1); } });
+let sx = null, sy = 0;
+stage.addEventListener('pointerdown', e => { sx = e.clientX; sy = e.clientY; });
+addEventListener('pointerup', e => { if (sx === null) return; const dx = e.clientX - sx, dy = e.clientY - sy; sx = null;
+  if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) { touch(); step(dx < 0 ? 1 : -1); } });
+addEventListener('resize', layout);
+start().catch(() => { stage.textContent = 'Không tải được dữ liệu dự án.'; });
+</script>
+</body>
+</html>

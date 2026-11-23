@@ -33,6 +33,8 @@ h2 { font-size:clamp(2rem,5vw,4.2rem); line-height:1.02; letter-spacing:-.06em; 
 .hero { display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:42px; padding-block:60px 82px; }
 h1 { font-size:clamp(4rem,11vw,9rem); line-height:.88; letter-spacing:-.09em; margin-block:20px; }
 .intro { max-width:34ch; color:var(--muted); font-size:1.15rem; }
+.avatar { display:block; width:112px; height:112px; border-radius:50%; background:var(--lime); object-fit:cover; margin-bottom:18px; }
+@media(max-width:630px) { .avatar { width:88px; height:88px; } }
 .stats { display:flex; gap:28px; margin-top:22px; font-size:.9rem; color:var(--muted); }
 .stats b { display:block; color:var(--ink); font-size:1.6rem; letter-spacing:-.04em; font-variant-numeric:tabular-nums; }
 .action { display:inline-block; margin-top:26px; background:var(--lime); color:var(--bg); font-weight:750; padding:11px 22px; border-radius:99px; }
@@ -205,7 +207,7 @@ body.editing { padding-bottom:84px; }
 <header class="top wrap"><a class="brand" href="#gioi-thieu" aria-label="Nguyễn Khoa, đầu trang">NK<span>.</span></a><nav aria-label="Điều hướng chính"><a href="#du-an">Dự án</a><a href="#kinh-nghiem">Kinh nghiệm</a><a href="#ky-nang">Kỹ năng</a></nav></header>
 <main id="home">
 <section class="hero wrap" id="gioi-thieu">
-  <div><p class="label" id="site-label"></p><h1>Nguyễn<br>Khoa<span>.</span></h1><p class="intro" id="site-intro"></p>
+  <div><img class="avatar" src="images/khoa-avatar.png" alt="Ảnh Nguyễn Khoa" width="360" height="360" decoding="async"><p class="label" id="site-label"></p><h1>Nguyễn<br>Khoa<span>.</span></h1><p class="intro" id="site-intro"></p>
   <div class="stats"><div><b id="stat-projects">–</b>dự án</div><div><b id="stat-images">–</b>thiết kế</div><div><b id="stat-period"></b>giai đoạn</div></div>
   <a class="action" href="#du-an">Xem dự án</a></div>
   <div class="reel"><video id="reel" muted loop playsinline preload="metadata" poster="video/showreel.jpg" aria-label="Video giới thiệu các dự án"><source src="video/showreel.mp4" type="video/mp4"></video></div>

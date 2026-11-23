@@ -308,7 +308,8 @@
      "ratio": 1
     }
    ],
-   "video": "video/wan2care-social.mp4"
+   "video": "video/wan2care-social.mp4",
+   "bannerImage": "banners/wan2care-social-a.jpg"
   },
   {
    "slug": "wan2care-worldcup",
@@ -375,7 +376,8 @@
     }
    ],
    "video": "video/wan2care-worldcup.mp4",
-   "banner": "work/wan2care-worldcup/01.jpg"
+   "banner": "work/wan2care-worldcup/01.jpg",
+   "bannerImage": "banners/wan2care-worldcup-a.jpg"
   },
   {
    "slug": "wan2care-tuyen-dung",
@@ -501,7 +503,8 @@
     }
    ],
    "video": "video/vicci-bao-bi.mp4",
-   "banner": "work/vicci-bao-bi/01.jpg"
+   "banner": "work/vicci-bao-bi/01.jpg",
+   "bannerImage": "banners/vicci-bao-bi-a.jpg"
   },
   {
    "slug": "giuong-tu-dep-video",
@@ -925,7 +928,8 @@
     }
    ],
    "video": "video/tra-hoa-lanh.mp4",
-   "banner": "work/tra-hoa-lanh/37.jpg"
+   "banner": "work/tra-hoa-lanh/37.jpg",
+   "bannerImage": "banners/tra-hoa-lanh-a.jpg"
   },
   {
    "slug": "tvc-giay",
@@ -1248,7 +1252,12 @@
     "beforeLabel": "Storyboard",
     "afterLabel": "Cảnh dựng 3D"
    },
-   "banner": "work/phim-3d-khan-do/03.jpg"
+   "banner": "work/phim-3d-khan-do/03.jpg",
+   "bannerImage": "banners/phim-3d-khan-do-a.jpg",
+   "bannerExtras": [
+    "work/phim-3d-khan-do/10.jpg",
+    "work/phim-3d-khan-do/18.jpg"
+   ]
   },
   {
    "slug": "dung-hinh-3d-maya",
@@ -1419,7 +1428,12 @@
     }
    ],
    "video": "video/bear-cream.mp4",
-   "banner": "work/bear-cream/27.jpg"
+   "banner": "work/bear-cream/27.jpg",
+   "bannerImage": "banners/bear-cream-a.jpg",
+   "bannerExtras": [
+    "work/bear-cream/06.jpg",
+    "work/bear-cream/13.jpg"
+   ]
   },
   {
    "slug": "bougies",
@@ -1582,7 +1596,8 @@
     }
    ],
    "video": "video/jus-de-fruit.mp4",
-   "banner": "work/jus-de-fruit/01.jpg"
+   "banner": "work/jus-de-fruit/01.jpg",
+   "bannerImage": "banners/jus-de-fruit-a.jpg"
   },
   {
    "slug": "glow",

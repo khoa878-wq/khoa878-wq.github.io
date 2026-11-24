@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
 <meta charset="utf-8">
-<script>/* link cũ /?sua → trang sửa nội dung */ if (new URLSearchParams(location.search).has('sua')) location.replace('sua.html' + location.search + location.hash);</script>
+<script>/* link cũ /?sua → trang sửa nội dung */ if (new URLSearchParams(location.search).has('sua')) location.replace('sua.html' + location.search + location.hash); else if (location.search === '?v=2') history.replaceState(null, '', './' + location.hash);</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>Nguyễn Khoa · Graphic Designer</title>
